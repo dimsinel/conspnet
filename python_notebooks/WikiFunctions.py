@@ -1,3 +1,4 @@
+"""Some helper functions for wikipedia notebooks"""
 def revco(s):
     s = s.strip()
     if 'alcolm' in s:
@@ -11,42 +12,39 @@ def revco(s):
     return s
 
 def findByNodeName(nodeName, objlist):
-    for ob in objlist:
-        if ob.nodeName == nodeName:
-            return ob
-    # if not found, check if this is only a part of the name
-    flist = []
-    for ob in objlist:
-        if nodeName.lower() in ob.nodeName.lower() :
-            flist.append(ob)    
-    # if not found, return an empty-name oblject
-    if len(flist) > 0:
+    """Get entry by node name in tree"""
+    flist = [ob for ob in objlist if nodeName.lower() in ob.nodeName.lower() ]
+     
+    if len(flist) == 1:
+        return flist[0]
+    elif len(flist) > 1:
         print('Multiple entries found')
         for i in flist:
             i.print()
+    else: 
+        print("Nothing found")
 
-    return wikiItem(None)
+    return wikiItem(None)   
 
 
 def findByWikiName(wikiName, objlist):
-    for ob in objlist:
-        if ob.wikiName.strip() == wikiName:
-            return ob
-    # if not found, check if this is only a part of the name
-    flist = []
-    for ob in objlist:
-        if wikiName.lower() in ob.wikiName.lower() :
-            flist.append(ob)    
-    #if nothing found,  return an empty-name oblject
-    if len(flist) > 0:
+    """Get entry by wikipedia  name"""
+    flist = [ob for ob in objlist if wikiName.lower() in ob.wikiName.lower() ]
+  
+    if len(flist) == 1:
+        return flist[0]
+    elif len(flist) > 1:
         print('Multiple entries found')
         for i in flist:
             i.print()
+    else: 
+        print("Nothing found")
 
     return wikiItem(None)      
     
     
-def printCommentsOnly():
+def printCommentsOnly(objlist):
+    """Get all comments in list of entries"""
     for ob in objlist:
         if ob.comment != None:
             ob.print()
