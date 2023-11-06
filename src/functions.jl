@@ -56,7 +56,7 @@ function find_title(sym::AbstractString, txt::String, in_page::UnitRange)
     end
     
     title = findnext(mysym, txt, in_page[1])
-    println("$title   ", in_page[1])
+    println(mysym, "  $title   ", in_page[1])
     # check if this is the first word in the page: in this case it is a headr, ignore it
     if title[1] == in_page[1] # this is the header
         title = findnext(mysym, txt, title[end])
@@ -100,7 +100,7 @@ function change_symbols(sym)
         mysym = "Warren Commission Report"
 
     elseif sym == "Hoover, Edgar J"
-        mysym = "Hoover, J Edgar"
+        mysym = "Hoover J Edgar"
 
     elseif sym == "mk-ultra"
         mysym = "MK-ULTRA"
@@ -120,8 +120,8 @@ function change_symbols(sym)
     elseif sym == "Ruby Ridge Incident"
         mysym = "Ruby Ridge"
 
-    elseif sym == "Burroughs, William S"
-        mysym = "Burroughs, William S."
+    # elseif sym == "Burroughs, William S"
+    #     mysym = "Burroughs, William S."
 
     elseif sym == "Central Ingelligence Agency"
         mysym = "Central Intelligence Agency"
@@ -133,10 +133,10 @@ function change_symbols(sym)
          mysym = "Venona"
 
      elseif sym == "Roosevelt, Franklin Delano"
-         mysym = "Roosevelt, Franklin D."
+         mysym = "Roosevelt, Franklin D"
       
-     elseif sym == "Roosevelt, Franklin D"
-         mysym = "Roosevelt, Franklin D."
+     elseif sym == "Roosevelt, Franklin D."
+         mysym = "Roosevelt, Franklin D"
 
     elseif occursin("Larouche", sym)
         mysym = replace(sym, "Larouche" => "LaRouche")
@@ -241,7 +241,7 @@ function make_replacements(txt)
 
     txt = replace(txt, "Ruby Ridge Incident" => "Ruby Ridge")
 
-    txt = replace(txt, "Burroughs, William S" => "Burroughs, William S.")
+    txt = replace(txt, "Burroughs, William S.." => "Burroughs, William S.")
 
     txt = replace(txt, "Central Ingelligence Agency" => "Central Intelligence Agency")
 
@@ -249,9 +249,9 @@ function make_replacements(txt)
 
      txt = replace(txt, "Venona Project" => "Venona")
 
-     txt = replace(txt, "Roosevelt, Franklin Delano" => "Roosevelt, Franklin D.")
+     txt = replace(txt, "Roosevelt, Franklin Delano" => "Roosevelt, Franklin D")
       
-     txt = replace(txt, "Roosevelt, Franklin D" => "Roosevelt, Franklin D.")
+     txt = replace(txt, "Roosevelt, Franklin D." => "Roosevelt, Franklin D")
 
     txt = replace(txt, "Larouche" => "LaRouche")
 
@@ -304,7 +304,7 @@ function make_replacements(txt)
     txt = replace(txt, "Johnson, Lyndon B" => "Johnson, Lyndon")
 
     txt = replace(txt,"Hollywood 10"=>"Hollywood Ten")
-    txt = replace(txt,"Hoover, J."=>"Hoover, J")
+    txt = replace(txt,"Hoover, J."=>"Hoover J")
 end
 #######################################3333
 
@@ -336,6 +336,8 @@ function get_refs(a::UnitRange, b::UnitRange, txt::String)
         #In this case just use the next title
         println("no References in this item!")
         ref = b
+    else
+        refs 
     end
     
     salsos = txt[(a[end]+2):(ref[1] -1)]
@@ -376,4 +378,6 @@ function load_df(df::DataFrames.DataFrame, salsos::Vector{SubString{String}})
     end
 
 end
+
+
 

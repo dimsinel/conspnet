@@ -1,0 +1,5717 @@
+References = Dict()
+not_found = dict()
+
+
+##############################################3
+not_found["Agent Orange"] = ["Columbia Encyclopedia, Sixth Edition. 2001. Agent Orange. http://www.bartleby.com/65/ag/AgentOra.html"]
+
+not_found["AIDS"] = ["U.S. House. 1969. Committee on Appropriations. Hearings on Department of Defense Appropriations for 1970. 91st Cong., 1st sess. Washington, DC: U.S. Government Printing Office. Adams, Jad. 1989. AIDS: The HIV Myth. London: Macmillan.",
+"Segal, Jakob, and Lilli Segal. 1986. AIDS: USA Home-Made Evil. Self-published",
+"The Strecker Memorandum. 1988. Produced byRobert Strecker. Videocassette.",
+"James, John S. 1986. “AIDS Conspiracy—Just a Theory?” San Francisco Sentinel, 12 September. http://www.immunet.org/atn/ZQX01301.html.",
+"Duke, Phillip S. “The AIDS-ET Connection.” Paranoia 6, no. 1: 51–54.",
+"Cantwell, Jr., Alan. 1997. “The Gulf BioWar: GWS and AIDS.” Paranoia 5, no. 1: 30–33."]
+
+
+not_found["Anti-Rent War"] = ["Emenhiser, JeDon A. 1962. The Anti-Rent War. Armed Politics: An Analysis and Comparison of
+Six Cases in the United States. Ph.D. diss., University of Minnesota."]
+
+not_found["Aurora"] = ["Harris, Roy, Jr. 1992. “Evidence Points to Secret U.S. Spy Plane.” Wall Street Journal, 4 December.",
+"Brown, Stuart. 1994. “Searching for the Secrets of Groom Lake.” Popular Science, March, 84–85."]
+
+not_found["Brown Scare"] = ["U.S. House. 1935. Investigation of Nazi and Other Propaganda. 74th Cong., 1st Sess., H. Rept. 153
+(Serial 9890). Washington, DC: U.S. Government Printing Office"]
+
+not_found["Cattle Mutilations"] = ["Rommel, Kenneth M., Jr. 1980. Operation Animal Mutilation. Santa Fe: District Attorney, First
+Judicial District, New Mexico. Also available at: http://www.parascope.com/articles/0597/romindex.htm."]
+
+not_found["Chicago 7"] = ['University of Missouri-Kansas City Law School.
+“The Chicago Seven Trial.” http://www.law.umkc.edu/faculty/projects/ftrials/Chicago7/chicago7.html']
+
+not_found["Cold War"] = ["U.S. Department of State. 1952–1972. Foreign Relations of the United States. Washington, DC: U.S. Government Printing Office."]
+
+not_found["Covert Action Quarterly"] = ["O’Neill, Rory. 2001. “Re: Encyclopedia Entry.”Personal email, 3 December.",
+"Allen, Terry, Sanho Tree, and Louis Wolf. 1998. Personal interviews, 14–15 June."]
+
+
+ not_found["Cuban Missile Crisis"] = ["Nechayev, I. V. 1987. Through the Stages of Nuclear Insanity)"]
+
+not_found["Federal Emergency Management Agency"] = ["The Present Truth Ministry. 1995. “President’s Emergency Powers Created FEMA.” The Patriot
+Report 4 (February)."]
+
+#########################################################################
+
+References["Abolitionism"] = ["https://doi.org/10.1215/00382876-65-1-55",
+                            "ISBN-13: 978-0312103866",
+                           "ISBN-13: 9780393007305", @garrisonWilliamLloydGarrison1995
+                           "https://doi.org/10.2307/2081254",
+                           "https://doi.org/10.2307/1918186",
+                           "https://doi.org/10.2307/3123907",
+                           "https://archive.org/details/freedomofthought00eatorich",
+                           "https://doi.org/10.4324/9781315720869",
+                           "ISBN: 978-0252070693",
+                           "ISBN: 978-0813108643",
+                           "https://doi.org/10.2307/2953140",
+                           "ISBN: 978-0393953701",
+                           "ISBN: 978-1598533484",
+                           "ISBN: 9780674833425",
+                           "http://name.umdl.umich.edu/acg1336.1-12.005",
+                           "https://files.eric.ed.gov/fulltext/ED245260.pdf",
+                           "https://doi.org/10.2307/1918187",
+                          "ISBN: 9780809015962",
+                           "http://memory.loc.gov/ammem/amlaw/lwac.html",
+                           "http://www.pbs.org/wgbh/aia/part4/4h2931t.html"]
+
+
+References["Abortion"] = ["http://www.armyofgod.com/AOGhistory.html",
+                           "https://doi.org/10.2307/3511171",
+                           "https://doi.org/10.2307/3712182",
+                           "https://doi.org/10.1017/S0034670500050658",
+                           "http://www.prochoice.org"
+                           ]
+
+References["African Americans"] = ["ISBN: 9780520228559",
+                                    "isbn: 978-0300090000",
+                                    "ISBN: 9780415189781",
+                                    "isbn: 9780814747353",
+                                    "ISBN: 9780520089365"]
+                                
+References["Agent Orange"] = ["ISBN: 978-0-7864-0027-0",
+                                "Columbia Encyclopedia, Sixth Edition. 2001. Agent Orange"
+                                "https://www.ncbi.nlm.nih.gov/books/NBK535912/",
+                                "https://doi.org/10.56021/9780801828638",
+                                ]
+
+References["AIDS"] = ["ISBN 978-0-8223-1553-7",
+                        "ISBN: 978-0-8223-2286-3",
+                        "http://hdl.handle.net/10822/738825",
+                        "U.S. House. 1969",
+                        "ISBN: 978-0941523035",
+                        "ISBN: 978-0883781357",
+                        "http://www.sonic.net/sentinel/gvcon1.html",
+                        "ISBN: 978-0943742083",
+                        "ISBN: 9781936239412",
+                        "ISBN: 9780415189781",
+                        "ISBN: 978-0-923550-12-7",
+                        "ISBN: 978-0-316-37261-9",
+                        "Herek & Capitanio 1994",
+                        "https://antifascistnews.net/2017/02/28/aids-conspiracy-theories-tracking-the-real-genocide-david-gilbert-1997/",
+                        "ISBN: 978-0-8166-2462-1",
+                        "iSBN: 978-0-9646475-0-3",
+                        "http://dx.doi.org/10.1007/978-94-009-1651-7",
+                        "iSBN: 978-1-881316-00-8",
+                        "iSBN: 978-0-929385-22-8",
+                        "iSBN: 978-0-917211-00-3"]   
+                        
+References["Alien and Sedition Acts"] = ["http://name.umdl.umich.edu/N25101.0001.001",
+                                        "iSBN: 978-0-8014-2839-5",
+                                        "https://www.jstor.org/stable/987049",
+                                        "doi: 10.1086/ahr/103.1.140",
+                                        "https://doi.org/10.1093/acprof:oso/9780195093810.001.0001",
+                                        "ISBN: 978-1-93108204-4",
+                                        "ISBN: 978-0520017542",
+                                        "ISBN: 978-0-94045016-5",
+                                        "ISBN: 978-0-19-503506-3",
+                                        "https://doi.org/10.2307/1895021",
+                                        "https://www.jstor.org/stable/j.ctt6wrm5f",
+                                        "https://www.jstor.org/stable/20091884",
+                                        "ISBN 0-8139- 2030-2"
+                                        "ISBN: 9780807816653",
+                                        "ISBN: 978-0-608-18391-6",
+                                        "https://www.gutenberg.org/files/52811/52811-h/52811-h.htm",
+                                        "ISBN: 9780313220531"]
+
+
+
+References["American Indian Movement"] = ["ISBN: 978-0674443013","WoodGordon1982"]
+
+References["Anarchists"] = ["ISBN: 978-0-691-00609-3",
+                            "ISBN: 978-0805202670",
+                            "ISBN: 978-0-14-243785-8",
+                            "ISBN: 978-0-8057-7794-9",
+                            "ISBN: 9781789122305"]
+
+
+
+References["Anti-Catholicism"] = ["ISBN: 978-0-19-536399-9",
+                                    "https://doi.org/10.2307/2952736",
+                                    "https://doi.org/10.1177/004056390106200305",
+                                    "ISBN: 978-0-8135-3123-6",
+                                    "ISBN: 978-0-520-07818-5",
+                                    "http://archive.org/details/protestantcrusad0000unse"]
+
+                                    
+References["Anticommunism"] = ["ISBN: 978-0-691-65093-7",
+                                "http://archive.org/details/radicalrightthen010584mbp",
+                                "ISBN: 978-0-671-24848-2",
+                                "ISBN: 978-0-19-504361-7",
+                                "ISBN: 978-0-531-06364-4",
+                                "https://archive.org/details/politicsofconsen0000hyma",
+                                "ISBN: 978-0-252-06336-7",
+                                "ISBN: 978-0-87023-241-1",
+                                "ISBN: 978-1-01-437134-8",
+                                "ISBN: 978-0-09-172598-3",
+                                "ISBN: 978-0-691-04870-3",
+                                "ISBN: 978-0-312-39319-9 ",
+                                "ISBN: 978-0-9636380-0-7",
+                                "ISBN: 978-0-14-026078-6" ]
+
+
+References["Anti-Federalists"] = ["ISBN: 978-0-87020-153-0",
+                                    "https://doi.org/10.2307/1923094",
+                                    "http://archive.org/details/antifederalistsc00main",
+                                    "ISBN: 978-0-679-78121-9",
+                                    "http://archive.org/details/ordealofconstitu0000rutl",
+                                    "ISBN: 978-0-226-77576-0"]
+
+
+References["Anti-Masonic Party"] = ["ISBN: 978-0-19-504864-3",
+                                    "ISBN: 978-0-691-04646-4",
+                                    "ISBN: 978-0-13-038513-0",
+                                    "ISBN: 978-0-8131-5040-6"]
+
+References["Anti-Rent War"] = ["https://tinyurl.com/yopawrw5",
+                                "Emenhiser, JeDon A. 1962"]
+
+References["Antisemitism"] = ["ISBN: 978-0-19-531354-3",
+                              "ISBN: 978-0-226-29665-4" ,
+                              "ISBN: 978-0-674-79006-3",
+                              "ISBN: 978-0-521-79538-8".
+                              "ISBN: 978-0-87722-297-2",
+                               ]
+References["Apocalypticism"] = ["ISBN: 978-0-87722-297-2",
+                                "http://archive.org/details/BarruelMemoirsIllustratingTheHistoryOfJacobinism",
+                                "http://archive.org/details/radicalrightthen010584mbp",
+                                "ISBN: 978-1-57230-562-5",
+                                "ISBN: 978-0-8010-5721-2",
+                                "http://archive.org/details/pursuitofmillenn0000cohn",
+                                "ISBN: 978-0-8166-3242-8",
+                                "ISBN: 978-0-19-510979-5",
+                                "http://archive.org/details/paranoidstyleina0000hofs",
+                                "ISBN: 978-0-8156-2687-9",
+                                "ISBN: 978-0-310-27771-2", 
+                                "https://tinyurl.com/ys7kl2ev",
+                                "ISBN: 978-0-19-508045-2",
+                                "ISBN: 978-0-8014-3592-8",
+                                "ISBN: 978-0-415-91649-3",
+                                "https://tinyurl.com/pqersjq",
+                                "ISBN: 978-0-87947-178-1",
+                                "ISBN: 978-0-87451-849-8",
+                                "ISBN: 978-0-8156-2809-5"]
+
+References["Area 51"] =  ["ISBN: 978-0-671-01756-9",
+                            "ISBN: 978-0-688-12223-2"]      
+
+                           
+References["Arnold, Benedict"] =  ["ISBN: 978-0-679-40106-3",
+                                    "ISBN: 978-0-8147-5560-0",
+                                    "ISBN: 978-0-918676-12-2"]  
+
+References["Aryan Nations"] = ["ISBN: 978-0-8090-2742-2"]                          
+ 
+References["Asian Americans"] = ["ISBN: 978-0-8057-8437-4",
+                                 "ISBN: 978-0-295-97018-9",
+                                 "ISBN: 978-0-520-91781-1",
+                                 "ISBN: 978-0-393-02747-1",
+                                 "ISBN: 978-0-253-31359-1"] 
+                                 
+References["Atomic Secrets"] = ["ISBN: 978-0-674-50507-0",
+                                "ISBN: 978-0-300-07806-0",
+                                "ISBN: 978-0-300-07205-1",
+                                "ISBN: 978-0-241-10271-8",
+                                "ISBN: 978-0-300-06664-7",
+                                "ISBN: 978-0-8050-6588-6",
+                                "ISBN: 978-1-55013-258-8",
+                                "ISBN: 978-0-8129-2861-7"]
+
+References["Aurora"] = ["ISBN: 978-0-87938-780-8"]
+
+References["Bacon’s Rebellion"] = ["ISBN: 978-0-8078-2307-1",
+                                    "ISBN: 978-0-393-05554-2",
+                                   "https://tinyurl.com/ymkxmyyp"]
+
+References["Banco Nazionale del Lavoro"] = ["ISBN: 978-0-679-41384-4",
+                                            "ISBN: 978-1-56171-333-2",
+                                            "ISBN: 978-1-55738-740-0",
+                                            "ISBN: 978-0-393-02387-9"]
+
+
+References["Bank of Credit and Commerce International"] = ["ISBN: 978-0-679-41384-4"]
+
+References["Bank of England"] = ["ISBN: 978-0-9640485-3-9","ISBN: 978-0-8499-3394-3",
+            "ISBN: 978-1-77464-238-2","https://tinyurl.com/ynr4eadw", "ISBN: 978-0-7153-6366-9"]
+
+References["Bank of the United States"] = ["ISBN: 978-0-674-64480-9",
+                                            "ISBN: 978-0-8160-2194-9",
+                                            "ISBN: 978-0-393-09757-3"]
+
+References["Bank War"] = ["ISBN: 978-0-393-09757-3",
+                          "ISBN: 978-0-8160-3133-7",
+                          "ISBN: 978-0-316-77343-0",
+                          "https://doi.org/10.1111/j.1540-6563.1988.tb00767",
+                          "https://tinyurl.com/yutqqujr",
+                          "ISBN: 978-0-674-64480-9"]
+
+References["Barruel, Abbé"] = ["http://archive.org/details/BarruelMemoirsIllustratingTheHistoryOfJacobinism",
+                                "ISBN: 978-0-8014-9113-9",
+                                "ISBN: 978-0-521-36654-0",
+                                "https://tinyurl.com/ys7kl2ev",
+                                "McIlhany, William H. 1996",
+                                "ISBN: 978-0-684-83131-2",
+                                "ISBN: 978-0-684-12904-4"]
+References["Bay of Pigs Invasion"] = ["ISBN: 978-1-56584-494-0",
+                                      "ISBN: 978-1-55587-822-1",
+                                      "ISBN: 978-0-385-49908-8"]
+
+References["Beam, Louis"] = ["ISBN: 978-0-06-017403-3","ISBN: 978-0-8021-1327-6"]
+
+References["Bell, Art"] = []
+References["Berg, Alan"] = ["ISBN:978-0-06-017403-3","ISBN:978-0-02-910312-8",
+            "ISBN:978-1-57392-058-2","ISBN:978-0-688-06154-8"]
+References["Biddle, Nicholas"] = ["ISBN:978-0-688-06154-8","Govan1959","ISBN:978-0-669-84491-7","Wilburn1967"]
+References["Bilderbergers"] = ["ISBN:978-0-521-36286-3","9ISBN:78-0-674-00671-3"]
+References["Black Helicopters"] = ["ISBN:978-1-84467-568-5"."ISBN:978-0-9620570-1-4","ISBN:978-1-881532-05-7","https://doi.org/10.1007/9","Spark1998"]
+References["Black Panthers"] = ["ISBN:978-0-8153-3257-2","ISBN:978-0-02-923681-9","Newton1980","ISBN:978-0-933121-96-6","ISBN:978-0-306-81201-9"]
+References["Booth, John Wilkes"] = ["Lewis1929","978-0-19-504213-9"."Forrester1937","Bryan1940","Babcock1925"]
+References["Boston Massacre"] = ["978-0-393-05376-0","https://doi.org/10.2307/1918907","https://doi.org/10.2307/1959783"]
+References["Boston Tea Party"] = ["ISBN: 978-0674443013", "978-0-673-99293-2","978-0-930350-05-5"."DOI: 10.2307/1918907"]
+References["British Royal Family"] = ["Ames1983","Dalrymple1775","https://doi.org/10.1093/acprof:oso/9780195093810.001.0001",
+            "978-0-8398-0800-8","978-0-226-35478-1","978-0-313-24571-8","978-0-688-05142-6",
+            "978-0-316-75641-9", "978-0-8078-1254-9","Wood1969"]
+References["Brown, John"] = ["978-0-87023-458-3","978-0-345-35942-1"]
+References["Brown Scare"] = ["978-0-944109-06-9","Carlson1943","978-0-8032-1410-1"
+            "978-0-8014-0788-8","978-0-231-11365-6","Glasser1974","Higham1985","978-0-8078-2316-3",
+            "978-0-252-00222-9","978-0-19-535775-2","Marshall1942","978-0-87722-301-6","978-0-87722-297-2",
+            "Rogge1961","Sayers1942","978-0-465-08625-2"]
+References["Brussell, Mae"] = ["978-1-55778-384-4"]
+
+References["Bryan, William Jennings"] = []
+References["Bureau of Alcohol, Tobacco, and Firearms"] = []
+References["Burr, Aaron"] = []
+References["Burroughs, William S."] = []
+References["Bush, George"] = []
+
+References["Cambodia, Secret Bombing of"] = []
+References["Castro, Fidel"] = []
+References["Cattle Mutilations"] = []
+
+References["CIA"] = []
+References["Chambers, Whittaker"] = []
+References["Chappaquiddick"] = []
+References["Chicago 7"] = []
+References["Christian Identity"] = []
+References["Christian Science"] = []
+References["Church of the SubGenius"] = []
+References["Civil Rights Movement"] = []
+References["Clan of the Mystic Confederacy"] = []
+
+References["Clinton, Bill and Hillary"] = []
+References["Clinton Body Count"] = []
+References["Coercive Acts"] = []
+References["COINTELPRO"] = []
+References["Cold War"] = []
+References["Constitution, U.S."] = []
+References["Contrails"] = []
+References["Conway Cabal"] = []
+
+References["Copperheads"] = []
+References["Corporations"] = []
+References["Coughlin, Father Charles"] = []
+References["Council on Foreign Relations"] = []
+References["Covert Action Quarterly"] = []
+
+References["Crédit Mobilier Scandal"] = []
+References["Cronenberg, David"] = []
+References["Cuban Missile Crisis"] = []
+
+References["DeLillo, Don"] = []
+References["Democratic-Republican Societies"] = []
+References["Dick, Philip K"] = []
+References["Disunion, Fears of"] = []
+References["Dollar Bill"] = []
+References["Domestic Terrorism"] = []
+References["Dominion Theology"] = []
+References["Donnelly, Ignatius"] = []
+References["Dorr War"] = []
+References["Drugs"] = []
+
+####################################
+
+References["Encryption"] = []
+References["Eugenics"] = []
+References["Executive Intelligence Review"] = []
+References["Farrakhan, Louis"] = []
+References["Federal Bureau of Investigation"] = []
+References["Federal Emergency Management Agency"] = []
+References["Federal Reserve System"] = []
+References["Film and Conspiracy Theory"] = []
+References["Fluoridation"] = []
+
+References["Foster, Vince"] = []
+References["Freemasonry"] = []
+References["Fugitive Slave Act"] = []
+References["Genet, Citizen Edmond Charles"] = []
+References["German Americans and World War I"] = []
+References["Ghost Dance Religion"] = []
+References["Gold Standard"] = []
+References["Green Corn Rebellion"] = []
+
+References["Gulf War Syndrome"] = []
+References["Hackers"] = []
+References["Harding, Warren G"] = []
+References["Hartford Convention"] = []
+References["Hawaii, Attempted U.S. Takeover of"] = []
+References["Haymarket Bombing"] = []
+References["Health Scares"] = []
+References["Hearst, William Randolph"] = []
+References["Hiss, Alger"] = []
+References["Hoffa, Jimmy"] = []
+
+References["Hollywood Ten"] = []
+References["Holocaust, Denial of"] = []
+References["Hoover, J. Edgar"] = []
+References["House Un-American Activities Committee"] = []
+References["Hughes, Howard"] = []
+References["Hutchinson, Anne"] = []
+References["Identification Cards"] = []
+References["Illuminati"] = []
+References["Income Tax and the Internal Revenue Service"] = []
+
+References["Industrial Workers of the World"] = []
+References["Internet"] = []
+References["Iran-Contra"] = []
+References["The Iron Heel"] = []
+References["Jackson, Andrew"] = []
+References["Japanese Americans"] = []
+References["Jefferson, Thomas"] = []
+References["Jesuits"] = []
+References["Jewish Defense League"] = []
+
+References["John Birch Society"] = []
+References["Johnson, Lyndon Baines"] = []
+References["Jonestown"] = []
+References["KAL 007"] = []
+References["Kennedy, John F., Assassination of"] = []
+References["Kennedy, Robert F., Assassination of"] = []
+References["King, Martin Luther, Jr., Assassination of"] = []
+References["Kissinger, Henry"] = []
+References["Know-Nothings"] = []
+
+References["Koch Brothers"] = []
+References["Ku Klux Klan"] = []
+References["LaRouche, Lyndon"] = []
+References["Leisler’s Rebellion"] = []
+References["Lennon, John, Shooting of"] = []
+References["Lewis, Meriwether"] = []
+References["Libertarianism"] = []
+References["Liberty Lobby"] = []
+References["Liddy, G. Gordon"] = []
+References["Lincoln, Abraham, Assassination of"] = []
+
+References["Lindbergh Baby Kidnapping"] = []
+References["Lindsey, Hal"] = []
+References["Long, Huey"] = []
+References["LSD"] = []
+References["Lusitania, Sinking of"] = []
+References["Mafia"] = []
+References["Mailer, Norman"] = []
+References["Malcolm X, Assassination of"] = []
+References["The Manchurian Candidate"] = []
+References["Manson, Charles"] = []
+References["McCarthy, Joseph"] = []
+References["Mexican-American War"] = []
+References["Microsoft"] = []
+References["Militias"] = []
+References["Millenarianism"] = []
+References["Mind Control"] = []
+References["MJ-12"] = []
+
+
+References["MK-ULTRA"] = []
+References["The Molly Maguires"] = []
+References["Monk, Maria"] = []
+References["Monroe, Marilyn"] = []
+References["Moon Landings"] = []
+References["Morgan, John Pierpont"] = []
+References["Morgan, William"] = []
+
+References["Morse, Jedidiah"] = []
+References["MOVE"] = []
+References["Muhammad, Elijah"] = []
+References["Nation of Islam"] = []
+References["National Rifle Association"] = []
+References["National Security Agency"] = []
+References["Native Americans"] = []
+References["Nativism"] = []
+References["Neo-Nazis"] = []
+References["New World Order"] = []
+References["Newburgh Conspiracy"] = []
+
+References["Nixon, Richard"] = []
+References["Nuclear Freeze Movement"] = []
+References["Nullification"] = []
+References["October Surprise"] = []
+References["Octopus"] = []
+References["Oil Industry"] = []
+References["Oklahoma City Bombing"] = []
+References["Onassis, Aristotle"] = []
+References["One-World Government"] = []
+References["Operation Paperclip"] = []
+References["Opinion Polls about Conspiracy Theories"] = []
+References["Oswald, Lee Harvey"] = []
+References["Pakula, Alan J."] = []
+References["Pan Am 103"] = []
+References["Panama Canal"] = []
+References["Paranoia"] = []
+References["Pearl Harbor"] = []
+References[""] = []
+References[""] = []
+References[""] = []
+
+References[""] = []
+References[""] = []
+References[""] = []
+References[""] = []
+References[""] = []
+References[""] = []
+References[""] = []
+References[""] = []
+References[""] = []
+References[""] = []
+References[""] = []
+References[""] = []
+References[""] = []
+####################################################
+Clausen, Henry C., and Bruce Lee. 1992. Pearl
+Harbor: Final Judgment. New York: Crown.
+Pearl Harbor History Associates, Inc. “Pearl Harbor
+Attacked.” http://www.ibiblio.org/pha/pha/
+index.html.
+
+Prange, Gordon William. 1986. Pearl Harbor: The
+Verdict of History. New York: McGraw-Hill Book
+Co.
+
+Rusbridger, James, and Eric Nave. 1991. Betrayal at
+Pearl Harbor: How Churchill Lured Roosevelt
+into World War II. New York: Summit Books.
+
+Stinnett, Robert B. 1999. Day of Deceit: The Truth
+about FDR and Pearl. New York: Free Press.
+
+Toland, John. 1982. Infamy: Pearl Harbor and Its
+Aftermath. Garden City, NY: Doubleday.
+
+U.S. Senate. 1946. Report of the Joint Committee on
+the Investigation of the Pearl Harbor Attack.
+Washington, DC: U.S. Government Printing
+Office.
+
+Wohlstetter, Roberta. 1962. Pearl Harbor: Warning
+and Decision. Stanford, CA: Stanford University
+Press.
+
+
+
+
+
+Daly, Mary. 1978. Gyn/Ecology: The Metaethics of
+Radical Feminism. Boston, MA: Beacon Press.. New
+York: Norton.
+
+Knight, Peter. 2000. Conspiracy Culture: From the
+Kennedy Assassination to The X-Files. London
+and New York: Routledge.
+
+
+American Psychiatric Association. 1994. Diagnostic
+and Statistical Manual of Mental Disorders. 4th
+ed. Washington, DC: American Psychiatric
+Association.
+
+Canetti, Elias. [1962] 1973. Crowds and Power. Rev.
+ed. Translated by Carol Stewart. Harmondsworth,
+England: Penguin.
+
+#Elias, Tony. 2000. The Sublime Secret: Paranoia as a
+#Contemporary Literary-Cultural Logic. Ph.D.
+#diss., University of Melbourne.
+
+Hofstadter, Richard. 1965. The Paranoid Style in
+American Politics and Other Essays. New York:
+Knopf.
+
+Schreber, Daniel Paul. [1903] 1955. Memoirs of my
+Nervous Illness. Edited and translated by Ida
+MacAlpine and Richard A. Hunter. London:
+Dawson.
+
+
+Diaz, Oviodio. 2001. How Wall Street Created a
+Nation: J. P. Morgan, Teddy Roosevelt, and the
+Panama Canal. New York: Four Walls Eight
+Windows.
+
+Ealy, Lawrence O. 1971. Yanqui Politics and the
+Isthmian Passage. University Park: Pennsylvania
+State University Press.
+
+Hogan, J. Michael. 1986. The Panama Canal in
+American Politics: Domestic Advocacy and the
+Evolution of Policy. Carbondale: Southern Illinois
+University Press.
+
+#Jasper, William F. 1999. “The Panama Canal
+#Giveaway.” New American, June 21. http://www.thenewamerican.com/tna/1999/06–21–99/vo15no13_panama.htm.
+
+LaFeber, Walter. 1989. The Panama Canal: The
+Crisis in Historical Perspective. New York: Oxford
+University Press.
+
+Major, John. 1993. Prize Possessions: The United
+States and the Panama Canal 1903–1979. New
+York: Cambridge University Press.
+
+Richard, Alfred Charles, Jr. 1990. The Panama
+Canal in American National Consciousness. New
+York: Garland Publishing.
+
+
+Chasey, William. 1995. Pan Am 103: The Lockerbie
+Cover Up. Carson City, NV: Bridger House.
+
+Cohen, Daniel and Susan. 2000. Pan Am 103: The
+Bombing, the Betrayals, and a Bereaved Family’s
+Search for Justice. New York: Diane Publishing.
+
+Davies, Carl A. 2001. Plane Truth. New York: Algora
+Publishers.
+
+Gerson, Allan, and Jerry Adler. 2001. The Price of
+Terror. New York: HarperCollins.
+
+Leppard, David. 1991. On the Trail of Terror: The
+Inside Story of the Lockerbie Investigation.
+London: Jonathan Cape.
+
+
+
+
+Jameson, Fredric. 1992. The Geopolitical Aesthetic:
+Cinema and Space in the World System.
+Bloomington: Indiana University Press.
+
+DeLillo, Don. Libra. 1988. New York: Viking.
+
+Epstein, Edward Jay. 1978. Legend: The Secret World
+of Lee Harvey Oswald. London: Hutchison.
+
+Garrison, Jim. 1988. On the Trail of the Assassins.
+New York: Sheridan Square.
+
+Hayes, Dorian P. 2001. “The Politics of the Witness:
+Lee Harvey Oswald, Life-Writing, and the
+American Left.” Ph.D diss., University of East
+Anglia, England.
+
+Mailer, Norman. 1995. Oswald’s Tale: An American
+Mystery. New York: Random House.
+
+Marrs, Jim. 1989. Crossfire: The Plot that Killed
+Kennedy. New York: Carroll and Graf.
+
+McMillan, Priscilla. 1977. Marina and Lee. London:
+Collins.
+
+Posner, Gerald. 1993. Case Closed: Lee Harvey
+Oswald and the Assassination of President
+Kennedy. New York: Random House.
+
+President’s Commission on the Assassination of
+President John F. Kennedy. 1964. Report and 26
+vols. of Hearings and Exhibits. Washington, DC:
+U.S. Government Printing Office.
+
+Scott, Peter Dale. [1977] 1993. Crime and Cover-
+Up: The CIA, the Mafia, and the Dallas-
+Watergate Connection. New and rev. ed. Santa
+Barbara, CA: Open Archive Press.
+
+———. [1993] 1996. Deep Politics and the Death of
+JFK. New and rev. ed. Berkeley: University of
+California Press.
+
+# Shackleford, Martin. 1992. “Lee Harvey Oswald:
+# The Myth of the Loner.” Fair Play, May-June.
+# http://home.earthlink.net/~jkelin1/fp.html.\
+
+Summers, Anthony. [1980] 1997. The Kennedy
+Conspiracy? New and rev. ed. New York:
+Random House.
+
+U.S. House. 1979. Select Committee on
+Assassinations. Report and 12 vols. of Hearings
+and Exhibits. Washington, DC: U.S. Government
+Printing Office.
+
+The Gallup Organization. 2001. “Americans Say
+Sept. 11 Will Be More Historically Significant
+Than Pearl Harbor.” 7 December.
+
+# ———. 2001. “Poll on Beliefs among U.S. Public in
+# Conspiracy in JFK Assassination.” 26–28 March.
+
+# ———. 1999. “Poll on Beliefs among U.S. Public
+# regarding Apollo Lunar Landing.” 13–14 July.
+# 
+# ———. 2000. “Poll on U.S. Beliefs regarding
+# Terrorism and Oklahoma City Bombing.” 7–9
+# April.
+
+Pipes, Daniel. 1997. Conspiracy: How the Paranoid
+Style Flourishes and Where It Comes From. New
+York: Free Press.
+# 
+# RoperASW and the SCI FI Channel. 2002. “Poll on
+# U.S. Beliefs in UFO Activity.” 23–25 August.
+# 
+# Stempel, Guido H., and Thomas Hargrove. 1997.
+# “National Poll on Beliefs in Conspiracy Theories
+# among U.S. Public.” 25–29 June.
+
+# Time/CNN/Yakelovich Partners, Inc. 1995.
+# “Time/CNN National Poll among U.S. Public
+# regarding Apollo Lunar Landing.” 19–20 July.
+
+
+
+Bower, Tom. 1987. The Paperclip Conspiracy: The
+Battle for the Spoils and Secrets of Nazi
+Germany. London: Grafton Books.
+
+Gimbel, John. “Project Paperclip: German
+Scientists, American Policy, and the Cold War.”
+Diplomatic History 14: 343–365.
+
+Hunt, Linda. 1991. Secret Agenda: The United
+States Government, Nazi Scientists, and Project
+Paperclip, 1945 to 1990. New York: St. Martin’s
+Press.
+
+
+Daniels, Ted, ed. 1995. A Doomsday Reader:
+Prophets, Predictors, and Hucksters of Salvation.
+New York: New York University Press.
+
+Keith, Jim. 1994. Black Helicopters over America:
+Strikeforce for the New World Order. Lilburn,
+GA: IllumiNet Press.
+
+Vankin, Jonathan. 1991. Conspiracies, Cover-ups,
+and Crimes: Political Manipulation and Mind
+Control in America. New York: Paragon House.
+
+
+
+Alan, Richard. 1992. The Gemstone File: Sixty Years
+of Corruption and Manipulation. New York:
+Crown.
+
+arroll, Gerald. 1994. Project Seek: Onassis,
+Kennedy and the Gemstone Thesis. Carson City,
+NV: Bridger House.
+
+Caruana, Stephanie. 1972. “Skeleton Key to the
+Gemstone File” (ms.)
+
+Keith, Jim, ed. 1992. The Gemstone File. Lilburn,
+GA: IllumiNet.
+
+Thomas, Kenn, ed. 2001. Inside the Gemstone File.
+Kempton, IL: Adventures Unlimited Press.
+
+
+
+
+# American Patriots Friends Network. “Oklahoma
+# City bombing Cover-Up.” http://www.apfn.org/apfn/okc_coverup.htm.
+
+Cobb, Kim. 2001. “John Doe No.2 Doesn’t Exist,
+McVeigh Maintains in a Letter.” Houston
+Chronicle, 15 May. http://www.chron.com/cs/CDA/story.hts/topstory/909349.
+
+#Douglas, Clay. 1995. “Federal Agencies Implicated
+#in Oklahoma City Bombing!” The Free American.
+#June, 1; 3.
+
+#Grabbe, J. Orlin. 1997. “Secret Pentagon Report on
+#Oklahoma City Bombing—Evidence of an Inside
+#Job?” http://www.conspiracy-net.com/archives/articles/conspiracy/terrorism/CNC1a011.txt.
+
+Hamm, Mark S. 2002. In Bad Company: America’s
+Terrorist Underground. Boston, MA:
+Northeastern University Press.
+
+Herbeck, Dan, and Lou Michel. 2001. American
+Terrorist: Timothy McVeigh and the Oklahoma
+City Bombing. New York: Regan Books.
+
+Jasper, William F. 2001. “Cover-up in OKC.” The
+New American, 16 July. http://www.thenewamerican.com/tna/2001/07–16–2001/vol17no15_coverup
+#
+#Johnson, Kevin. 2001. “Death Doesn’t End
+#Speculation of Co-Conspirators.” USA Today,
+#June 12, 3A.
+
+Jones, Stephen, and Peter Israel. 1998. Others
+Unknown: The Oklahoma City Bombing Case and
+Conspiracy. New York: Public Affairs.
+
+Keith, Jim. 1996. OKBomb! Conspiracy and Cover-
+up. Lilburn, GA: IllumniNet Press.
+
+Mulloy, D. J., ed. 1999. Homegrown
+Revolutionaries: An American Militia Reader.
+Norwich, England: Arthur Miller Centre for
+American Studies.
+
+Neiwert, David. 2001. “The Mystery of John Doe
+No. 2.” Salon, 9 June. http://www.salon.com/news/feature/2001/06/09/john_doe.
+
+#Skolnick, Sherman H. n.d. “U.S. Government
+#Complicity in the Oklahoma Bombing.”
+#Conspiracy Nation 7. 44. http://www.conspiracy-net.com/ archives/articles/conspiracy/conspnation/CN744.txt.\
+
+Stern, Kenneth S. 1997. A Force upon the Plain: The
+American Militia Movement and the Politics of
+Hate. Norman: University of Oklahoma Press.
+
+
+Blair, John M. 1976. The Control of Oil. New York:
+Pantheon.
+
+# Martin, Patrick. 2002. “Oil and Conspiracy
+# Theories.” http://www.wsws.org. 20–21 September.
+
+Pipes, Daniel. 1996. The Hidden Hand: Middle East
+Fears of Conspiracy. New York: St. Martin’s
+Press.
+
+Salinger, Pierre. 1991. Secret Dossier: The Hidden
+Agenda behind the Gulf War. New York: Penguin.
+
+Shaffer, Ed. 1983. The United States and the
+Control of World Oil. New York: St. Martin’s
+Press
+
+Thornton, Richard C. 1989. The Nixon-Kissinger
+Years. New York: Paragon House.
+
+———. 1991. The Carter Years. New York: Paragon
+House.
+
+Yergin, Daniel. 1991. The Prize. New York: Simon
+and Schuster.
+
+
+
+
+Fenster, Mark. 1999. Conspiracy Theories: Secrecy
+and Power in American Culture. Minneapolis,
+MN: University of Minnesota Press.
+
+Thomas, Kenn, and Jim Keith. 1996. The Octopus:
+Secret Government and the Death of Danny
+Casolaro. Portland, OR: Feral House.
+
+
+Cockburn, Leslie. 1987. Out of Control. New York:
+The Atlantic Monthly Press.
+
+Deniau, Jean-Charles, and Bani Sadr. 1987. Le
+Complot des ayatollahs. Paris: Editions la
+Découverte.
+
+Goertzel, Ted. 1994. “Belief in Conspiracy
+Theories.” Political Psychology 15.
+
+Sick, Gary. 1991. October Surprise: America’s
+Hostages in Iran and the Election of Ronald
+Reagan. New York: Times Books.
+
+U.S. House. 1993. Committee of the Whole House
+on the State of the Union. Joint Report of the
+Task Force to Investigate Certain Allegations
+Concerning the Holding of American Hostages by
+Iran in 1980. Washington, DC: U.S. Government
+Printing Office.
+
+U.S. Sentate. 1992. Committee on Foreign
+Relations. The “October Surprise” Allegations and
+the Circumstances Surrounding the Release of the
+American Hostages Held in Iran. Washington,
+DC: U.S. Government Printing Office.
+
+American Heritage College Dictionary. 2002.
+Boston: Houghton Mifflin.
+
+Calhoun, John C. 1953. A Disquisition on
+Government. Edited by Gordon C. Post.
+Indianapolis, IN: Hackett Publishing Co.
+
+O’Toole, Laurence J., Jr. 2000. “Intergovernmental
+Relations (IGR): The Concept of IGR as
+Interdependence, Complexity, and Bargaining.”
+In Public Administration: Concepts and Cases,
+ed. Richard Stillman II. Boston, MA: Houghton
+Mifflin Company.
+
+Peterson, Merrill D. 1984. Thomas Jefferson:
+Writings. New York: Library of America.
+
+Reagan, Ronald. 1981. First Inaugural Address.
+The Avalon Project at Yale Law School. www.
+yale.edu/lawweb/avalon/presiden/inaug/
+reagan1.
+
+Rhenquist, William H. 1999. Grand Inquests. New
+York: Quill.
+
+Rossiter, Clinton, ed. 1961. Alexander Hamilton,
+John Jay, and James Madison, The Federalist
+Papers. New York: Penguin.
+
+Schlesinger, Arthur M., Jr. 1945. The Age of Jackson.
+Boston, MA: Little, Brown, and Co.
+
+Wills, Gary. 1999. A Necessary Evil: A History of
+American Distrust of Government. New York:
+Simon and Schuster.
+
+
+
+Bukovsky, Vladimir. 1982. “The Peace Movement
+and the Soviet Union.” Commentary, May, 25–41.
+
+#Chapple, Frank. 1982. “Masters of Manipulation.”
+#Reader’s Digest, June, 68–70.
+
+Forsberg, Randall. 1990. “A Bilateral Nuclear
+Weapons Freeze.” Scientific American,
+November, 52–61.
+
+Meyer, David S. 1990. A Winter of Discontent: The
+Nuclear Freeze and American Politics. New York:
+Praeger.
+
+Miller, Steven E., ed. 1984. The Nuclear Weapons
+Freeze and Arms Control. Cambridge, MA:
+Ballinger.
+
+
+
+Brussell, Mae. 1972. “How Nixon Actually Got into
+Power.” The Realist, August, 43–47.
+
+#Gerth, Jeff. 1974. “Richard M. Nixon and Organized
+#Crime.” Penthouse, July, 43ff.
+
+Haldeman, H. R., with Joseph DiMona. 1978. The
+Ends of Power. New York: Time.
+
+Rogin, Michael, and John Lottier. 1971. “The Inner
+History of Richard Milhous Nixon.” Transaction 9
+(1–2): 19–28.
+
+Secret Honor. 1984. Prod. and dir. Robert Altman.
+90 min. Sandcastle 5. Videocassette.
+
+Summers, Anthony. 2000. The Arrogance of Power:
+The Secret World of Richard Nixon. New York:
+Viking.
+
+Vankin, Jonathan. 1991. Conspiracies, Cover-ups
+and Crimes: Political Manipulation and Mind
+Control in America. New York: Paragon House.
+
+
+Kohn, Richard. 1970. “The Inside History of the
+Newburgh Conspiracy: America and the Coup
+d’Etat.” William and Mary Quarterly, 3d ser., 27:
+187–220.
+
+Palmer, Dave. 1994. 1794: America, Its Army, and
+the Birth of the Nation. Novato, CA: Presidio
+Press.
+
+
+Chomsky, Noam. 1992. Chronicles of Dissent.
+Boston, MA: Common Courage Press.
+
+———. 1992. Deterring Democracy. London:
+Vintage.
+
+———. 1994. World Orders Old and New. London:
+Pluto Press.
+
+“Gurudas.” 1996. Treason: The New World Order.
+San Rafael, CA: Cassandra Press.
+
+#Howe, Linda. 1994. “Re-Declaration of
+#Independence.” http://10hpt.com/pub/blackcrwl/patriot/linda-thompson-dec.txt.
+
+Moore, Michael. 2002. Stupid White Men. New
+York: Reganbooks.
+
+Mulloy, D. J., ed. 1999. Homegrown
+Revolutionaries: A Militia Reader. Norwich,
+England: University of East Anglia Press.
+
+Pipes, Daniel. 1997. Conspiracy: How the Paranoid
+Style Flourishes and Where It Comes From.
+Boston, MA: Free Press.
+
+Robertson, Pat. 1991. The New World Order. Dallas,
+TX: Word Books.
+
+Vidal Gore. 2002. “The Enemy Within.” Observer,
+October 27.
+
+American Nazi Party. 1970. “Four Ways to Protect
+Your Home from Illegal FBI Intrusion.” Attack, 2
+August.
+
+Bell, Leland V. 1973. In Hitler’s Shadow: The
+Anatomy of American Nazism. Port Washington,
+NY: Kennikat Press.
+
+Diamond, Sander A. The Nazi Movement in the
+United States, 1924–1941. 1974. Ithaca, NY:
+Cornell University Press.
+
+#National Socialist Liberation Front. 1984.
+#Miscellaneous Ephemera 1969–1984. National
+#Socialist Liberation Front.
+
+#National Socialist White People’s Party. 1967. “The
+#Ten Points of American National Socialism” and
+#“New Program of the American Nazi Party.”
+#White Power 7 (October): 1, 2.
+#
+Oates, Stephen. 1982. Let the Trumpet Sound: The
+Life of Martin Luther King, Jr. New York: New
+American Library.
+
+Ridgeway, James. 1990. Blood in the Face: The Ku
+Klux Klan, Aryan Nations, Nazi Skinheads and
+the Rise of a New White Culture. New York:
+Thunder’s Mouth Press.
+
+Rockwell, George Lincoln. 1967. “What We Stand
+For: Goals and Objectives of the National
+Socialist White People’s Party.” http://ww4.stormfront.org/posterity/ns/index.html.
+
+Schmaltz, William H. 1999. Hate: George Lincoln
+Rockwell and the American Nazi Party.
+Washington, DC: Brasseys.
+
+Bennett, David. 1988. The Party of Fear: From
+Nativist Movements to the New Right in
+American History. Chapel Hill: University of
+North Carolina Press.
+
+Cose, Ellis. 1992. A Nation of Strangers: Prejudice,
+Politics, and the Populating of America. New
+York: Morrow.
+
+Dinnerstein, Leonard, Roger L. Nichols, and David
+M. Reimers. 1996. Natives and Strangers: A
+Multicultural History of Americans. New York:
+Oxford University Press.
+
+Handlin, Oscar. 1957. Race and Nationality in
+American Life. Boston, MA: Little, Brown.
+
+Higham, John. 1988. Strangers in the Land: Patterns
+of American Nativism, 1860–1925. 2d ed. New
+Brunswick, NJ: Rutgers University Press.
+
+Jones, Maldwyn Allen. 1992. American Immigration.
+2d ed. Chicago, IL: University of Chicago Press.
+
+Lee, John Hancock. 1970. The Origin and the
+Progress of the American Party in Politics. New
+York: Books for Libraries Press.
+
+Leonard, Ira M., and Robert D. Parmet. 1971.
+American Nativism, 1830–1860. New York: Van
+Nostrand Reinhold.
+
+
+
+Berkhofer Robert J., Jr. 1979. The White Man’s
+Indian: Images of the American Indian from
+Columbus to the Present. New York: Vintage
+Books.
+
+Bird, S. Elizabeth, ed. 1996. Dressing in Feathers:
+The Construction of the American Indian in
+American Popular Culture. Boulder: Westview
+Press.
+
+Bourne, Russell. 1991. The Red King’s Rebellion:
+Racial Politics in New England, 1675–1678. New
+York: Oxford University Press.
+
+Bross, Kristina. 1999. “‘That Epithet of Praying’:
+The Vilification of Praying Indians during King
+Philip’s War.” Pp. 53–67 in Fear Itself: Enemies
+Real and Imagined in American Culture, ed.
+Nancy Lusignan Schultz. West Lafayette, IN:
+Purdue University Press.
+
+Coward, John M. 1999. The Newspaper Indian:
+Native American Identity in the Press, 1820–90.
+Urbana: University of Illinois Press.
+
+Davis, Karl. 2002. “‘Remember Fort Mims’:
+Reinterpreting the Origins of the Creek War.”
+Journal of the Early Republic 22: 611–636.
+
+Dowd, Gregory Evans. 1990. “The French King
+Wakes Up in Detroit: Pontiac’s War in Rumor and
+History.” Ethnohistory 37: 254–278.
+
+———. 1996. “The Panic of 1751: The Significance
+of Rumor on the South Carolina–Cherokee
+Frontier.” William and Mary Quarterly, 3d ser.
+53: 527–560.
+
+Heidler, David S., and Jeanne T. Heidler. 1996. Old
+Hickory’s War: Andrew Jackson and the Quest for
+Empire. Mechanicburg, PA: Stackpole Books.
+
+Jennings, Francis. 1984. The Ambiguous Iroquois
+Empire: The Covenant Chain Confederation of
+Indian Tribes with English Colonies from Its
+Beginnings to the Lancaster Treaty of 1744. New
+York: W. W. Norton & Co.
+
+Lurie, Nancy Oestreich. 1978. “Winnebago.” Pp.
+690–707 in Handbook of North American
+Indians, Vol. 15, Northeast, ed. Bruce G. Trigger.
+Washington, DC: Smithsonian Institution.
+
+McConnell, Michael N. 1997. A Country Between:
+The Upper Ohio Valley and Its Peoples,
+1724–1774. Lincoln, NE: University of Nebraska
+Press.
+
+McWilliams, John. 1996. “Indian John and the
+Northern Tawnies.” New England Quarterly 69:
+580–604.]
+
+Merrell, James H. 1999. Into the American Woods:
+Negotiators on the Pennsylvania Frontier. New
+York: Norton.
+
+Namias, June. 1993. White Captives: Gender and
+Ethnicity on the American Frontier. Chapel Hill:
+University of North Carolina Press.
+
+Nash, Roderick. 1982. Wilderness and the American
+Mind. 3d ed. New Haven: Yale University Press.
+
+
+Norton, Mary Beth. 2002. In the Devil’s Snare: The
+Salem Witchcraft Crisis of 1692. New York:
+Alfred A. Knopf.
+
+Oberg, Michael L. 1994. “Indians and Englishmen
+at the First Roanoke Colony: A Note on
+Pemisapan’s Conspiracy, 1585–86.” American
+Indian Culture and Research Journal 18: 75–89.
+
+Parkman, Francis. 1991. The Oregon Trail, The
+Conspiracy of Pontiac. New York: Library of
+America (Literary Classics of the United States).
+
+Parmenter, Jon William. 1997. “Pontiac’s War:
+Forging New Links in the Anglo-Iroquois
+Covenant Chain, 1758–1766.” Ethnohistory 44:
+617–654.
+
+Pulsipher, Jenny Hale. 1996. “Massacre at
+Hurtleberry Hill: Christian Indians and English
+Authority in Metacom’s War.” William and Mary
+Quarterly, 3d ser. 53: 459–486.
+
+Richter, Daniel K. 1992. The Ordeal of the
+Longhouse: The Peoples of the Iroquois League in
+the Era of European Colonization. Chapel Hill:
+University of North Carolina Press.
+
+Riley, Glenda. 1984. “The Specter of a Savage:
+Rumors and Alarmism on the Overland Trail.”
+Western Historical Quarterly 15: 427–444.
+
+Rogers, Robert. 1766. “Ponteach: Or the Savages of
+America. A Tragedy.” Reprinted in Representative
+Plays by American Dramatists, 1765–1819, ed.
+Montrose J. Moses. New York: Benjamin Blom.
+
+White, Richard. 1991. The Middle Ground: Indians,
+Empires, and Republics in the Great Lakes
+Region, 1650–1815. Cambridge, Eng.: Cambridge
+University Press.
+
+
+
+Bamford, James. 1982. The Puzzle Palace: A Report
+on America’s Most Secret Agency. Boston, MA:
+Houghton Mifflin Company.
+
+———. 2001. Body of Secrets: Anatomy of the
+Ultra-Secret National Security Agency from the
+Cold War through the Dawn of a New Century.
+New York: Doubleday.
+
+Volkman, Ernest, and Blaine Baggett. 1989. Secret
+Intelligence. New York: Doubleday.
+
+
+
+Bruce, John M., and Clyde Wilcox, eds. 1998. The
+Changing Politics of Gun Control. Lanham, MD:
+Rowman and Littlefield Publishing Inc.
+
+Davidson, Osha Gray. 1993. Under Fire: The NRA
+and the Battle for Gun Control. New York: Holt.
+
+Dizard, Jan E., et al., eds. 1999. Guns in America: A
+Reader. New York: New York University Press.
+
+Durham, Martin. 2000. The Christian Right, the Far
+Right and the Boundaries of American
+Conservatism. Manchester, England: Manchester
+University Press.
+
+LaPierre, Wayne. 1994. Guns, Crime, and Freedom.
+Washington, DC: Regnery Publishing Inc.
+
+Spitzer, Robert J. 1998. The Politics of Gun Control.
+2d ed. New York: Seven Bridges Press.
+
+Stern, Kenneth S. 1997. A Force upon the Plain: The
+American Militia Movement and the Politics of
+Hate. Norman: University of Oklahoma Press.
+Websites
+
+#The National Rifle Association: http://www.nra.org.
+#The Brady Campaign to Prevent Gun Violence:
+#http://www.bradycampaign.org.
+#
+Goldberg, Robert. 2001. Enemies Within. New
+Haven and London: Yale University Press.
+
+Historical Research Department of the Nation of
+Islam. 1991. The Secret Relationship between
+Blacks and Jews. Historical Research Department
+of the Nation of Islam.
+
+Lee, Martha F. 1996. The Nation of Islam: An
+American Millenarian Movement. Syracuse, NY:
+Syracuse University Press.
+
+
+Evanzz, Karl. 1999. The Messenger: The Rise and
+Fall of Elijah Muhammad. New York: Pantheon
+Books.
+
+Goldberg, Robert. 2001. Enemies Within. New
+Haven and London: Yale University Press.
+
+Muhammad, Elijah. 1965. Message to the Blackman
+in America. Chicago: Muhammad Mosque of
+Islam No. 2.
+
+
+Anderson, John, and Hilary Hevenor. 1997. Burning
+Down the House: MOVE and the Tragedy of
+Philadelphia. New York: W. W. Norton &
+Company.
+
+Assefa, Hizkias, and Paul Wahrhaftig. 1990. The
+MOVE Crisis in Philadelphia: Extremist Groups
+and Conflict Resolution. Pittsburgh, PA:
+University of Pittsburgh Press.
+
+Bowser, Charles W. 1989. Let the Bunker Burn: The
+Final Battle with MOVE. Philadelphia, PA:
+Camino Books.
+
+#“Maple Shade Murder.” 2002. Channel 6 website,
+#September 27: abclocal.go.com/wpvi/news/
+#92702_MOVE.html.
+#
+#“Philadelphia, city officials ordered to pay $1.5
+#million in MOVE case.” 1996. CNN website,
+#June 24: www.cnn.com/US/9606/24/move.vertict.
+
+Wagner-Pacifici, Robin. 1994. Discourse and
+Destruction: The City of Philadelphia versus
+MOVE. Chicago, IL: The University of Chicago
+
+
+Jackson, Leon. 1999. “Jedidiah Morse and the
+Transformation of Print Culture in New England,
+1784–1826.” Early American Literature 34: 2–31.
+
+Morse, James King. [1939] 1967. Jedidiah Morse: A
+Champion of New England Orthodoxy. New
+York: AMS Press.
+
+Nash, Gary B. 1965. “The American Clergy and the
+French Revolution.” William and Mary Quarterly
+3d ser., 22: 392–412.
+
+Phillips, Joseph W. 1983. Jedidiah Morse and New
+England Congregationalism. New Brunswick:
+Rutgers University Press.
+
+Stauffer, Vernon. [1918] 1967. New England and the
+Bavarian Illuminati. New York: Russell and
+Russell.
+
+
+
+Bushman, Richard and Claudia. 2001. Building the
+Kingdom. New York: Oxford University Press.
+
+Davis, David Brion. 1960. “Some Themes of
+Counter-Subversion: An Analysis of Anti-Masonic,
+Anti-Catholic, and Anti-Mormon Literature.” The
+Mississippi Valley Historical Review 2: 205–224.
+
+Gordon, Sarah Barringer. 2002. The Mormon
+Question: Polygamy and Constitutional Conflict
+in Nineteenth-Century America. Chapel Hill:
+University of North Carolina Press.
+
+Melton, J. Gordon, ed. 1990. Evangelical Christian
+Anti-Mormonism in the Twentieth Century. New
+York: Garland Publishing.
+
+
+Formisano, Ronald P., and Kathleen Smith
+Kutolowsi. 1977. “Antimasonry and Masonry: The
+Genesis of Protest, 1826–27.” American
+Quarterly 29: 140–46.
+
+Goodman, Paul. 1988. Towards a Christian
+Republic: Antimasonry and the Great Tradition in
+New England, 1826–1836. New York: Oxford
+University Press.
+
+Vaughn, William Preston. 1983. The Antimasonic
+Party in the United States, 1826–1843. Lexington:
+The University Press of Kentucky.
+
+Carosso, Vincent P. 1987. The Morgans: Private
+International Bankers, 1854–1913. Cambridge,
+MA: Harvard University Press.
+
+Martin, Albro. “John Pierpont Morgan.” Pp.
+325–351 in Encyclopedia of American Business
+History and Biography: Banking and Finance to
+1913, ed. Larry Schweikart. New York. Facts on
+File.
+
+Baldwin, Frank. 1978. “The Korea Lobby.” Pp.
+160–175 in Science, Sin, and Scholarship: The
+Politics of Reverend Moon and the Unification
+Church, ed. Irving Louis Horowitz. Cambridge:
+MIT Press.
+
+#Clarkson, Fred. 1987. “Behind the Times: Who Pulls
+#the Strings at Washington’s No. 2 Daily?”
+#http://www.fair.org/extra/best-of-extra/washington-
+#times.html.
+
+Mickler, Michael L. 1993. A History of the
+Unification Church in America 1959–1974. New
+York: Garland Publishing.
+
+Lee, Jai Hyon. 1978. “The Activities of the Korean
+Central Intelligence Agency in the United
+States.” Pp. 120–147 in Science, Sin, and
+Scholarship: The Politics of Reverend Moon and
+the Unification Church, ed. Irving Louis
+Horowitz. Cambridge: MIT Press.
+
+
+Brian, William. 1982. Moongate. Portland, OR:
+Future Science Research Publishing.
+
+Chaikin, Andrew. 1994. Man on the Moon. New
+York: Viking Penguin.
+
+Kaysing, Bill, and Randy Reid. 1976. We Never
+Went to the Moon. Pomeroy, WA: Health
+Research Press.
+
+Percy, David, and Mary Bennett. 2001. Dark Moon.
+Kempton, IL: Adventures Unlimited Press.
+
+#Plait, Phil. 2001. “Fox TV and the Apollo Moon
+#Hoax.” Phil Plait’s Bad Astronomy, 13 February.
+#http://www.badastronomy.com/bad/tv/foxapollo.
+#html.
+#Van Bakel, Rogier. 1994. “The Wrong Stuff.” Wired,
+#2 September. http://www.wired.com/wired/
+#archive/2.09/moon.land_pr.html.
+
+
+Capell, Frank. 1964. The Strange Death of Marilyn
+Monroe. Staten Island, NY: Herald of Freedom.
+
+Giancana, Chuck. 1992. Double Cross: The
+Explosive, Inside Story of the Mobster Who
+Controlled America. New York: Warner Books.
+
+Leaming, Barbara. 1998. Marilyn Monroe. New
+York: Crown Publishers.
+
+Slatzer, Robert. 1974. The Curious Death of Marilyn
+Monroe. New York: Pinnacle Books.
+
+Wolfe, Donald H. 1998. The Last Days of Marilyn
+Monroe. New York: Morrow.
+
+
+Billington, Ray Allen. 1964. The Protestant Crusade,
+1800–1860: A Study of the Origins of American
+Nativism. Chicago, IL: Quadrangle Books.
+
+Castagna, JoAnn. 1999. “Monk, Maria.” In American
+National Biography, ed. John A. Garraty and
+Mark C. Carnes. New York: Oxford University
+Press.
+
+#Early Canadiana Online: http://www.canadiana.org/english/. Features several editions of the
+#Awful Disclosures.
+
+Franchot, Jenny. 1994. Roads to Rome: The
+Antebellum Protestant Encounter with
+Catholicism. Berkeley: University of California
+Press.
+
+Monk, Maria. 1836. Awful Disclosures of Maria
+Monk, or, The Hidden Secrets of a Nun’s Life in a
+Convent Exposed. Manchester: Milner.
+
+
+Albright, Charles. 1876. The Great Mollie Maguire
+Trials. Commonwealth v. James Carroll et al.,
+1876. Arguments of General Charles Albright and
+F. W. Hughes for the Commonwealth. Pottsville,
+PA: Chronicle Book and Job Rooms.
+
+Aurand, Harold D., and William A. Gudelunas, Jr.
+1982. “The Mythical Qualities of Molly Maguire.”
+Pennsylvania History 49 (April): 91–103.
+
+Beames, M. R. 1983. Peasants and Power: The
+Whiteboy Movements and Their Control in Pre-
+Famine Ireland. New York: St. Martin’s Press.
+
+Bimba, Anthony. [1932] 1950. The Molly Maguires.
+New York: International Publishers.
+
+Broehl, Wayne G., Jr. 1964. The Molly Maguires.
+Cambridge, MA: Harvard University Press.
+
+Coleman, James Walter. 1936. The Molly Maguire
+Riots: Industrial Conflict in the Pennsylvania
+Coal Region. Richmond, VA: Garrett and Massie.
+
+Dewees, Francis P. 1877. The Molly Maguires.
+Philadelphia, PA: J. B. Lippincott and Co.
+
+Doyle, Sir Arthur Conan. [1915] 1994. The Valley of
+Fear. Edited with an introduction by Owen
+Dudley Edwards. New York: Oxford University
+Press.
+
+Gowen, Franklin B. 1876. Argument of Franklin B.
+Gowen in the Case of the Commonwealth v.
+Munley, 1877, for the Murder of Thomas Sanger.
+Pottsville, PA: Chronicle Book and Job Rooms.
+
+
+
+Kenny, Kevin, 1998. Making Sense of the Molly
+Maguires. New York: Oxford University Press.
+
+Pinkerton, Allan. [1877] 1905. The Molly Maguires
+and the Detectives. New York: Dillingham.
+
+Wallace, Anthony F. C. 1987. St. Clair: A
+Nineteenth-Century Coal Town’s Experience with
+a Disaster-Prone Industry. New York: Knopf.
+
+West, R. A. 1876. Report of the Case of the
+Commonwealth v. John Kehoe et al., August 8,
+1876 . . . Stenographically reported by R. A. West.
+Pottsville, PA: Miners’ Journal Book and Job
+Rooms.
+
+
+
+Bowart, Walter. 1977. Operation Mind Control. New
+York: Dell.
+
+Keith, Jim. 1997. Mind Control, World Control: The
+Encyclopedia of Mind Control. Kempton, IL:
+Adventures Unlimited Press.
+
+Lee, Martin A., and Bruce Shlain. 1986. Acid
+Dreams: The Complete Social History of LSD:
+The CIA, the Sixties, and Beyond. New York:
+Grove.
+
+Marks, John. 1991. The Search for the Manchurian
+Candidate. New York: W. W. Norton.
+
+Papers from the Select Committee on Intelligence
+and Committee on Human Resources. 1977.
+Washington, DC; U.S. Government Printing
+Office.
+
+Patton, Ron. 1996. “Project Monarch: Nazi Mind
+Control.” Paranoia: The Conspiracy Reader 4: 3.
+
+
+Friedman, Stanton. 1996. TOP SECRET/MAJIC.
+New York: Marlowe and Company. 1996.
+
+Klass, Philip J. 1987–1988. “The MJ-12 Crashed-
+Saucer Documents.” Skeptical Inquirer, Winter,
+137–146.
+
+———. 1988. “The MJ-12 Papers: Part 2.” Skeptical
+Inquirer, Spring, 279–289.
+
+Peebles, Curtis. 1994. Watch the Skies! A Chronicle
+of the Flying Saucer Myth. Washington, DC:
+Smithsonian Institution Press.
+
+
+Adorno, Theodor, and Max Horkheimer. 1979.
+Dialectic of Enlightenment. London: Verso.
+
+Constantine, Alex. 1995. Psychic Dictatorship in the
+U.S.A. Portland, OR: Feral House.
+
+———. 1997. Virtual Government: CIA Mind
+Control Operations in America. Venice, CA: Feral
+House.
+
+Guffey, Robert. 1999. “Honey, Did You Leave Your
+Brain Back in Langley Again? A Brief History of
+Modern Mind Control.” In The Conspiracy
+Reader, ed. Al Hidell and Joan D’Arc. Secaucus,
+NJ: Citadel Press.
+
+Hopkins, Budd. 1987. Intruders: The Incredible
+Visitations at Copley Woods. New York: Random
+House.
+
+Keith, Jim. 1997. Mind Control, World Control: The
+Encyclopedia of Mind Control. Kempton, IL:
+Adventures Unlimited Press.
+
+———. 1999. Mass Control: Engineering Human
+Consciousness. Lilburn, GA: Illuminet Press.
+
+Kelly, Dan. 2000. “Hi-Tech Market Research.” In
+Apocalypse Culture II, ed. Adam Parfrey. Venice,
+CA: Feral House.
+
+Key, Wilson Bryan. 1974. Subliminal Seduction.
+New York: Signet.
+
+Lee, Martin A., and Bruce Shlain. 1986. Acid
+Dreams: The Complete Social History of LSD:
+The CIA, the Sixties, and Beyond. New York:
+Grove.
+
+Marks, John. 1991. The Search for the Manchurian
+Candidate. New York: W. W. Norton
+
+Marling, Karal Ann. 1996. As Seen on TV: The
+Visual Culture of Everyday Life in the 1950s.
+Cambridge, MA: Harvard University Press.
+
+Marrs, Texe. 1996. Project L.U.C.I.D. Austin, TX:
+Living Truth Publishers.
+
+O’Brien, Cathy. 1995. Trance Formation of America:
+The True Life Story of a CIA Mind Control Slave.
+Nashville, TN: Reality Marketing.
+
+Packard, Vance. 1985. The Hidden Persuaders. New
+York: Pocket Books.
+
+Patton, Ron. 1996. “Project Monarch: Nazi Mind
+Control.” Paranoia: The Conspiracy Reader 4: 3.
+
+
+Barkun, Michael. 1986. Crucible of the Millennium:
+The Burned Over District of New York in the
+1840s. Syracuse, NY: Syracuse University Press.
+
+Dick, Everett N. 1994. William Miller and the
+Advent Crisis. Berrien Springs, MI: Andrews
+University Press.
+
+Numbers, Ronald L., and Jonathan M. Butler. 1993.
+The Disappointed: Millerism and Millenarianism
+in the Nineteenth Century. Knoxville: University
+of Tennessee Press.
+
+
+Boyer, Paul. 1992. When Time Shall Be No More:
+Prophecy Belief in Modern American Culture.
+Cambridge, MA: Belknap Press of Harvard
+University Press.
+
+Goldberg, Robert Alan. 2001. Enemies Within: The
+Culture of Conspiracy in Modern America. New
+Haven, CT: Yale University Press.
+
+Kaplan, Jeffrey. 1997. Radical Religion in America:
+Millenarian Movements from the Far Right to the
+Children of Noah. Syracuse, NY: Syracuse
+University Press.
+
+O’Leary, Stephen. 1994. Arguing the Apocalypse: A
+Theory of Millennial Rhetoric. New York: Oxford
+University Press.
+
+Wojcik, Daniel. 1997. The End of the World As We
+Know It: Faith, Fatalism, and Apocalypse in
+America. New York: New York University Press.
+
+
+Abanes, Richard. 1996. American Militias: Rebellion,
+Racism & Religion. Illinois: InterVarsity Press.
+
+Anti-Defamation League of B’nai B’rith. 1994.
+Armed and Dangerous: Militias Take Aim at the
+Federal Government. New York: ADL.
+
+———. 1995a. Special Report: Paranoia as
+Patriotism: Far Right Influences on the Militia
+Movement. New York: ADL.
+
+———. 1995b. Beyond the Bombing: The Militia
+Menace Grows. An Update of Armed and
+Dangerous. New York: ADL.
+
+Barkun, Michael. 1996. “Religion, Militias and
+Oklahoma City: The Mind of Conspiratorialists,”
+Terrorism and Political Violence 8 (1): 50–64.
+
+Barnett, Randy E. 2001. “Saved by the Militia:
+Arming an Army against Terrorism.” National
+Review Online, 18 September.
+
+#Barry, Ellen. 2001. “Taking Arms: Militias Turn
+#Fight Away from US, at Its Enemies.” Boston
+#Globe, 22 September.
+
+#Beam, Louis. 1983. “Leaderless Resistance,” http://www2.mo-net.com/~mlindste/ledrless.html.
+
+Berlet, Chip, and Matthew Lyons. 2000. Right-Wing
+Populism in America: Too Close for Comfort. New
+York: Guilford Press.
+
+Castells, Manuel. 1999. The Information Age:
+Economy, Society and Culture. Vol. 2, The Power
+of Identity. Oxford: Blackwell Publishers.
+
+Clarkson, Frederick. 1997. Eternal Hostility: The
+Struggle between Theocracy and Democracy.
+Monroe, MA: Common Courage Press.@
+
+#Congressional Research Service Report for
+#Congress. 1995. The Unauthorized Militia
+#Movement in the United States: Current Status,
+#Historical Context. Washington, DC.
+
+Dees, Morris, and James Corcoran. 1997. Gathering
+Storm: America’s Militia Threat. New York:
+Harper Perennial.
+
+Durham, Martin. 2000. The Christian Right, the Far
+Right and the Boundaries of American
+Conservatism. Manchester: Manchester
+University Press.
+
+#Eaton, G. 1997. “Militias Are Alive and Going
+#Strong.” Patriot Report, February.
+
+#Evans-Pritchard, Ambrose. 1994. “British
+#Newspaper Publishes Truth about Citizens
+#Militias.” Spotlight, 26 December. Originally
+#published in Sunday Telegraph (London), 4
+#December.
+
+#Federal Bureau of Investigation. 1999. Special
+#Report: Project Megiddo. http://www.fbi.gov/library/megiddo/. 
+#Also available at: http://www.constitution.org/y2k/megiddo.htm.
+
+Fenster, Mark. 1999. Conspiracy Theories: Secrecy
+and Power in American Culture. Minneapolis:
+University of Minnesota Press.
+
+Flynn, Kevin, and Gary Gerhardt. 1989. The Silent
+Brotherhood. New York: Penguin.
+
+Jorstad, Erling. 1987. The New Christian Right
+1981–88: Prospects for the Post-Reagan Decade.
+New York: Edwin Mellen Press.
+
+Kelly, Michael. 1995. “The Road to Paranoia.” New
+Yorker, June, 60–75.
+
+#McLemee, Scott. 1995. “Public Enemy.” These Times, 15 May.
+
+McNicol Stock, Catherine. 1996. Rural Radicals:
+From Bacon’s Rebellion to the Oklahoma City
+Bombing. New York: Penguin.
+
+#Michels, Frank. 1999. “Militia Recall and
+#Countdown to Y2K, Civil Unrest.” Gaylord
+#Herald Times, 15 May.
+
+Mulloy, Darren. 1999. Homegrown Revolutionaries:
+An American Militia Reader. Norwich, England:
+EAS Publishing.
+
+Neiwert, David A. 1999. In God’s Country: The
+Patriot Movement and the Pacific Northwest.
+Pullman: Washington State University.
+
+#Pitcavage, Mark. 1995. Militia—History and Law
+#FAQ: Part 6—Afterword. http://www.adl.org/mwd/faq6.htm.
+
+#———. 2001. Personal email, May (confirmed for
+#attribution January 2002).Puckett, Gary. 1999. “Why I WILL NOT Obey
+##California’s Gun Registration Edict.”
+#http://web2.airmail.net/reptex1/guntruth.htm.
+
+Ridgeway, James. 1995. Blood in the Face: The Ku
+Klux Klan, Aryan Nations, Nazi Skinheads, and
+the Rise of a New White Culture. New York:
+Thunder’s Mouth Press.
+
+Robertson, Pat. 1991. The New World Order. Dallas,
+TX: Word Publishing.
+
+#Roland, Jon. 2000. “Commentary on the FBI.
+#Project Megiddo.” http://www.constitution.org/y2k/megid_jr.htm.
+
+#Southern Poverty Law Center (SPLC). 1997.
+#Intelligence Report. Spring, no. 86.
+
+Stern, Kenneth S. 1996. A Force upon the Plain: The
+American Militia Movement and the Politics of
+Hate. New York: Simon and Schuster.
+
+Suprynowicz, Vin. 1993. “A Nation of Cowards.” The
+Public Interest, Fall. Also in Suprynowicz, V.
+1999. Send in the Waco Killers: Essays on the
+Freedom Movement, 1993–1998. Las Vegas, NV:
+Mountain Media.
+
+
+
+Glasner, Joanna. 2001. “MS Denies Wingding Thing,
+Again.” Wired News. http://www.wired.com/news/business/0,1367,47042,00.html.
+
+Heileman, John. 2001. Pride Before the Fall: The
+Trials of Bill Gates and the End of the Microsoft
+Era. New York: HarperCollins.
+
+#Markoff, John. 1999. “A Mysterious Component
+#Roils Microsoft.” The New York Times, 4
+#September, A8.
+
+
+Brack, Gene M. “Mexican Opinion, American
+Racism, and the War of 1846.” Western Historical
+Quarterly 1 (2): 161–174.
+
+Price, Glen W. 1967. Origins of the War with
+Mexico: The Polk-Stockton Intrigue. Austin and
+London: University of Texas Press.
+
+Richards, Leonard L. 2000. The Slave Power: The
+Free North and Southern Domination,
+1780–1860. Baton Rouge: Louisiana State
+University Press.
+
+Qualife, Milo M., ed. 1910. The Diary of James K.
+Polk During His Presidency, 1845–49. 4 vols.
+Chicago, IL: McClurg.
+
+
+Buckley, William F., and L. Brent Bozell. 1954.
+McCarthy and His Enemies: The Record and Its
+Meaning. Chicago, IL: Henry Regnery Company.
+
+Fried, Richard M. 1990. Nightmare in Red: The
+McCarthy Era in Perspective. New York: Oxford
+University Press.
+
+McCarthy, Joseph [1952] 1977. McCarthyism: The
+Fight for America. New York. Arno Press.
+
+Oshinsky, David M. 1983. A Conspiracy So
+Immense: The World of Joe McCarthy. New York:
+The Free Press.
+
+Bugliosi, V., and C. Gentry. 1974. Helter Skelter: The
+True Story of the Manson Murders. New York:
+Bantam Books.
+
+#Fillmer, Deborah K. 2002. “Forensic Science and
+#the Charles Manson Murders.” http://www.cris.com/~dfillmer/Manson.htm.
+
+Terry, Maury. 1989. The Ultimate Evil. New York:
+Bantam Books.
+
+Marcus, Greil. 2002. The Manchurian Candidate.
+London: BFI.
+Marks, John. 1991. The Search for the Manchurian
+Candidate. New York: W. W. Norton.
+
+
+Breitman, George, et al. 1991. The Assassination of
+Malcolm X. 3d ed. New York: Pathfinder.
+
+Carson, Clayborne. 1991. Malcolm X: The FBI File.
+New York: Carroll and Graf.
+
+Farmer, James. 1985. Lay Bare the Heart. New
+York: Arbor House.
+
+Friedly, Michael. 1992. Malcolm X: The
+Assassination. New York: Ballantine Books.
+
+Goldman, Peter. 1979. The Death and Life of
+Malcolm X. 2d ed. Urbana, IL: University of
+Illinois Press.
+
+Norden, Eric. 1967. “The Murder of Malcolm X.”
+The Realist, February, 1–22.
+
+Mailer, Norman. 1948. The Naked and the Dead.
+New York: Holt, Rinehart, and Winston.
+———1964. An American Dream. New York: Dell
+Publishing.
+———. 1966. “The Great American Mystery.” Book
+Week Washington Post, 28 August, 1; 11–13.
+———. 1979. The Executioner’s Song. Boston:
+Little, Brown, and Company.
+———. 1991. Harlot’s Ghost. London: Abacus.
+———. 1995. Oswald’s Tale: An American Mystery.
+New York: Random House.
+———. 2000. Why Are We in Vietnam? New York:
+Henry Holt and Company.
+
+Bernstein, Lee. 2002. The Greatest Menace:
+Organized Crime in Cold War America. Amherst,
+MA: University of Massachusetts Press.
+
+Fox, Stephen. 1989. Blood and Power: Organized
+Crime in Twentieth Century America. New York:
+Penguin.
+
+Maas, Peter. 1968. The Valachi Papers. New York:
+G. P. Putnam’s Sons.
+
+Ruth, David. 1996. Inventing the Public Enemy: The
+Gangster in American Culture, 1918–1934.
+Chicago, IL: University of Chicago Press.
+
+Woodiwiss, Michael. 2001. Organized Crime and
+American Power: A History. Toronto: The
+University of Toronto Press.
+
+
+Bailey, Thomas A., and Paul B. Ryan. 1975. The
+Lusitania Disaster: An Episode in Modern
+Warfare and Diplomacy. New York: Free Press.
+
+Churchill, Winston. 1932. Thoughts and Adventures.
+New York: Scribners.
+
+Preston, Diana. 2002. Wilful Murder: The Sinking of
+the Lusitania. New York: Doubleday.
+
+Simpson, Colin. 1983. Lusitania. New York:
+Penguin.
+
+John Marks. 1979. The Search for the Manchurian
+Candidate: The CIA and Mind Control. London:
+Penguin.
+
+U.S. Senate. 1977. Select Committee on
+Intelligence. Project MK-ULTRA, the CIA’s Program
+of Research in Behavioral Modification: Joint
+Hearing before the Select Committee on
+Intelligence and the Subcommittee on Health and
+Scientific Research of the Committee on Human
+Resources. 95th Cong., 1st sess. 3 August.
+Washington, DC: U.S. Government Printing
+Office.
+
+Long, Huey. [1933] 1996. Every Man a King: The
+Autobiography of Huey P. Long. New York: Da
+Capo Press.
+
+Williams, T. Harry. 1981. Huey Long. New York:
+Vintage.
+
+Zinham, David. 1993. The Day Huey Long Was
+Shot. Jackson: University Press of Mississippi.
+
+
+#Biblical Discernment Ministries. 2003. “Hal
+#Lindsey: General Teachings/Activities.” http://www.rapidnet.com/~jbeard/bdm/exposes/lindsey/lindsey.htm.
+
+Lindsey, Hal. 1970. The Late Great Planet Earth.
+Grand Rapids, MI: Zondervan.
+
+#———. 2002. “Baghdad, Moscow Plan Economic Pact.” http://www.hallindseyoracle.com.
+
+Ahlgren, Gregory, and Stephen Monier. 1993. Crime
+of the Century: The Lindbergh Kidnapping Hoax.
+Boston, MA: Branden Books.
+
+Behn, Noel. 1994. Lindbergh: The Crime. New
+York: Atlantic Monthly Press.
+
+Fisher, Jim. 1999. The Ghosts of Hopewell: Setting
+the Record Straight in the Lindbergh Case.
+Carbondale: Southern Illinois University Press.
+
+Kennedy, Ludovic. 1985. The Airman and the
+Carpenter: The Lindbergh Kidnapping and the
+Framing of Richard Hauptmann. New York:
+Viking.
+
+Balsiger, David, and Charles Sellier. 1977. The
+Lincoln Conspiracy. Los Angeles, CA: Schick
+Sunn.
+
+Bryan, George S. 1940. The Great American Myth.
+New York: Carrick and Evans.
+
+#Davis, William C. 1977. “Caveat Emptor.” Civil War
+#Times, August, 32–37.
+
+Eisenschiml, Otto. 1937. Why Was Lincoln
+Murdered? London: Faber and Faber.
+
+#Federal Bureau of Investigation. John Wilkes Booth.http://foia.fbi.gov/booth.htm.
+
+Hanchett, William. 1983. The Lincoln Murder
+Conspiracies. Urbana and Chicago: University of
+Illinois Press.
+
+Klement, Frank L. 1984. Dark Lanterns: Secret
+Political Societies, Conspiracies, and Treason
+Trials in the Civil War. Baton Rouge: Louisiana
+State University Press.
+
+National Archives and Record Administration. RG
+153. Investigation and Trial Papers Relating to
+the Assassination of Abraham Lincoln. Microfilm
+ID M599.
+
+Oldroyd, Osborne H. 1901. The Assassination of
+Abraham Lincoln, Washington, DC: O.H.
+Oldroyd.
+
+Peterson, Merrill D. 1994. Lincoln in American
+Memory. New York and Oxford: Oxford
+University Press.
+
+Turner, Thomas R. 1982. Beware the People
+Weeping: Public Opinion and the Assassination of
+Abraham Lincoln. Baton Rouge: Louisiana State
+University Press.
+
+U.S. Government. 1894. War of the Rebellion:
+Official Records of the Union and Confederate
+Armies. Series 1, vol. 46, part 3. Washington, DC:
+U.S. Government Printing Office.
+
+Emery, Fred. 1994. Watergate: The Corruption and
+Fall of Richard Nixon. London: Pimlico.
+
+Liddy, G. Gordon. 1997. Will: The Autobiography of
+G. Gordon Liddy. Rev. ed. New York: St. Martin’s
+Press.
+
+Berlet, Chip, and Mathew N. Lyons. 2000. Right-
+Wing Populism in America. New York: Guilford
+Press.
+
+Liberty Lobby. Liberty Lobby 1975 Progress Report.
+n.d. Washington, DC: Liberty Lobby.
+
+———. [1975] 1989. Spotlight on the Bilderbergers.
+Washington, DC: Liberty Lobby.
+
+Mintz, Frank P. 1985. The Liberty Lobby and the
+American Right. Race, Conspiracy, and Culture.
+Westport, CT: Greenwood Press.
+
+#National Spotlight,17 September 1975.
+#Spotlight, 26 June 1989; 13 September 1993; 27
+#October 1997.
+
+#Zeskind, Lenny. 2000. “Liberty Lobby Closes Its
+#Doors, Spotlight Ceases Publication.” Searchlight,
+#September.
+
+Bergland, David. 1997. Libertarianism in One
+Lesson. 7th ed. Costa Mesa, CA: Orpheus.
+
+Rand, Ayn. 1957. Atlas Shrugged. New York:
+Random House.
+
+Rothbard, Murray N. 1973. For a New Liberty: The
+Libertarian Manifesto. New York: Macmillan.
+
+
+
+Chandler, David Leon. 1994. The Jefferson
+Conspiracies: A President’s Role in the
+Assassination of Meriwether Lewis. New York:
+William Morrow and Co.
+
+Jackson, Donald. 1991. Thomas Jefferson & and the
+Stony Mountains: Exploring the West from
+Monticello. Norman: University of Oklahoma
+Press.
+
+Kushner, Howard I. 1981. “The Suicide of
+Meriwether Lewis: A Psychoanalytic Inquiry.”
+William and Mary Quarterly 3d ser., 38: 464–481.
+
+Phelps, Dawson A. 1956. “The Tragic Death of
+Meriwether Lewis.” William and Mary Quarterly
+3d ser., 13: 305–318.
+
+Ronda, James P. 1984. Lewis and Clark among the
+Indians. Lincoln: University of Nebraska Press.
+
+Thomas Jefferson Papers, Library of Congress.
+
+Bresler, Fenton. 1989. Who Killed John Lennon?
+New York: St. Martin’s Press.
+
+Elliot, Anthony. 1999. The Mourning of John
+Lennon. Berkeley and Los Angeles: University of
+California Press.
+
+Goldman, Albert. 1988. The Lives of John Lennon.
+New York: William Morrow and Co., Inc.
+
+Jones, Jack. 2001. Let Me Take You Down: Inside the
+Mind of Mark David Chapman, the Man Who
+Shot John Lennon. London: Virgin.
+
+Rosen, John. 2000. Nowhere Man: The Final Days
+of John Lennon. London: Fusion Press.
+
+Seaman, Frederic. 1991. The Last Days of John
+Lennon. New York: Birch Lane Press.
+
+Wiener, Jon. 2001. Gimme Some Truth: The John
+Lennon FBI Files. Berkeley and Los Angeles:
+University of California Press.
+
+
+Bouton, Terry. 2000. “A Road Closed: Rural
+Insurgency in Post-Independence Pennsylvania.”
+Journal of American History 87: 855–887.
+
+Gross, Robert, ed. 1993. In Debt to Shays: The
+Bicentennial of an Agrarian Rebellion.
+Charlottesville: University Press of Virginia.
+
+Lovejoy, David S. 1972. The Glorious Revolution in
+America. New York: Harper and Row.
+
+Szatmary, David. 1980. Shays’ Rebellion: The
+Making of an Agrarian Insurgency. Amherst: The
+University of Massachusetts Press.
+
+Voorhees, David William. 1994. “The ‘Fervent
+Zeale’ of Jacob Leisler.” William and Mary
+Quarterly 51: 447–472.
+
+
+George, John, and Laird Wilcox. 1996. American
+Extremists: Militias, Supremacists, Klansmen,
+Communists, and Others. Amherst, NY:
+Prometheus Books.
+
+King, Dennis. 1989. Lyndon LaRouche and the New
+American Fascism. New York: Doubleday.
+
+LaRouche, Lyndon H., Jr. 1987. The Power of
+Reason: 1988, an Autobiography. New York: New
+Franklin.
+
+
+Bair, Fred, and V. L. Lamar. 1928. Does the USA
+Need the KKK? Girard, KA: Haldeman-Julius.
+
+Beam, Louis, Jr. 1983. Essays of a Klansman.
+Hayden Lake, ID: A.K.I.A. Publications.
+
+Blee, Kathleen. 1991. Women of the Klan: Racism
+and Gender in the 1920s. Berkeley: University of
+California Press.
+
+Bennett, David H. 1988. The Party of Fear: From
+Nativist Movements to the New Right in
+American History. New York: Vintage Books.
+
+Chalmers, David. 1981. Hooded Americanism: A
+History of the KKK. New York: Franklin Watts.
+
+Cook, Erza A. 1922. Ku Klux Klan Secrets Exposed!
+Chicago, IL: Erza A. Cook.
+
+Drabble, John. 1996. COINTELPRO–White Hate, the
+FBI, and the Cold War Consensus. Ph.D. diss.,
+University of California at Berkeley.
+
+Evans, Hiram Wesley. 1926. “The Klan’s Fight for
+Americanism.” North American Review, March-
+April-May.
+
+Feldman, Glenn. 1996. The Ku Klux Klan in
+Alabama, 1915–1954. Ph.D. diss., Auburn
+University.
+
+
+#Fowler, C. Lewis. 1922. The Ku Klux Klan, Its
+#Origin, Meaning and Scope of Operation. Atlanta,
+#GA: C. L. Fowler
+
+Ingalls, Robert P. “Antiradical Violence in
+Birmingham during the 1930s” Journal of
+Southern History 47: 4.
+
+Jackson, Kenneth T. 1967. The Ku Klux Klan in the
+City, 1915–1930. New York: Oxford University
+Press.
+
+Jenkins, William D. “The Ku Klux Klan in
+Youngstown, Ohio: Moral Reform in the
+Twenties.” Historian 41: 76–93.
+
+Knights of the Ku Klux Klan [H. W. Evans]. 1924.
+“The Menace of Modern Immigration.” Knights
+of the Ku Klux Klan Inc.
+
+Lay, Shawn. 1992. The Invisible Empire in the West:
+Toward a New Historical Understanding of the
+Ku Klux Klan of the 1920s. Urbana: Illinois
+University Press.
+
+———. 1995. Hooded Knights on the Niagara: The
+Ku Klux Klan in Buffalo. New York: New York
+University Press.
+
+Litwack, Leon F. 1979. Been in the Storm So Long:
+The Aftermath of Slavery. New York: Vintage.
+
+MacLean, Nancy. 1994. Beyond the Mask of
+Chivalry: The Making of the Second Ku Klux
+Klan. New York: Oxford University Press.
+
+#Mathews, Robert. 1984. Letter. Sandpoint Daily Bee, 12 December.
+
+Moore, Leonard J. 1991. Citizen Klansman: The Ku
+Klux Klan in Indiana, 1921–1928. Chapel Hill:
+University of North Carolina Press.
+
+Nelson, Scott Reynolds. 1999. Iron Confederacies:
+Southern Railways, Klan Violence and
+Reconstruction. Chapel Hill: University of North
+Carolina Press.
+
+Newton, Michael and Judy Ann. 1991. The Ku Klux
+Klan: An Encyclopedia. New York: Garland.
+
+Rhomberg, Chris. “White Nativism and Urban
+Politics: The 1920s Ku Klux Klan in Oakland,
+California.” Journal of American Ethnic History
+17: 2.
+
+Rich, Evelyn. 1988. Ku Klux Klan Ideology
+1954–1988. Ph.D. diss., Boston University.
+
+#Shelton, Robert M. 1965. Interview. Playboy,August.
+
+Trelease, Allen W. 1999. White Terror: The Ku Klux
+Klan Conspiracy and Southern Reconstruction.
+Baton Rouge: Louisiana University Press.
+
+#United Klans of America. 1972. “Why Revolution?” Fiery Cross 7: 10.
+
+U.S. House. 1965. Committee on Un-American
+Activities. Hearings on Ku Klux Klan
+Organizations. 89th Cong., 1st sess. Washington,
+DC: U.S. Government Printing Office.
+
+———. Report: The Present-Day Ku Klux Klan
+Movement. 1967. 90th Cong., 1st sess. Washing-
+ton, DC: U.S. Government Printing Office.
+
+Wade, Wyn Craig. 1987. The Fiery Cross: The Ku
+Klux Klan in America. New York: Simon and
+Schuster.
+
+
+#Daily Oklahoman. 2000. “Clinton-Gore Justice: Bizarro.” 9 August.
+
+Frantz, Douglas. 1999. “Journalists or Detectives?
+Depends on Who’s Asking.” New York Times, 28
+July.
+
+#Koch Industries and Oxbow Corporation. 2001.
+#“Koch Industries and Oxbow Corporation
+#Terminate Litigation.” Press release, 25 May.
+
+#Murphy, Bill. 2001. “Tape Details Dispute between
+#Marshalls.” Houston Chronicle, 27 February. 2
+#star edition.
+
+#Nissimov, Ron. 1999. “Probate Judge’s Trip Turns
+#into Trouble; Hearing Held to Remove Jurist
+#from Battle over Oilman’s Millions.” Houston
+#Chronicle, 15 September. 3 star edition.
+
+Perry, Robert. 1996. “D(oil)e: What Wouldn’t Bob
+Do for Koch Oil?” Nation, 26 August.
+
+U.S. Senate. Committee on Governmental Affairs.
+1998. Investigation of Illegal or Improper
+Activities in Connection with the 1996 Federal
+Election Campaigns. 105th Cong., 2d sess.,
+Washington DC: U.S. Government Printing
+Office.
+
+Washington Post. 2000. “Alleged Texas Polluter Is
+Indicted; Charges against Pipeline Firm Quickly
+Become Campaign Issue.” 29 September, final
+edition.
+
+Wayne, Leslie. 1997. “Papers Link Donations to 2
+on Senate Hearings Panel.” New York Times, 30
+October.
+
+
+
+Anbinder, Tyler. 1992. Nativism and Slavery: The
+Northern Know-Nothings and the Politics of the
+1850s. New York: Oxford University Press.
+
+Beals, Carleton. 1960. Brass-Knuckle Crusade. The
+Great Know-Nothing Conspiracy. 1820–1860.
+New York: Hastings House.
+
+Billington, Ray A. [1938] 1964. The Protestant
+Crusade, 1800–1860. New York: Rinehart.
+
+———. 1979. The Origins of Nativism in the United
+States, 1800–1844. New York: Arno.
+
+Brown, Thomas. 1985. Politics and Statesmanship:
+Essays on the American Whig Party. New York:
+Columbia University Press.
+
+Gienapp, William E. 1988. The Origins of the
+Republican Party, 1852–1856. Oxford: Oxford
+University Press.
+
+Overdyke, William Darrell. [1950] 1968. The Know-
+Nothing Party in the South. Gloucester, MA:
+Peter Smith.
+
+
+Hitchens, Christopher. 2001. The Trial of Henry
+Kissinger. New York: Verso Books.
+
+Isaacson, Walter. 1992. Kissinger: A Biography. New
+York: Simon and Schuster.
+
+Kissinger, Henry. 1979. The White House Years.
+Boston, MA: Little, Brown.
+
+———. 1982. Years of Upheaval. Boston, MA:
+Little, Brown.
+
+———. 1999. Years of Renewal. New York: Simon
+and Schuster.
+
+Huie, William. 1997. He Slew the Dreamer: My
+Search, with James Earl Ray, for the Truth about
+the Murder of Martin Luther King, Jr.
+Montgomery, AL: Black Belt Press.
+
+Joesten, Joachim. 1969. The Case against J. Edgar
+Hoover in the Assassinations of President John F.
+Kennedy, Senator Robert Kennedy, Dr. Martin
+Luther King: A Public Indictment before the High
+Court of World Opinion. New York: J. Joesten.
+
+Lane, Mark, and Dick Gregory. 1978. Code Name
+“Zorro”: The Murder of Martin Luther King, Jr.
+New York: Pocket Books.
+
+———. 1993. Murder in Memphis: The FBI and the
+Assassination of Martin Luther King. New York:
+Thunder’s Mouth Press.
+
+Melanson, Philip. 1989. The MURKIN Conspiracy:
+An Investigation into the Assassination of Dr.
+Martin Luther King, Jr. New York: Praeger.
+———. 1994. The Martin Luther King
+Assassination: New Revelations on the Conspiracy
+and Cover-Up. New York: S.P.I. Books.
+
+Newton, Michael. 1989. The King Conspiracy. Los
+Angeles, CA: Holloway House.
+
+Pepper, William. 1995. Conspiracy: The Truth
+behind Martin Luther King, Jr.’s Murder. New
+York: Harper Collins.
+
+———. 1998. Orders to Kill: The Truth behind the
+Murder of Martin Luther King, Jr. New York:
+Warner.
+
+Posner, Gerald. 1999. Killing the Dream: James Earl
+Ray and the Assassination of Martin Luther King,
+Jr. London: Little, Brown.
+
+Ray, James Earl. 1997. Who Killed Martin Luther
+King? The True Story by the Alleged Assassin.
+New York: Marlowe.
+
+U.S. House. 1979. Report of the Select Committee
+on Assassinations of the U.S. House of
+Representatives. Washington, DC: U.S.
+Government Printing Office.
+
+
+
+Knight, M. Janet, ed. 1971. Three Assassinations:
+The Deaths of John & Robert Kennedy and
+Martin Luther King. 2 vols. New York: Facts on
+File, Inc.
+
+Klaber, William, and Philip H. Melanson. 1997.
+Shadow Play. New York: St. Martin’s Press.
+
+Moldea, Dan. 1995. The Killing of Robert F.
+Kennedy: An Investigation of Motive, Means, and
+Opportunity. New York: W. W. Norton and Co.
+
+Question of Conspiracy: The RFK Murder. 2000.
+Prod. and writer Andrew Holland, dir. Damian
+Weyand. A&E Television Networks, The History
+Channel.
+
+Socarides, Charles W. 1979. “Why Sirhan Killed
+Kennedy: Psychoanalytic Speculation on an
+Assassination.” Journal of Psychohistory 6:
+447–460.
+
+Turner, William, and John Christian. 1993. The
+Assassination of Robert Kennedy: The Conspiracy
+and Cover-up. New York: Thunder House Press.
+
+
+Blakey, G. Robert. 1981. The Plot to Kill the
+President. New York: Times Books.
+
+Crenshaw, Charles. 1992. JFK Conspiracy of Silence.
+New York: Signet.
+
+Eddowes, Michael. 1977. The Oswald File. New
+York: Potter.
+
+Epstein, Edward Jay. 1966. Inquest. New York:
+Viking.
+
+Fetzer, James. 1998. Assassination Science. Chicago,
+IL: Catfeet Press.
+
+Fonzi, Gaeton. 1993. The Last Investigation. New
+York: Thunder’s Mouth Press.
+
+Garrison, Jim. 1988. On The Trail of the Assassins.
+New York: Time Warner.
+
+Groden, Robert, and Harrison Edward Livingstone.
+1990. High Treason. New York: Berkley.
+
+Hurt, Henry. 1985. Reasonable Doubt. New York:
+Henry Holt.
+
+Kantor, Seth. 1978. The Ruby Cover-Up. New York:
+Zebra.
+
+Lane, Mark. 1966. Rush to Judgment. New York:
+Holt Rinehart & Winston.
+
+———. 1991. Plausible Denial. New York:
+Thunder’s Mouth Press.
+
+Lifton, David. 1988. Best Evidence. New York:
+Carroll and Graf.
+
+Marrs, Jim. 1989. Crossfire. New York: Carroll and
+Graf.
+
+Meagher, Sylvia. 1992. Accessories after the Fact.
+New York: Vintage.
+
+Melanson, Philip. 1990. Spy Saga. New York:
+Praeger.
+
+Menninger, Bonar. 1992. Mortal Error. New York:
+St. Martin’s Press.
+
+Newman, John. 1995. Oswald and the CIA. New
+York: Carroll and Graf.
+
+North, Mark. 1991. Act of Treason. New York:
+Carroll and Graf.
+
+Oglesby, Carl. 1976. The Yankee and Cowboy War.
+Kansas City, MO: Sheed Andrews and McMeel.
+
+Posner, Gerald. 1993. Case Closed. New York:
+Random House.
+
+Scheim, David. 1988. Contract on America. New
+York: Zebra Books.
+
+Scott, Peter Dale. 1993. Deep Politics and the Death
+of JFK. Berkeley: University of California Press.
+
+Summers, Anthony. 1989. Conspiracy. New York:
+Paragon House.
+
+Zirbel, Craig. 1991. The Texas Connection.
+Scottsdale, AZ: Wright and Company.
+
+
+
+Brun, Michel. 1995. Incident at Sakhalin. New York:
+Four Walls Eight Windows.
+
+Gollin, James, and Robert Allardyce. 1994. Desired
+Track. Findlay, OH: American Vision Publishing.
+
+Hersh, Seymour. 1986. “The Target Is Destroyed.”
+New York: Random House.
+
+Johnson, R. W. 1986. Shootdown. New York: Viking.
+
+Pearson, David. 1987. KAL 007: Cover-Up. New
+York: Summit.
+
+Chidester, David. 1988. Salvation and Suicide: An
+Interpretation of Jim Jones, the People’s Temple,
+and Jonestown. Bloomington: Indiana University
+Press.
+
+Hall, John R. 1987. Gone from the Promised Land:
+Jonestown in American Cultural History. New
+Brunswick, NJ: Transaction Books.
+
+Judge, John.1993. “The Black Hole of Guyana.” Pp.
+127–165 in Secret and Suppressed: Banned Ideas
+and Hidden History, ed. Jim Keith. Portland, OR:
+Feral House.
+
+Kidulff, Marshall, and Ron Javers. 1978. Suicide
+Cult: The Inside Story of the People’s Temple Sect
+and the Massacre in Guyana. New York: Bantam
+Books.
+
+Klineman, George, Sherman Butler, and David
+Conn. 1980. The Cult that Died: The Tragedy of
+Jim Jones and the People’s Temple. New York:
+Putnam.
+
+Layton, Deborah. 1998. Seductive Poison: A
+Jonestown Survivor’s Story of Life and Death in
+the People’s Temple. New York: Anchor
+Books/Doubleday.
+
+U.S. House Committee on Foreign Affairs. 1979.
+The Death of Representative Leo J. Ryan, People’s
+Temple and Jonestown. Understanding a Tragedy.
+Washington, DC: U.S. Government Printing
+Office.
+
+Vankin, Jonathan. 1991. Conspiracies, Cover-ups,
+and Crimes. New York: Paragon House.
+
+Vankin, Jonathan, and John Whalen. 1998. The 70
+Greatest Conspiracy Theories. New York: Citadel
+Press.
+
+Wooden, Kenneth. 1980. The Children of
+Jonestown. New York: McGraw-Hill.
+
+Caro, Robert. 1982. The Path to Power. New York:
+Alfred A. Knopf.
+
+———. 1990. Means of Ascent. New York: Alfred A.
+Knopf.
+
+———. 2002. Master of the Senate. New York:
+Alfred A. Knopf.
+
+Ennes, James. 1979. Assault on the Liberty. New
+York: Random House.
+
+Green, Stephen. 1988. Taking Sides. Brattleboro,
+VT: Amana Books.
+
+Lasky, Victor. 1977. It Didn’t Start with Watergate.
+New York: Dial Press.
+
+Melanson, Philip. 1991. The Robert F. Kennedy
+Assassination. New York: SPI Books.
+
+Moise, Edwin. 1996. Tonkin Gulf and the Escalation
+of the Vietnam War. Chapel Hill: University of
+North Carolina Press.
+
+Oglesby, Carl. 1976. The Yankee and Cowboy War.
+Kansas City, MO: Sheed Andrews and McMeel.\
+
+Pepper, William F. 1995. Orders to Kill. New York:
+Carroll and Graf.
+
+Pipes, Daniel. 1996. The Hidden Hand: Middle East
+Fears of a Conspiracy. New York: St. Martin’s
+Press.
+
+Scott, Peter Dale. 1993. Deep Politics and the Death
+of JFK. Berkeley: University of California Press.
+
+Zirbel, Craig. 1991. The Texas Connection.
+Scottsdale, AZ: Wright and Co.
+
+
+Dallek, Matthew. 2000. The Right Moment: Ronald
+Reagan’s First Victory and the Decisive Turning
+Point in American Politics. New York: The Free
+Press.
+
+Epstein, Benjamin R., and Arnold Foster. 1967. The
+Radical Right: Report on the John Birch Society
+and Its Allies. New York: Random House.
+
+McGirr, Lisa. 2001. Suburban Warriors: The Origins
+of the New American Right. Princeton, NJ:
+Princeton University Press.
+
+Welch, Robert. 1959. The Blue Book of the John
+Birch Society. Belmont, MA: Western Islands.
+
+
+Dolgin, Janet E. 1977. Jewish Identity and the JDL.
+Princeton, NJ: Princeton University Press.
+
+Kaplan, Morris. 1971. “Kahane and Colombo Join
+Forces to Fight Reported U.S. Harassment.” New
+York Times, 14 May, 1.
+
+#Ragavan, Chitra, et al. 2003. “How the World Trade
+#Center Plot Sowed the Seeds for 9/11” U.S. News
+#and World Report, 24 February, 28–30.
+
+Rosenthal, Richard. 2000. Rookie Cop: Deep
+Undercover in the Jewish Defense League.
+Wellfleet, MA: Leapfrog Press.
+
+Wieseltier, Leon. 1985. “The Demon of the Jews.”
+New Republic, 11 November.
+
+Alamo, Tony. 1984. The Pope’s Secrets. Alma, AR:
+End Time Books.
+
+Bainton, Roland. 1966. Christendom. New York:
+Harper and Row.
+
+Bettenson, Henry. 1999. Documents of the Christian
+Church. New York: Oxford University Press.
+
+# Chick, Jack. 1984. The Poor Pope? Chino, CA: Chick Publications.
+
+Chiniquy, Charles. 1885. Fifty Years in the Church
+of Rome. Grand Rapids, MI: Baker Book House.
+
+Ellis, John Tracy. 1962. Documents of American
+Catholic History. Milwaukee, WI: Bruce
+Publishing Co.
+
+Cunningham, Noble E., Jr., ed. 1965. The Making of
+the American Party System, 1789 to 1809.
+Englewood Cliffs, NJ: Prentice-Hall.
+
+Ellis, Joseph. 1997. American Sphinx: The Character
+of Thomas Jefferson. New York: Alfred A. Knopf.
+
+Horn, James, Jan Ellen Lewis, and Peter S. Onuf,
+eds. 2002. The Revolution of 1800: Democracy,
+Race, and the New Republic. Charlottesville:
+University of Virginia Press.
+
+Library of Congress. Religion and the Founding of
+the American Republic. Online exhibition at
+http://lcweb.loc.gov/exhibits/religion/religion.html.
+
+Pasley, Jeffrey L. 2001. “The Tyranny of Printers”:
+Newspaper Politics in the Early American
+Republic. Charlottesville: University Press of
+Virginia.
+
+Peterson, Merrill D. 1960. The Jefferson Image in
+the American Mind. New York: Oxford University Press.
+
+
+Daniels, Roger. 1971. Concentration Camps USA:
+Japanese Americans and World War II New York:
+Holt, Rinehart and Winston, Inc.
+
+———. 1988. Asian America: Chinese and Japanese
+in the United States since 1850. Seattle:
+University of Washington Press.
+
+———. 1993. Prisoners without Trial: Japanese
+Americans in World War II. New York: Hill and
+Wang.
+
+#Los Angeles Times, December 1941–March 1942.
+#San Francisco Chronicle, December 1941–March 1942.
+
+Smith, Page. 1995. Democracy on Trial: The
+Japanese American Evacuation and Relocation in
+World War II. New York: Simon and Schuster.
+
+Takaki, Ronald. 1989. Strangers from a Different
+Shore: A History of Asian-Americans. Boston:
+Little, Brown and Company.
+
+
+Blau, Joseph L., ed. 1964. Social Theories of
+Jacksonian Democracy: Representative Writings
+of the Period. Indianapolis, IN: Bobbs-Merrill.
+
+Chambers, William Nisbet. 1956. Old Bullion
+Benton, Senator from the New West: Thomas
+Hart Benton, 1782–1858. Boston, MA: Little
+Brown.
+
+Cole, Donald B. 1993. The Presidency of Andrew
+Jackson. Lawrence: University Press of Kansas.
+
+Dangerfield, George. 1965. The Awakening of
+American Nationalism, 1815–1828. New York:
+Harper and Row.
+
+Davis, David Brion, ed. 1971. The Fear of
+Conspiracy: Images of Un-American Subversion
+from the Revolution to the Present. Ithaca, NY:
+Cornell University Press.
+
+Gatell, Frank Otto. 1966. “Sober Second Thoughts
+on Van Buren, the Albany Regency, and the Wall
+Street Conspiracy.” Journal of American History
+53: 19–40.
+
+Hammond, Bray. 1957. Banks and Politics in
+America: From the Revolution to the Civil War.
+Princeton, NJ: Princeton University Press.
+
+Hofstadter, Richard. [1948] 1973. The American
+Political Tradition, and the Men Who Made It.
+Reprint, New York: Vintage Books.
+
+Jackson, Andrew. 1832. “President Jackson’s Veto
+Message Regarding the Bank of the United
+States; July 10, 1832.” http://www.yale.edu/lawweb/avalon/presiden/veto/ajveto01.htm
+
+Meyers, Marvin. 1960. The Jacksonian Persuasion:
+Politics and Belief. Stanford, CA: Stanford
+University Press.
+
+Prince, Carl E. 1985. “The Great ‘Riot Year’:
+Jacksonian Democracy and Patterns of Violence
+in 1834.” Journal of the Early Republic 3: 1–19.
+
+Remini, Robert V. 1967. Andrew Jackson and the
+Bank War. New York: W. W. Norton and Co.
+
+Rohrs, Richard C. 1981. “Partisan Politics and the
+Attempted Assassination of Andrew Jackson.”
+Journal of the Early Republic 1: 149–163.
+
+Sellers, Charles. 1991. The Market Revolution:
+Jacksonian America, 1815–1846. New York:
+Oxford University Press.
+
+United States Congress. 1834–1856. The Debates
+and Proceedings in the Congress of the United
+States. Washington, DC: Gales and Seaton. http://memory.loc.gov/ammem/amlaw/lwac.html
+
+Watson, Harry L. 1990. Liberty and Power: The
+Politics of Jacksonian America. New York:
+Noonday Press, Farrar, Straus and Giroux.
+
+
+
+
+London, Jack. 1908. The Iron Heel. Chicago:
+Charles H. Kerr and Co.
+
+London, Jack. 1964. The Social Writing of Jack
+London. Edited with an introduction by Philip S.
+Foner. Secausus, NJ: Citadel Press.
+
+Turner, John Kenneth. 1914. “Government by
+Gunmen.” The Appeal to Reason, 9 May.
+
+Bell, J. Bowyer. 2001. The IRA 1968–2000. London:
+Frank Cass.
+
+Bishop, Patrick, and Eamonn Mallie. 1987. The
+Provisional IRA. London: Corgi.
+
+Coogan, Tim Pat. 1987. The IRA. London: Fontana.
+
+Horgan, John, and Max Taylor. 1998. “Playing the
+Green Card—Financing the Provisional IRA: Part
+1.” Terrorism and Political Violence 11: 1–38.
+
+#
+#B#ernstein, Dennis, and Janet King. 1989. “Hostile
+#Acts.” The Progressive, March.
+
+Cannon, Lou. 1991. President Reagan: Role of a
+Lifetime. New York: Simon and Schuster.
+
+Draper, Theodore. 1987. “An Autopsy.” New York
+Review of Books, 17 December.
+
+Draper, Theodore.. 1991. A Very Thin Line: The Iran-Contra
+Affairs. New York: Hill and Wang.\
+
+Kornbluh, Peter, and Malcolm Byrne, eds. 1993.
+The Iran-Contra Scandal: The Declassified
+History. New York: New Press.
+
+McFarlane, Robert C., and Zofi Smardz. 1994.
+Special Trust. New York: Cadell and Davis.
+
+North, Oliver L., with William Novak. 1990. Under
+Fire: An American Story. New York:
+HarperCollins.
+
+Tower, John, Edmund Muskie, and Brent
+Scrowcroft. 1987. The Tower Commission Report.
+New York: Times Books.
+
+
+Abbate, Janet. 1999. Inventing the Internet.
+Cambridge, MA: MIT Press.
+
+Hafner, Katie, and Matthew Lyon. 1996. Where
+Wizards Stay Up Late: The Origins of the
+Internet. New York: Simon and Schuster.
+
+Pence, Angélica. 1998. “The Truth Is Not Out
+There: Ex-Jounalists Capitalize on Paranoia.”
+StarNet Dispatches, 24 July.
+
+Stewart, Kathleen. 1999. “Conspiracy Theory’s
+Worlds.” In Paranoia within Reason, ed. George
+Marcus. Chicago, IL: University of Chicago Press.
+
+Brazier, Richard. 1966. “The Mass I.W.W. Trial of
+1918: A Retrospect.” Labor History 7: 178–192.
+
+Chaplin, Ralph. 1920. The Centralia Conspiracy.
+Chicago, IL: General Defense Committee.
+
+Dubofsky, Melvyn. 1969. We Shall Be All: A History
+of the IWW. New York: Quadrangle.
+
+Foner, Philip S. 1965. The Industrial Workers of the
+World, 1905–1917: History of the Labor
+Movement in the United States. Vol. 4. New York:
+International Publishers.
+
+Kornbluh, Joyce L. 1988. Rebel Voices: An IWW
+Anthology. Chicago, IL: Charles H. Kerr
+Publishing Co.
+
+Preston, William, Jr. 1994. Aliens and Dissenters:
+Federal Suppression of Radicals, 1903–1933.
+Chicago: University of Illinois Press.
+
+Renshaw, Patrick. 1967. The Wobblies: The Story of
+the IWW and Syndicalism in the United States.
+Chicago, IL: Ivan R. Dee.
+
+
+Beito, David T. 1989. Taxpayers in Revolt: Tax
+Resistance during the Great Depression. Chapel
+Hill: University of North Carolina Press.
+
+Brownlee, W. Elliot. 1996. Federal Taxation in
+America: A Short History. Washington, DC:
+Woodrow Wilson Center Press.
+
+“Downside Legacy at Two Degrees of President
+Clinton, Section: IRS Audits and Tax Exempt
+Status,” by Alamo-Girl. http://www.freerepublic.com/forum/a37fd23f3657d.htm
+
+Schiff, Irwin. 1982. How Anyone Can Stop Paying
+Income Taxes. Hamden, CT: Freedom Books.
+
+
+Hill, Greg, and Kerry Thornley [Malaclypse the
+Younger and Omar Khayyam Ravenhurst, pseud.].
+1965. Principia Discordia, or, How I Found the
+Goddess and What I Did to Her When I Found
+Her. Mason, MI: Loompanics Unlimited.
+
+Prince, Robert M., ed. 1996. The Necronomicon:
+Selected Stories and Essays Concerning the
+Blasphemous Tome of the Mad Arab. Cthulhu
+Mythos Fiction Series. Oakland, CA: Chaosium
+Press.
+
+Shea, Robert, and Robert Anton Wilson. 1975. The
+Illuminatus! Trilogy. New York: Dell.
+
+Briceland, Alan V. 1976. “The Philadelphia Aurora,
+the New England Illuminati, and the Election of
+1800.” Pennsylvania Magazine of History and
+Biography 50 (January): 3–36.
+
+Morse, James King. [1939] 1967. Jedidiah Morse: A
+Champion of New England Orthodoxy. New
+York: AMS Press.
+
+Robison, John. 1798. Proofs of a Conspiracy—
+Against All the Religions and Governments of
+Europe, Carried On in the Secret Meetings of
+Freemasons, Illuminati and Reading Societies. 4th
+ed. London: T. Cadell.
+
+Stauffer, Vernon. [1918] 1967. New England and the
+Bavarian Illuminati. New York: Russell and
+Russell.
+
+Waldstreicher, David, and Stephen R. Grossbart.
+1998. “Abraham Bishop’s Vocation; or, the
+Mediation of American Politics.” Journal of the
+Early Republic 18 (Winter): 617–657.
+
+
+Abanes, Richard. 1996. American Militias: Rebellion,
+Racism, and Religion. Downers Grove, IL:
+InterVarsity Press.
+
+Boyer, Paul. 1992. When Time Shall Be No More:
+Prophecy Belief in Modern American Culture.
+Cambridge, MA: Harvard University Press.
+
+Cohen, Patricia Cline. 1982. A Calculating People:
+The Spread of Numeracy in Early America.
+Chicago, IL: University of Chicago Press.
+
+Schulman, Andrew. 2002. “The US/Mexico Border
+Crossing Card (BCC): A Case Study in Biometric,
+Machine-Readable ID.” http://www.sonic.net/~undoc/bccnew.doc
+
+
+Smith, Robert Ellis. 2000. Ben Franklin’s Web Site:
+Privacy and Curiosity from Plymouth Rock to the
+Internet. Providence, RI: Privacy Journal.
+
+Stern, Kenneth S. 1996. A Force upon the Plain: The
+American Militia Movement and the Politics of
+Hate. Norman: University of Oklahoma Press.
+
+
+Battis, Emery. 1962. Saints and Sectaries: Anne
+Hutchinson and the Antinomian Controversy in
+the Massachusetts Bay Colony. Chapel Hill:
+Universtity of North Carolina Press.
+
+Hall, David D. 1990. The Antinomian Controversy,
+1636–1638: A Documentary History. 2d ed.
+Durham, NC: Duke University Press.
+
+Brown, Peter Harry, and Pat H. Broeske. 1996.
+Howard Hughes: The Untold Story. New York:
+Penguin.
+
+Choppin, Purnell W. 1998. “From a Three-Headed
+Bit to a Major Philanthropy: The Surprising
+Legacy of Howard Hughes.” Proceedings of the
+American Philosophical Society 142 (3): 425–431.
+
+Fay, Stephen, Lewis Chester, and Magnus Linklater.
+1972. Hoax: The Inside Story of the Howard
+Hughes–Clifford Irving Affair. New York: Viking
+Press.
+
+Phelan, James. 1976. Howard Hughes: The Hidden
+Years. New York: Random House.
+
+
+Bentley, Eric, ed. 2002. Thirty Years of Treason:
+Excerpts from the Hearings of the House Un-
+American Activities Committee 1938–1968.
+Reprint ed. New York: Thunder’s Mouth Press-
+Nation Books.
+
+Carr, Robert K. 1952. The House Committee on Un-
+American Activities, 1945–1950. Ithaca, NY:
+Cornell University Press.
+
+Goodman, Walter. 1968. The Committee: The
+Extraordinary Career of the House Committee on
+Un-American Activities. New York: Farrar, Straus,
+and Giroux.
+
+Olmsted, Kathryn S. 2002. Red Spy Queen: A
+Biography of Elizabeth Bentley. Chapel Hill:
+University of North Carolina Press.
+
+Packer, Herbert. 1962. Ex-Communist Witnesses:
+Four Studies in Fact Finding. Stanford, CA:
+Stanford University Press.
+
+Tanenhaus, Sam. 1997. Whittaker Chambers. New
+York: Random House.
+
+Weinstein, Allen. 1978. Perjury: The Hiss-Chambers
+Case. New York: Random House.
+
+
+Cooke, Alistair. 1950. A Generation on Trial: USA
+vs. Alger Hiss. New York: Knopf.
+
+Gentry, Curt. 1991. J. Edgar Hoover: The Man and
+the Secrets. New York: Norton.
+
+Powers, Richard Gid. 1986. Secrecy and Power: The
+Secret Life of J. Edgar Hoover. New York: Free
+Press.
+
+Schrecker, Ellen. 1998. Many Are the Crimes:
+McCarthyism in America. Princeton, NJ:
+Princeton University Press.
+
+Stern, Philip. 1969. The Oppenheimer Case:
+Security on Trial. New York: HarperCollins.
+
+Zinn, Howard. 1980. A People’s History of the
+United States. New York: Harper & Row.
+
+Lipstadt, Deborah. 1993. Denying the Holocaust:
+The Growing Assault on Truth and Memory. New
+York: Plume.
+
+Ridgeway, James. 1990. Blood in the Face. New
+York: Thunder’s Mouth Press.
+
+Shermer, Michael, and Alex Grobman. 2000.
+Denying History: Who Says the Holocaust Never
+Happened and Why Do They Say It? Berkeley:
+University of California Press.
+
+Zimmerman, John C. 2000. Holocaust Denial:
+Demographics, Testimonies, and Ideologies. New
+York: University Press of America.
+
+
+Ceplair, Larry, and Steven Englund. 1979. The
+Inquisition in Hollywood: Politics in the Film
+Community, 1930–1960. Berkeley, CA: University
+of California Press.
+
+Dick, Bernard. 1989. Radical Innocence: A Critical
+Study of the Hollywood Ten. Lexington:
+University of Kentucky Press
+
+#Alpern, David M. 1975. “Jimmy Hoffa Vanishes.” Newsweek, August 11.
+
+#Caloff, Pamela 1998. “The Conspiracy Theories.” Texas Monthly 26: 128–134.
+
+# Cogan, David M. 1999. “Jimmy Hoffa Found!” Los Angeles Magazine 44: 3, 32.
+
+Moldea, Dan E. 1978. The Hoffa Wars: Teamsters,
+Rebels, Politicians, and the Mob. New York:
+Paddington Press.
+
+#Newsweek. 1982. “Jimmy Hoffa Is Legally Dead.” August 9.
+
+Zacharis, Pat. 1975. “The Day Jimmy Hoffa Didn’t
+Come Home.” The Detroit News. http://detnews.com/history/hoffa/hoffa.htm.
+
+
+Caute, David. 1978. The Great Fear: The Anti-
+Communist Purge under Truman and
+Eisenhower. New York: Simon and Schuster.
+
+Chambers, Whittaker. 1952. Witness. New York:
+Random House.
+
+Cooke, Alastair. 1950. A Generation on Trial. New
+York: Knopf.
+
+Hiss, Alger. 1957. In the Court of Public Opinion.
+New York: Knopf.
+
+#In Re Alger Hiss. 1980. 2 vols. New York: Hill and Wang.
+
+Weinstein, Allen. 1978. Perjury: The Hiss–Chambers
+Case. New York: Knopf.
+
+Carringer, Robert L. 1996. The Making of Citizen
+Kane. Berkeley, CA: University of California
+Press.
+
+Chaplin, Charles. 1964. My Autobiography. New
+York: Simon and Schuster.
+
+Nasaw, David. 2000. The Chief: The Life of William
+Randolph Hearst. New York: Houghton Mifflin
+
+Altieri, Miguel A. 2001. Genetic Engineering in
+Agriculture: The Myths, Environmental Risks,
+and Alternatives. Oakland, CA: Food First
+Special Report No. 1.
+
+Bealle, Morris A. 1949. The Drug Story: A History
+of America’s $10,000,000,000 Drug Cartel. Orem,
+UT: Bi World Industries, Inc.
+
+Berkson, D. Lindsay. 2000. Hormone Deception.
+Chicago, IL: Contemporary Books.
+
+#Center for Health, Environment and Justice. 2001.
+#“Behind Closed Doors.”
+
+Colborne, Theo, et al. 1996. Our Stolen Future.
+New York: Penguin.
+
+Ehrenreich, Barbara, and Deirdre English. 1978.
+For Her Own Good: 150 Years of the
+Experts’Advice to Women. New York:
+Anchor/Doubleday.
+
+Fagin, Dan, and Marianne Lavelle. 1996. Toxic
+Deception: How the Chemical Industry
+Manipulates Science, Bends the Law, and
+Endangers Your Health. New York: Common
+Courage Press.
+
+Garrett, Laurie. 1994. The Coming Plague: Newly
+Emerging Diseases in a World out of Balance.
+New York: Farrar Strauss and Giroux.
+
+Institute of Medicine. 2000. To Err Is Human:
+Building a Safer Health System. Washington, DC:
+National Academies Press.
+
+Kett, Joseph. 1968. The Formation of the American
+Medical Profession: The Role of Institutions,
+1780–1860. New Haven, CT: Yale University Press.
+
+Knight, Peter. 2000. Conspiracy Culture: From
+Kennedy to The X-Files. London and New York:
+Routledge.
+
+Levit, Katharine, et al. 2003. “Trends in U.S. Health
+Care Spending, 2001.” Health Affairs, the Policy
+Journal of the Health Sphere 22 (1).
+
+Rampton, Sheldon, and John Stauber. 2001. Trust
+Us, We’re Experts!—How Industry Manipulates
+Science and Gambles with Your Future. New
+York: Tarcher/Putnam.
+
+Ruesch, Hans. 1992. Naked Empress or the Great
+Medical Fraud. Zurich: CIVIS.
+
+Vann, Riley. “The Diseased City: Yellow Fever and
+Cultural Paranoia in 1790s Philadelphia.” http://xroads.virginia.edu/~MA96/forrest/WW/fever.html
+
+
+Foner, Philip. 1969. The Autobiographies of the
+Haymarket Martyrs. New York: Humanities Press.
+
+Schneirov, Richard. 1998. Labor and Urban Politics:
+Class Conflict and the Origins of Modern
+Liberalism in Chicago, 1864–97. Urbana:
+University of Illinois Press.
+
+Trachtenberg, Alan. 1982. The Incorporation of
+America: Culture and Society in the Gilded Age.
+New York: Hill and Wang.
+
+Carpenter, Edmund James. 1899. America in
+Hawaii: A History of the U.S. Influence in the
+Hawaiian Islands. Boston, MA: Small, Maynard
+and Company.
+
+Kuykendall, Ralph S. 1953. The Hawaiian Kingdom:
+1854–1874 Twenty Critical Years. Vol. 2.
+Honolulu: University of Hawaii Press.
+
+#Lendeveg, George W. 1868. Honolulu. Letter to
+3#Kamehameha V. 12 February. Microfilm.
+#Hawaiian Legation. 1 February 1847–26
+#December 1885.
+
+#———. 1868. Honolulu. Copy of Letter to
+#Kamehameha V. 21 April. Microfilm. Hawaiian
+#Legation. 1 February 1847–26 December
+#1885.
+
+Patterson, John. 1938. “The United States and
+Hawaiian Reciprocity, 1867–1870.” Pacific
+Historical Review 7: 14–26.
+
+
+
+Banner, James M. 1970. To the Hartford
+Convention: The Federalists and the Origins of
+Party Politics in Massachusetts, 1789–1815. New
+York: Alfred A. Knopf.
+
+Knox, J. Wendell. 1966. Conspiracy in American
+Politics, 1787–1815. New York: Arno Press.
+
+Stagg, J.C.A. 1983. Mr. Madison’s War: Politics,
+Diplomacy, and Warfare in the Early American
+Republic, 1783–1830. Princeton, NJ: Princeton
+University Press.
+
+
+Adams, Samuel H. 1926. Revelry. New York: Boni
+and Liveright.
+
+Anthony, Carl S. 1998. Florence Harding: The First
+Lady, the Jazz Age and the Death of America’s
+Most Scandalous President. New York: William
+Morrow and Company.
+
+Ferrell, Robert H. 1996. The Strange Death of
+President Harding. Columbia, MO: University of
+Missouri Press.
+
+Gold, Glenn David. 2001. Carter Beats the Devil.
+London: Hodder and Stoughton.
+
+Means, Gaston B. 1930. The Strange Death of
+President Harding. New York: Gold Label Books,
+Inc.
+
+Russell, Francis. 1969. President Harding: His Life
+and Times, 1865–1923. London: Eyre and
+Spottiswoode.
+
+Vidal, Gore 1991. Hollywood. London: Grafton
+Books.
+
+Boyd, Julian P., et al., eds. 1950–. The Papers of
+Thomas Jefferson. Princeton, NJ: Princeton
+University Press.
+
+Brookhiser, Richard. 1999. Alexander Hamilton:
+American. New York: The Free Press.
+
+Christman, Margaret C. S. 1992. “The Spirit of
+Party”: Hamilton and Jefferson at Odds.
+Washington, DC: National Portrait Gallery,
+Smithsonian Institution Press.
+
+Elkins, Stanley, and Eric McKitrick. 1993. The Age
+of Federalism: The Early American Republic,
+1788–1800. New York: Oxford University Press.
+
+Ford, Paul Leicester, ed. 1892–1899. The Writings of
+Thomas Jefferson. 10 vols. New York: Putnam’s.
+
+McDonald, Forrest. 1979. Alexander Hamilton: A
+Biography. New York: Norton.
+
+Sawvel, Franklin B., ed. 1903. The Complete Anas of
+Thomas Jefferson. New York: The Round Table
+Press.
+
+Syrett, Harold C., et al., eds. 1961–1979. The Papers
+of Alexander Hamilton. 26 vols. New York:
+Columbia University Press.
+
+Himanen, Pekka. 2001. The Hacker Ethic and the
+Spirit of the Information Age. New York: Random
+House.
+
+Levy, Steven. 1994 [1984]. Hackers: Heroes of the
+Computer Revolution. New York: Penguin.
+
+Littman, Jonathan. 2002. Interview. Hackers:
+Computer Outlaws. TLC: The Learning Channel,
+9 January.
+
+Ross, Andrew. 1991. Strange Weather: Culture,
+Science, and Technology in the Age of Limits.
+London: Verso.
+
+Slatalla, Michelle, and Joshua Quittner. 1994. “Gang
+War in Cyberspace.” Wired, December. http://www.wired.com/wired/archive/2.12/hacker_pr.html
+
+Sterling Bruce. 1994. Hacker Crackdown: Law and
+Disorder on the Electronic Frontier. http://www.lysator.liu.se/etexts/hacker
+.
+Taylor, Paul. 1999. Hackers: Crime in the Digital
+Sublime. New York: Routledge.
+
+
+Eddington, Patrick. 1997. Gassed in the Gulf: The
+Inside Story of the Pentagon-CIA Cover-up of
+Gulf War Syndrome. Washington, DC: Insignia.
+
+Showalter, Elaine. 1997. Hystories: Hysterical
+Epidemics and Modern Culture. New York:
+Columbia University Press.
+
+ush, Charles C. 1932. The Green Corn Rebellion.
+M.A. thesis, University of Oklahoma.
+
+Cunningham, William. 1935. The Green Corn
+Rebellion. New York: Vanguard Press.
+
+Emenhiser, JeDon A. 1962. “The Green Corn
+Rebellion.” Pp. 316–338 in Armed Politics: An
+Analysis and Comparison of Six Cases in the
+United States. Ph.D diss., University of
+Minnesota.
+
+Clapham, John. 1944. The Bank of England: A
+History. Cambridge: Cambridge University Press.
+
+Fell, James E., Jr. 1990. “The Silver Issue and the
+Gold Standard.” Encyclopedia of American
+Business and Economic History: Banking and
+Finance to 1913, ed. Larry Schweikart. New York:
+Facts on File.
+
+Greider, William. 1987. Secrets of the Temple: How
+the Federal Reserve Runs the Country. New York:
+Simon and Schuster.
+
+Timberlake, Richard H., Jr. 1978. Origins of Central
+Banking in the United States. New York and
+Cambridge, MA: Harvard University Press.
+
+White, Lawrence H. 1984. Free Banking in Britain:
+Theory, Experience, and Debate, 1800–1845. New
+York: Cambridge University Press.
+
+
+Eastman, Elaine Goodale. 1945. “The Ghost Dance
+and Wounded Knee Massacre of 1890–91.”
+Nebraska History 26: 26–42.
+
+Hittman, Michael. 1997. Wovoka and the Ghost
+Dance. Lincoln: University of Nebraska Press.
+
+Mooney, James. 1991. The Ghost Dance Religion
+and the Sioux Outbreak of 1890. Lincoln:
+University of Nebraska Press.
+
+Smith, Rex Alan. 1981. Moon of Popping Trees: The
+Tragedy at Wounded Knee and the End of the
+Indian Wars. Lincoln: University of Nebraska
+Press.
+
+Cather, Willa. 1922. One of Ours. New York: Knopf.
+
+Landau, Henry. 1937. The Enemy Within: The
+Inside Story of German Sabotage in America.
+New York: Putnam’s.
+
+#Swickard, Michael. 2001 “N.Y. Was Attacked by
+#Terrorists in 1916.” ABQjournal. http://www.abqjournal.com/opinion/guest_columns/aguest09–20–01.htm.
+
+Volkman, Ernest. 1996. Espionage: The Greatest
+Spy Operations of the Twentieth Century. New
+York: Wiley.
+
+Witcover, Jules. 1989. Sabotage at Black Tom:
+Imperial Germany’s Secret War in America,
+1914–1917. Chapel Hill, NC: Algonquin Books.
+
+Ammon, Harry. 1973. The Genet Mission. New York:
+Norton.
+
+Sheridan, Eugene. 1994. “The Recall of Edmond
+Charles Genet: A Study in Transatlantic Politics
+and Diplomacy.” Diplomatic History 18: 463–488.
+
+Sioli, Marco. 1995. “Citizen Genet and Political
+Struggle in the Early American Republic.” Revue
+Française d’Etudes Americaines 64: 259–267.
+
+Campbell, Stanley W. 1968. The Slave Catchers.
+Chapel Hill: University of North Carolina Press.
+
+McPherson, James M. 1988. Battle Cry of Freedom:
+The Civil War Era. New York and Oxford: Oxford
+University Press.
+
+Neiwert, David. 1999. In God’s Country: The Patriot
+Movement and the Pacific Northwest. Pullman,
+WA: Washington State University Press.
+
+
+Bullock, Steven C. 1996. Revolutionary
+Brotherhood: Freemasonry and the
+Transformation of the American Social Order,
+1730–1840. Chapel Hill: University of North
+Carolina Press.
+
+Davis, David Brion. 1960. “Some Themes of
+Counter-Subversion: An Analysis of Anti-Masonic,
+Anti-Catholic, and Anti Mormon Literature.” The
+Mississippi Valley Historical Review 47: 205–224.
+
+Dumenil, Lynn. 1984. Freemasonry and American
+Culture, 1880–1939. Princeton, NJ: Princeton
+University Press.
+
+Goodman, Paul. 1988. Towards a Christian
+Republic: Antimasonry and the Great Tradition in
+New England, 1826–1836. New York: Oxford
+University Press.
+
+Jacob, Margaret. 1991. Living the Enlightenment:
+Freemasonry and Politics in Eighteenth-Century
+Europe. New York: Oxford University Press.
+
+Knight, Stephen. 1985. The Brotherhood: The Secret
+World of the Freemasons. London: Panther
+Books.
+
+Roberts, J. M. 1972. The Mythology of the Secret
+Societies. London: Secker and Warburg.
+
+Robinson, John J. 1989. Born in Blood: The Lost
+Secrets of Freemasonry. New York: M. Evans and
+Company.
+
+Vaughn, William Preston. 1983. The Antimasonic
+Party in the United States, 1826–1843. Lexington:
+The University Press of Kentucky.
+
+
+#Fiske, B., Jr. 1994. Fiske Report—Report of the
+#Independent Counsel In Re Vincent W. Foster, Jr.
+#Washington, DC: Government Printing Office.
+
+Kellett, Michael. 1995. The Murder of Vince Foster.
+Columbia, MD: CLS Publishers.
+
+Ruddy, Christopher. 1997. The Strange Death of
+Vincent Foster: An Investigation. New York: The
+Free Press.
+
+Starr, Kenneth W. 1997. Starr Report—Report of the
+Independent Counsel In Re Vincent W. Foster, Jr.
+Washington, DC: Government Printing Office.
+
+Vankin, Jonathan, and John Whalen. 1998. The 70
+Greatest Conspiracies of all Time. Secaucus, NJ:
+Citadel Press.
+
+
+Cohn, Norman. 1981. Warrant for Genocide: The
+Myth of the Jewish World-Conspiracy and the
+“Protocols of the Elders of Zion.” Chico, CA:
+Scholars Press.
+
+The International Jew: The World’s Foremost
+Problem. 1920–1922. Vols. 1–4. Dearborn, MI.:
+The Dearborn Publishing Co.
+
+Lee, Albert. 1980. Henry Ford and the Jews. New
+York: Stein and Day.
+
+
+Caldwell, Gladys, and Philip E. Zanfagna. 1974.
+Fluoridation and Truth Decay. Reseda, CA: Top-
+Ecol Press.
+
+Courtney, Phoebe. 1971. How Dangerous Is
+Fluoridation? New Orleans, LA: Free Men
+Speak, Inc.
+
+Gotzsche, Anne-Lise. 1975. The Fluoride Question:
+Panacea or Poison? Briarcliff Manor, NY: Stein
+and Day.
+
+U.S. House. 1954. Committee on Interstate and
+Foreign Commerce. Hearings on H.R. 2341, A
+Bill to Protect the Public Health from the Dangers
+of Fluorination of Water. 83rd Cong., 2d sess.
+25–27 May. Washington, DC: U.S. Government
+Printing Office.
+
+
+
+Altman, Rick. 1999. Film/Genre. London: British
+Film Institute.
+
+Bartholomew, David. 1994. “Science Fiction Films.”
+Pp. 369–385 in The Political Companion to
+American Film, ed. Gary Crowdus. Chicago, IL:
+Lake View Press.
+
+Borzello, Frances, Annette Kuhn, Jill Pack, and
+Cassandra Wedd. 1985. “Living Dolls and ‘Real
+Women.’” Pp. 9–18 in The Power of the Image:
+Essays on Representation and Sexuality, ed.
+Annette Kuhn. London: Routledge and Kegan
+Paul.
+
+Dean, Jodi. 1998. Aliens in America: Conspiracy
+Cultures from Outerspace to Cyberspace. Ithaca,
+NY: Cornell University Press.
+
+Fenster, Mark. 1999. Conspiracy Theories: Secrecy
+and Power in American Culture. Minneapolis:
+University of Minnesota Press.
+
+Garfinkel, Simson. 2000. Database Nation: The
+Death of Privacy in the 21st Century. Sebastopol,
+CA: O’Reilly.
+
+Hutchings, Peter. 1999. “Satan Bugs in the Hot
+Zone: Microbial Pathogens as Alien Invaders.”
+Pp. 11–13 in Alien Identities: Exploring
+Differences in Film and Fiction, ed. Deborah
+Cartmell, I. Q. Hunter, Heidi Kate, and Imelda
+Whelehan. London: Pluto Press.
+
+Jameson, Fredric. 1992. The Geopolitical Aesthetic:
+Cinema and Space in the World System.
+Bloomington: Indiana University Press.
+
+Knight, Peter. 2000. Conspiracy Culture: From the
+Kennedy Assassination to The X-Files. London
+and New York: Routledge.
+
+Leab, Daniel J. 1994. “Anti-Communist Films.” Pp.
+26–31 in The Political Companion to American
+Film, ed. Gary Crowdus. Chicago, IL: Lake View
+Press.
+
+McLarty, Lianne. 1999. “Alien/Nation: Invasions,
+Abductions, and the Politics of Identity.” Pp.
+345–359 in Mythologies of Violence in
+Postmodern Media, ed. Christopher Sharret.
+Detroit, MI: Wayne State University Press.
+
+Melley, Timothy. 2000. Empire of Conspiracy: The
+Culture of Paranoia in Postwar America. Ithaca,
+NY: Cornell University Press.
+
+Newman, Kim. 2000. Apocalypse Movies: End of the
+World Cinema. New York: St. Martin’s Griffin.
+
+Pratt, Ray. 2001. Projecting Paranoia: Conspiratorial
+Visions in American Film. Lawrence: University
+Press of Kansas.
+
+Romney, Jonathan. “The New Paranoia: Games
+Pixels Play.” Film Comment 34 (6): 39–43.
+
+Rushkoff, Douglas. 1999. Coercion: Why We Listen
+to What They Say. New York: Riverhead Books.
+
+Turner, Patricia A. 1993. I Heard It through the
+Grapevine: Rumor in African-American Culture.
+Berkeley: University of California Press.
+
+
+
+
+Allen, Gary. 1971. None Dare Call It Conspiracy.
+Rossmoor, CA: Concord Press.
+
+Bryant, Ralph C. 1983. Controlling Money: The
+Federal Reserve and Its Critics. Washington, DC:
+The Brookings Institution.
+
+Gilmour, Richard A. 1984. America’s Unknown
+Enemy: Beyond Conspiracy. Great Barrington,
+MA: American Institute for Economic Research.
+
+Cooper, William Milton. 1991. Behold a Pale Horse.
+Sedona, AZ: Light Technology Publishing.
+
+Federal Emergency Management Agency.
+http://www.fema.gov.
+
+#Federal Emergency Management Agency. 1998. “What’s in a Name? For FEMA,
+#Less—and More—than Movie Suggests.” http://www.fema.government/reg-viii/1998/r8_n003.htm.
+
+Federal Emergency Management Agency. 2002. “History of the Federal Emergency
+Management Agency.” http://www.fema.gov/about/history.htm.
+
+Frager, Dr. Richard X. 1997. “FEMA and UFOs: A
+Definite Connection.” http://www.conspiracy-net.com/archives/articles/conspiracy/nwo/CNCib012.txt. 7 March.
+
+Keith, Jim. 1994. Black Helicopters over America:
+Strikeforce for the New World Order. Lilburn,
+GA: IllumiNet Press.
+
+Militia of Montana. n.d. “Executive Orders for the
+New World Order: What You Should Know.”
+Noxon, MT: MOM.
+
+Police Against the New World Order. 1992.
+Operation Vampire Killer 2000. Phoenix, AZ:
+PANWO.
+
+#The Present Truth Ministry. 1995. “President’s
+#Emergency Powers Created FEMA.” The Patriot
+#Report 4 (February).
+
+Stern, Kenneth S. 1997. A Force upon the Plain: The
+American Militia Movement and the Politics of
+Hate. Norman: University of Oklahoma Press.
+
+The X-Files Movie. 1998. Dir. Rob Bowman.
+
+
+
+Bayley, Edwin R. 1981. Joe McCarthy and the Press.
+Madison: University of Wisconsin Press.
+
+Countryman, Vern. 1973. “The History of the FBI:
+Democracy’s Development of a Secret Police,”
+Pp. 33–63 in Investigating the FBI, ed. Pat
+Watters and Stephen Gillers. Garden City, NY:
+Doubleday.
+
+Schrecker, Ellen. 1998. Many Are the Crimes:
+McCarthyism in America. Princeton, NJ:
+Princeton University Press.
+
+Theoharis, Athan, et al., eds. 1998. The FBI: A
+Comprehensive Reference Guide. Phoenix, AZ:
+Oryx Press.
+
+Wall, Robert. 1973. “Why I Got Out of It,” Pp.
+369–388 in Investigating the FBI, ed. Pat Watters
+and Stephen Gillers. Garden City, NY:
+Doubleday.
+
+
+
+Alexander, Amy, ed. 1999. The Farrakhan Factor:
+African-American Writers on Leadership,
+Nationhood, and Minister Louis Farrakhan. New
+York: Grove Press.
+
+Goldberg, Robert. 2001. Enemies Within: The
+Culture of Conspiracy in Modern America. New
+Haven, CT: Yale University Press.
+
+Singh, Robert. 1997. The Farrakhan Phenomenon.
+Race, Reaction, and the Paranoid Style in
+American Politics. Georgetown, MD: Georgetown
+University Press.
+
+The Editors of Executive Intelligence Review. 1992.
+Dope, Inc.: The Book that Drove Henry Kissinger
+Crazy. Washington, DC: Executive Intelligence
+Review.
+
+The Editors of Executive Intelligence Review. 1992.
+The Ugly Truth about the ADL. Washington, DC:
+Executive Intelligence Review.
+
+King, Dennis. 1989. Lyndon LaRouche and the New
+American Fascism. New York: Doubleday.
+
+Dugdale, Richard. 1877. “The Jukes”: A Study in
+Crime, Pauperism, and Heredity. Putnam, NY:
+Arno.
+
+Goddard, Henry. 1973. The Kallikak Family: A
+Study in the Heredity of Feeble-Mindedness. New
+York: MacMillan
+
+Kline, Wendy. Building a Better Race: Gender,
+Sexuality, and Eugenics from the Turn of the
+Century to the Baby Boom. Berkeley: University
+of California Press.
+
+Smith, J. D. 1985. Minds Made Feeble: The Myth
+and Legacy of the Kallikaks. Rockville, MD:
+Aspen Publications.
+
+Vankin, Jonathan, and John Whalen. 1999.
+“Breeding Better People.” The 70 Greatest
+Conspiracies of All Time. Secaucus, NJ: Carol
+Publishing.
+
+Vold, George, Thomas Bernard, and Jeffery Snipes.
+1998. Theoretical Criminology. 4th ed. New York:
+Oxford University Press.
+
+Kahn, David. [1967] 1996. The Codebreakers: The
+Story of Secret Writing. New York: Scribner.
+
+Newton, David E. 1997. Encyclopedia of
+Cryptology. Santa Barbara, CA: ABC-CLIO.
+
+Singh, Simon. 1999. The Code Book. New York:
+Doubleday.
+
+Anslinger, Harry J., with Courtney Riley Cooper.
+1937. “Marijuana: Assassin of Youth.” America
+Magazine. July: 18–19, 150–153.
+
+Anslinger, Harry J., and William F. Tompkins. 1953.
+The Traffic in Narcotics. New York: Funk and
+Wagnalls.
+
+Bonnie, Richard J., and Charles H. Whitebread, III.
+1974. The Marihuana Conviction: History of
+Marihuana Prohibition in the United States.
+Charlottsville: University Press of Virginia.
+Courtwright, David T. 1982. 
+
+Dark Paradise: Opiate
+Addiction in America before 1940. Cambridge,
+MA: Harvard University Press.
+
+Epstein, Edward J. 1990. Agency of Fear: Opiates
+and Political Power in America. Rev. ed. New
+York: Verso.
+
+Herer, Jack. 1991. Hemp and the Marijuana
+Conspiracy: The Emperor Wears No Clothes. Van
+Nuys, CA: HEMP Publishing.
+
+Kinder, Douglas Clark. 1992. “Shutting Out the
+Evil: Nativism and Narcotics Control in the
+United States.” Pp. 117–142 in Drug Control
+Policy: Essays in Historical and Comparative
+Perspective, ed. William O. Walker, III. University
+Park, PA: Pennsylvania State University Press.
+
+McCoy, Alfred W. 1990. The Politics of Heroin: CIA
+Complicity in the Global Drug Trade. New York:
+Lawrence Hill Books.
+
+McCoy, Alfred W. 2000. “Mission Myopia: Narcotics as Fallout
+from the CIA’s Covert Wars.” Pp. 118–148 in
+National Insecurity: U.S. Intelligence after the
+Cold War, ed. Craig Eisendrath. Philadelphia, PA:
+Temple University Press.
+
+McWilliams, John C. 1990. The Protectors: Harry J.
+Anslinger and the Federal Bureau of Narcotics,
+1930–1962. Newark: University of Delaware
+Press
+
+McWilliams, John C. 1992. “Through the Past Darkly: The
+Politics and Policies of America’s Drug War.” Pp.
+5–41 in Drug Control Policy: Essays in Historical
+and Comparative Perspective, ed. William O.
+Walker, III. University Park, PA: Pennsylvania
+State University Press.
+
+Musto, David F. 1999. The American Disease:
+Origins of Narcotics Control. 3rd ed. New York:
+Oxford University Press.
+
+Reefer Madness (a.k.a. Tell Your Children) 1938. Dir.
+Louis J. Gasnier.
+
+Sloman, Larry. 1998. Reefer Madness: A History of
+Marijuana. Introduction by William S. Burroughs.
+New York: St. Martin’s Griffin.
+
+Walker, William O., III. Opium and Foreign Policy:
+The Anglo-American Search for Order in Asia,
+1912–1954. Chapel Hill: The University of North
+Carolina Press.
+
+
+#Emenhiser, JeDon A. 1962. Armed Politics: An
+#Analysis and Comparison of Six Cases in the
+#United State. Ph.D. diss., University of Minnesota.
+
+Frieze, Jacob. 1912. A Concise History of the Efforts
+to Obtain an Extension of Suffrage in Rhode
+Island, from the Year 1811 to 1842 and the Dorr
+War. 3rd ed. Providence, RI: Thoas S. Hammond.
+Luther v. Borden. 1849. (48 U.S. 1).
+
+Mowry, Arthur May. 1895. “The Constitutional
+Controversy in Rhode Island in 1841.” Pp.
+361–370 in Annual Report of the American
+Historical Association for the Year 1894.
+Washington, DC: U.S. Government Printing
+Office.
+
+Donnelly, Ignatius. [1890] 1960. Caesar’s Column: A
+Story of the Twentieth Century. Cambridge, MA:
+Harvard University Press.
+
+Hofstadter, Richard. 1955. The Age of Reform: From
+Bryan to FDR. New York: Vintage Press.
+
+McMath, Robert C. 1993. American Populism: A
+Social History 1877–1898. New York: Hill and
+Wang.
+
+
+Barron, Bruce. 1992. Heaven on Earth. The Social
+and Political Agendas of Dominion Theology.
+Grand Rapids, MI: Zondervan Publishing House.
+
+Clarkson, Frederick. 1997. Eternal Hostility. The
+Struggle between Theocracy and Democracy.
+Monroe, MN: Common Courage Press.
+
+Westchester, IL : Crossway Books.
+
+Berlet, Chip, and Matthew N. Lyons. 1995. “Militia
+Nation.” The Progressive, June, 22–25.
+
+Bracken, Len. 1999. The Arch Conspirator.
+Kempton, IL: Adventures Unlimited Press.
+
+#Chaitkin, Anton. “Secret Roots of the KKK.”
+#Paranoia: The Conspiracy Reader 2 (5): 38–41.
+
+Constantine, Alex. 1997. Virtual Government: CIA
+Mind Control Operations in America. Venice, CA:
+Feral House.
+
+Epperson, A. Ralph. 1985. The Unseen Hand.
+Tuscon, AZ: Publius Press.
+
+Gardner, James. 1997. The Age of Extremism: The
+Enemies of Compromise in American Politics,
+Culture, and Race Relations. New York: Birch
+Lane Press.
+
+George, James, and Laird Wilcox. 1996. American
+Extremists: Militias, Supremacists, Klansmen,
+Communists, and Others. Amherst, NY:
+Prometheus Books.
+
+Hieronimus, Robert. 1989. America’s Secret
+Destiny: Spiritual Vision and the Founding of a
+Nation. Rochester, VT: Destiny Books.
+
+Hoffman, David. 1998. The Oklahoma City
+Bombing and the Politics of Terror. Venice, CA:
+Feral House Publishing.
+
+#Martinez, Miguel. “Oklahoma City, Italian Style.”
+#Paranoia: The Conspiracy Reader. 4 (1): 8–11.
+
+Parfrey, Adam. 1995. “Finding Our Way Out of
+Oklahoma.” Pp. 322–347 in Cult Rapture, ed.
+Adam Parfrey. Portland, OR: Feral House
+Publishing.
+
+Pipes, Daniel. 1997. Conspiracy! How the Paranoid
+Style Flourishes and Where It Comes From. New
+York: Free Press.
+
+Robins, Robert, and Jerrold M. Post. 1997. Political
+Paranoia: The Psychopolitics of Hatred. New
+Haven, CT: Yale University Press.
+
+#U.S. Department of Justice, National Security
+#Division, Federal Bureau of Investigation,
+#Terrorist Research and Analytical Center.
+#Terrorism in the United States, 1994. Washington,
+#DC: Federal Bureau of Investigation.
+
+Vankin, Jonathan, and John Whalen. 1998. The 70
+Greatest Conspiracy Theories. New York: Citadel
+Press.
+
+
+Barrett, David V. 1999. Secret Societies: From the
+Ancient and Arcane to the Modern and
+Clandestine. London: Blanford.
+
+Flynn, Ted. 2000. Hope for the Wicked: The Master
+Plan to Rule the World. Herndon, VA: MaxKol
+Communications Inc.
+
+Marrs, Jim. 2001. Rule by Secrecy: The Hidden
+History that Connects the Trilateral Commission,
+the Freemasons, and the Great Pyramids. New
+York: Perennial.
+
+Southwell, David, and Sean Twist. 1999. Conspiracy
+Files. London: Carlton.
+
+Davis, Joseph L. 1974. Sectionalism in the
+Continental Congress. New York: McGraw-Hill.
+
+Jensen, Merrill, John P. Kaminski, and Gaspare J.
+Saladino, eds. 1976–. The Documentary History
+of the Ratification of the Constitution. Vol. 13.
+Madison: State Historical Society of Wisconsin.
+
+Onuf, Peter S. 1988. “Constitutional Politics: States,
+Sections, and the National Interest.” In Toward a
+More Perfect Union: Six Essays on the
+Constitution, ed. Neil L. Young. Provo, UT:
+Brigham Young University.
+
+#Willis, Cheryl Collins. 2001. Regionalism in the
+#Confederation Period: Fears of Disunion and the
+#Ambiguities of Constitutional Ratification. M.A.
+#thesis, University of Utah.
+
+
+Baudrillard, Jean. 1994. Simulacra and Simulation.
+Translated by Sheila Faria Glaser. Ann Arbor:
+University of Michigan Press.
+
+Dick, Philip K. 1969. Time Out of Joint.
+Harmondsworth: Penguin.
+
+Dick, Philip K. 1999. A Scanner Darkly. London: Gollancz.
+
+Dick, Philip K. 2000. Ubik. London: Gollancz.
+
+Dick, Philip K. 2001. Valis. London: Gollancz.
+
+Freeman, Carl, ed. 1988. Science Fiction Studies 15.
+Sutin, Lawrence. 1989. Divine Invasions: A Life of
+Philip K. Dick. New York: Harmony.
+
+Sutin, Lawrence, ed. 1995. The Shifting Realities of
+Philip K. Dick: Selected Literary and
+Philosophical Writings. New York: Vintage.
+
+Warrick, Patricia. 1987. Mind in Motion: The Fiction
+of Philip K. Dick. Carbondale: Southern Illinois
+University Press.
+
+Allen, W. B., ed. 1988. George Washington: A
+Collection. Indianapolis, IN: LibertyClassics.
+
+Foner, Philip S., ed. 1976. The Democratic-
+Republican Societies, 1790–1800: A Documentary
+Sourcebook of Constitutions, Declarations,
+Addresses, Resolutions, and Toasts. Westport, CT:
+Greenwood Press.
+
+Koschnik, Albrecht. 2001. “The Democratic
+Societies of Philadelphia and the Limits of the
+American Public Sphere, circa 1793–1795.”
+William and Mary Quarterly, 3d ser., 58:
+615–636.
+
+Link, Eugene Perry. 1942. Democratic-Republican
+Societies, 1790–1800. Morningside Heights, NY:
+Columbia University Press.
+
+Schoenbachler, Matthew. 1998. “Republicanism in
+the Age of Democratic Revolution: The
+Democratic-Republican Societies of the 1790s.”
+Journal of the Early Republic 18: 237–261.
+
+Bawer, Bruce. 1985. “Don DeLillo’s America.” The
+New Criterion, April, 34–42.
+
+Begley, Adam. 1993. “The Art of Fiction CXXXV:
+Interview with Don DeLillo.” Paris Review 35
+(128): 275–305.
+
+DeCurtis, Anthony. 1990. “‘An Outsider in This
+Society’: An Interview with Don DeLillo.” The
+South Atlantic Quarterly 89: 280–304.
+
+DeLillo, Don. 1971. Americana. Boston: Houghton
+Mifflin.
+
+DeLillo, Don. 1983. “American Blood.” Rolling Stone, 8
+December, 21–28; 74.
+
+Time. 1997. Underworld. New York: Scribner.
+
+Time. 1999, 5 July: http://www.jerusalembookfair.com/default.html.
+
+Hersh, Seymour. 1998. The Dark Side of Camelot.
+London: HarperCollins.
+
+Nechayev, I. V. 1987. Po stupenyam yadernogo
+bezumiya (Through the Stages of Nuclear
+Insanity). Moscow:
+
+White, Mark J. Missiles in Cuba: Kennedy,
+Khrushchev, Castro, and the 1962 Crisis.
+Chicago, IL: Ivan R. Dee.
+
+Handling, Piers, ed. 1983. The Shape of Rage: The
+Films of David Cronenberg. Don Mills, Ontario:
+Academy of Canadian Cinema.
+
+Rodley, Chris, ed. 1992. Cronenberg on Cronenberg.
+London: Faber and Faber
+
+Crawford, Jay Boyd. 1880. The Crédit Mobilier of
+America; Its Origin and History, Its Work of
+Constructing the Union Pacific Railroad and the
+Relation of Members of Congress Therewith.
+Boston, MA: C. W. Culkins.
+
+Martin, Edward Winslow [pseud.]. 1873. Behind the
+Scenes in Washington. New York: Continental
+Publishing Company.
+
+Paulet, Elizabeth. 1999. The Role of Banks in
+Monitoring Firms: The Case of the Crédit
+Mobilier. London: Routledge.
+
+Trent, Logan Douglas. 1981. The Crédit Mobilier.
+New York: Arno Press.
+
+Allen, Terry, Sanho Tree, and Louis Wolf. 1998.
+Personal interviews, 14–15 June.
+
+Covert Action Information Bulletin, Covert Action
+Quarterly, and CounterSpy: http://www.pir.org.
+
+Ripley, Amanda. 1998. “Fascist Lefties.” Washington
+City Paper, May 22–28.
+
+O’Neill, Rory. 2001. “Re: Encyclopedia Entry.”
+Personal email, 3 December.
+
+Josephson, Emanuel. 1952. Rockefeller
+Internationalist: The Man Who Misrules the
+World. New York: Chedney Press.
+
+McManus, John F. 1994. “Americans Have a Right
+to Know about the Council on Foreign
+Relations.” http://www.jbs.org/focus/conspiracy/righttoknow_cfr.htm.
+
+Perloff, James. 1989. Shadows of Power: The
+Council on Foreign Relations and the American
+Decline. Boston, MA: Western Islands.
+
+Schulzinger, Robert D. 1984. The Wise Men of
+Foreign Affairs: The History of the Council on
+Foreign Relations. New York: Columbia
+University Press.
+
+
+Athans, Mary Christine. 1991. The Coughlin-Fahey
+Connection: Father Charles E. Coughlin, Father
+Denis Fahey, C.S.Sp., and Religious Anti-
+Semitism in the United States, 1938–1954. New
+York: Peter Lang.
+
+Brinkley, Allen. 1983. Voices of Protest: Huey Long,
+Charles Coughlin, and the Great Depression.
+New York: Alfred Knopf.
+
+Carpenter, Ronald H. 1998. Father Charles
+Coughlin: Surrogate Spokesmen for the
+Disaffected. Westport, CT: Greenwood Press.
+
+Fisher, James T. 1989. The Catholic Counterculture
+in America, 1933–1962. Chapel Hill: University of
+North Carolina Press.
+
+Jeansonne, Glen. 1988. Gerald L. K. Smith: Minister
+of Hate. New Haven: Yale University Press.
+
+Kaplan, Jeffrey, ed. 2000. Encyclopedia of White
+Power. Rowan and Littlefield, Alta Mira Press.
+
+Warren, Donald. 1996. Radio Priest: Father Charles
+Coughlin, the Father of Hate Radio. The Free
+Press.
+
+
+Barnet, R., and J. Cavanagh. 1994. Global Dreams:
+Imperial Corporations and the New World Order.
+New York: Touchstone.
+
+Barnet, R., and R. Müller. 1974. Global Reach: The
+Power of the Multinational Corporations. New
+York: Simon and Schuster.
+
+Beder, S. 2000. Selling the Work Ethic: From
+Puritan Pulpit to Corporate PR. London: Zed
+Books.
+
+Bierce, Ambrose. [1911] 1996. The Devil’s
+Dictionary. Ware, England: Wordsworth Editions.
+
+Chomsky, Noam. 1996. Powers and Prospects.
+London: Pluto.
+
+Frank, T. 2000. One Market under God. London:
+Secker and Warburg.
+
+Hirschman, A. 1996. “Rival Interpretations of
+Market Society.” Pp. 250–259 in Business and
+Society, ed. B. Castro. Oxford: Oxford University
+Press.
+
+Klein, Naomi. 2000. No Logo: Taking Aim at the
+Brand Bullies. London: Flamingo.
+
+Korten, D. 1995. When Corporations Rule the
+World. West Hartford, CT: Kumarian Press.
+
+Marcuse, H. 1964. One Dimensional Man. London:
+Routledge and Kegan Paul.
+
+Monbiot, G. 2000. Captive State: The Corporate
+Takeover of Britain. London: Macmillan.
+
+Parker, M. 2002. Against Management. Cambridge:
+Polity.
+
+Punch, M. 1996. Dirty Business. London: Sage.
+
+Smith, W. 2001. “Conspiracy, Corporate Culture and
+Criticism.” Pp. 153–165 in The Age of Anxiety:
+Conspiracy Theory and the Human Sciences, ed.
+J. Parish and J. Parker. Oxford: Blackwell.
+
+Spark, A. 2001. “Conjuring Order: The New World
+Order and Conspiracy Theories of Globalisation.”
+Pp. 46–62 in The Age of Anxiety: Conspiracy
+Theory and the Human Sciences, ed. J. Parish and
+J. Parker. Oxford: Blackwell.
+
+Starr, A. 2000. Naming the Enemy: Anti-Corporate
+Movements Confront Globalisation. London: Zed
+Books.
+
+Whyte, W. H. 1961. The Organisation Man.
+Harmondsworth, England: Penguin.
+
+Curry, Richard O. 1972. “Copperheadism and
+Continuity: The Anatomy of a Stereotype.”
+Journal of Negro History 57: 29–36.
+
+Klement, Frank L. 1972. The Copperheads in the
+Middlewest. Gloucester, MA: Peter Smith.
+
+Klement, Frank L.. 1984. Dark Lanterns: Secret Political
+Societies, Conspiracies, and Treason Trials during
+the Civil War. Baton Rouge: Louisiana State
+University Press.
+
+Silbey, Joel. 1977. “A Respectable Minority”: The
+Democratic Party in the Civil War Era,
+1860–1868. New York: W. W. Norton and
+Company.
+
+
+Martin, James Kirby. 1979. In the Course of Human
+Events: An Interpretive Exploration of the
+American Revolution. Wheeling, IL: Harlan
+Davidson.
+
+Martin, James Kirby, and Mark Edward Lender.
+1982. A Respectable Army: The Military Origins
+of the Republic, 1763–1789. Wheeling, IL: Harlan
+Davidson.
+
+Pancake, John S. 1977. 1777: The Year of the
+Hangman. Tuscaloosa, AL: University of Alabama
+Press.
+
+Spotlight. 2000. “Chemtrails Said Part of Top Secret
+Military Maneuvers over America.” Reprinted in
+Free American (December): 32.
+
+USA Today. 2001. “Conspiracy Theorists Read
+between Lines in the Sky.” 7 March.
+
+Vidal, J,. and H. Weinstein. 2001. “RAF Rainmakers
+Blamed for 1952 Flood.” Guardian (London). 30
+August.
+
+The Constitution Society. “Abuses and Usurpations.”
+http://www.constitution.org/cs_abuse.htm.
+
+Main, Jackson Turner. 1961. The Antifederalists:
+Critics of the Constitution, 1781–1788. Chapel
+Hill: University of North Carolina Press.
+
+Schroder, Eugene, and Micki Nellis. 1995.
+Constitution, Fact or Fiction: The Story of the
+Nation’s Descent from a Constitutional Republic
+through a Constitutional Dictatorship to an
+Unconstitutional Dictatorship. Cleburne, TX:
+Buffalo Creek Press.
+
+Stern, Kenneth. 1996. A Force upon the Plain: The
+American Militia Movement and the Politics of
+Hate. New York: Simon and Schuster.
+
+Ambrose, Stephen E., and Douglas Brinkley. [1971]
+1993. Rise to Globalism: American Foreign Policy
+since 1938. 7th ed. London: Penguin.
+
+Boyer, Paul. 1985. By the Bomb’s Early Light:
+American Thought and Culture at the Dawn of
+the Atomic Age. London: Pantheon.
+
+Brands, H. W. 1993. The Devil We Knew: Americans
+and the Cold War. 1993. New York: Oxford
+University Press.
+
+Chomsky, Noam. 1969. American Power and the
+New Mandarins. Harmondsworth, England:
+Penguin.
+
+Chomsky, Noam. 1973. For Reasons of State. London:
+Fontana.
+
+
+Crockatt, Richard. 1995. The Fifty Years War: The
+United States and the Soviet Union in World
+Politics, 1941–1991. London: Routledge.
+
+Engelhart, Tom. 1995. The End of Victory Culture:
+Cold War America and the Disillusioning of a
+Generation. New York: Basic Books.
+
+Fenster, Mark. 1999. Conspiracy Theories: Secrecy
+and Power in American Culture. Minneapolis:
+University of Minnesota Press.
+
+Gaddis, John Lewis. 1987. The Long Peace:
+Inquiries into the History of the Cold War. New
+York: Oxford University Press.
+
+Gaddis, John Lewis. 1997. We Now Know: Rethinking Cold War
+History. New York: Oxford University Press.
+
+Henrikson, Margot A. 1997. Dr. Strangelove’s
+America: Society and Culture in the Atomic Age.
+Berkeley: University of California Press.
+
+Lafeber, Walter. [1967] 1997. America, Russia and
+the Cold War, 1945–1996. 8th ed. New York and
+London: McGraw-Hill.
+
+Leffler, Melvin. 1993. A Preponderance of Power.
+Stanford, CA: Stanford University Press.
+
+Lippmann, Walter, ed. 1972. The Cold War: A Study
+in US Foreign Policy. New York: Harper and
+Row.
+
+Lucas, Scott. 1996. “The Psychological Strategy
+Board.” International History Review 18 (May):
+279–302.
+
+Moynihan, Daniel Patrick. 1998. Secrecy: The
+American Experience. Intro. by Richard Powers.
+New Haven: Yale University Press.
+
+Newman, John. 1992. JFK and Vietnam. New York:
+Warner.
+
+Saunders, Frances Stonor. 1999. Who Paid the
+Piper? The CIA and the Cultural Cold War.
+London: Granta.
+
+Scott, Peter Dale. Crime and Cover-Up: The CIA,
+the Mafia, and the Dallas-Watergate Connection.
+Berkeley, CA: Westworks.
+
+Showalter, Elaine. 1997. Hystories: Hysterical
+Epidemics and Modern Culture. London:
+Picador.
+
+U.S. Department of State. 1952–1972. Foreign
+Relations of the United States. Washington, DC:
+U.S. Government Printing Office.
+
+U.S. Senate. 1976. Select Committee to Study
+Governmental Operations with Respect to
+Intelligence Activities (the “Church Committee”).
+Final Report. Washington, DC: U.S. Government
+Printing Office.
+
+Walker, Martin. 1993. The Cold War and the
+Making of the Modern World. London: Fourth
+Estate.
+
+Churchill, Ward, and Jim Vander Wall. 1990a.
+Agents of Repression: The FBI’s Secret Wars
+against the Black Panther Party and the American
+Indian Movement. Boston, MA: South End Press.
+
+
+Churchill, Ward, and Jim Vander Wall. 1990b. The COINTELPRO Papers: Documents
+from the FBI’s Secret Wars against Dissent
+in the United States. Boston, MA: South End
+Press.
+
+Davis, James Kirkpatrick. 1997. Assault on the Left:
+The FBI and the Sixties Antiwar Movement.
+Westport, CT: Greenwood Publishing Group.
+
+Donner, Frank J. 1981. The Age of Surveillance: The
+Aims and Methods of America’s Political
+Intelligence System. New York: Vintage.
+
+Garrow, David J. 1981. The FBI and Martin Luther
+King, Jr. New York: Penguin.
+
+Matthiessen, Peter. 1991. In the Spirit of Crazy
+Horse: The Story of Leonard Peltier and the FBI’s
+War on the American Indian Movement. New
+York: Penguin.
+
+O’Reilly, Kenneth. 1989. Racial Matters: The FBI’s
+Secret File on Black America, 1960–1972. New
+York: Free Press.
+
+Rogin, Michael. 1987. “Political Repression in the
+United States.” Pp. 44–80 in Ronald Reagan, the
+Movie, and other Episodes in Political
+Demonization. Berkeley: University of California
+Press.
+
+Rosen, Ruth. 2000. “The Politics of Paranoia.” Pp.
+227–260 in The World Split Open: How the
+Modern Women’s Movement Changed America.
+New York: Penguin.
+
+Ammermann, David. 1974. In the Common Cause:
+American Response to the Coercive Acts of 1774.
+Charlottesville, VA: University Press of Virginia.
+
+
+Bailyn, Bernard. 1967. The Ideological Origins of
+the American Revolution. Cambridge, MA:
+Harvard University Press.
+
+
+Bush, George. 1996. Address to the Nation. 5
+September.
+
+Department of Justice/Office of the Inspector
+General. 1997. The CIA-Crack Cocaine
+Controversy: A Review of the Justice
+Department’s Investigations and Prosecutions.
+http://www.usdoj.gov/oig/special/97–12/exec.htm.
+
+Reinarman, Craig, and Harry G. Levine, eds. 1997.
+Crack in America. Berkeley: University of
+California Press.
+
+Webb, Gary. 1999. Dark Alliance: The CIA, the
+Contras, and the Crack Cocaine Explosion. New
+York: Seven Stories Press.
+
+Bainerman, Joel. 1992. The Crimes of a President:
+New Revelations on Conspiracy and Cover-Up in
+the Bush and Reagan Administrations. New York:
+SPI Books.
+
+The Clinton Chronicles. 1994. Dir. Pat Matrisciana.
+Citizens’ Video Press.
+
+Conason, Joe, and Gene Lyons. 2000. The Hunting
+of the President: The Ten-Year Campaign to
+Destroy Bill and Hillary Clinton. New York: St.
+Martin’s Press.
+
+Kuntz, Phil. 1995. “Heir Turned Publisher Uses
+Financial Largess to Fuel Conservatism.” The
+Wall Street Journal. 12 October, A1.
+
+Quigley, Carroll. 1966. Tragedy and Hope: A History
+of the World in Our Time. London: MacMillan.
+
+Thomas, Kenn. 1994. “Clinton Era Conspiracies!
+Was Gennifer Flowers on the Grassy Knoll?
+Probably Not, but Here Are Some Other Bizarre
+Theories for a New Political Age.” The
+Washington Post. 16 January, C3.
+
+Waco: The Rules of Engagement. 1997. Dir. William
+Gazecki. Somford Entertainment.
+
+
+
+McElwee, William E. 1905. “About John A.
+Murrel.” Rockwood Times, 14 and 21 September.
+
+McGowan, Sam. n.d. “Murrel, the Outlaw.” http://www.members.aol.com/McGowan/murrel.html
+
+Messick, Hank, and Burt Goldblatt. 1976. The Only
+Game in Town: An Illustrated History of
+Gambling. New York: Thomas Y. Cromwell Co.
+
+Mississippi Local History Network. 2000. “John A.
+Murel.” http://www.MLHN2000.org/usa/ms/state/outlaws/murrel.html.
+
+Walton, Augustus Q. 1994. A History of the
+Detections, Conviction, Life and Designs of John
+A. Murel, The Great Western Land Pirate.
+Woodville, TX: Dogwood Press.
+
+Davis, David B., ed. 1971. The Fear of Conspiracy:
+Images of Un-American Subversion from the
+Revolution to the Present. Ithaca, NY: Cornell
+University Press.
+
+Knight, Peter. 2000. Conspiracy Culture: From the
+Kennedy Assassination to The X-Files. London
+and New York: Routledge.
+
+Levy, Peter B. 1998. The Civil Rights Movement.
+Westport, CT: Greenwood Press.
+
+Melley, Timothy. 2000. Empire of Conspiracy: The
+Culture of Paranoia in Postwar America. Ithaca,
+NY: Cornell University Press.
+
+Turner, Patricia A. 1993. I Heard It through the
+Grapevine: Rumor in African-American Culture.
+Berkeley: University of California Press.
+
+
+Fade to Black Comedy Magazine. “Question and
+Answer with the Reverend Ivan Stang.” http://www.fadetoblack.com/interviews/ivanstang
+
+The SubGenius Foundation. 1987. The Book of the
+SubGenius, ed. Reverend Ivan Stang. New York:
+Simon and Schuster.
+
+The SubGenius Foundation. 1994. Revelation X: The “Bob: Apocryphon,
+ed. Reverend Ivan Stang. New York: Simon and
+Schuster.
+
+
+
+
+Cunningham, Raymond J. 1967. “The Impact of
+Christian Science on the American Churches,
+1880–1910.” American Historical Review 72:
+885–905.
+
+Peel, Robert. 1966–1977. Mary Baker Eddy. 3 vols.
+New York: Holt, Rinehart, and Winston.
+
+Twain, Mark. 1993 [1907]. Christian Science.
+Buffalo, NY: Prometheus.
+
+Barkun, Michael. 1994. Religion and the Racist Right.
+Chapel Hill: University of North Carolina Press.
+
+Coates, James. 1987. Armed and Dangerous: The Rise
+of the Survivalist Right. New York: Hill and Wang.
+
+Bloom, Alexander, and Wini Breines. 1995. “Takin’
+It to the Streets”: A Sixties Reader. New York:
+Oxford University Press.
+
+Dellinger, David T. 1970. Contempt: Transcript of
+the Contempt Citations, Sentences, and Responses
+of the Chicago Conspiracy 10. Chicago, IL:
+Swallow Press.
+
+Epstein, Jason. 1970. The Great Conspiracy Trial:
+An Essay on Law, Liberty, and the Constitution.
+New York: Random House.
+
+Hoffman, Abbie. 1980. Soon to Be a Major Motion
+Picture. New York: Perigree Books.
+
+Peck, Abe. [1985] 1991. Uncovering the Sixties: The
+Life and Times of the Underground Press. New
+York: Citadel Press.
+
+Rubin, Jerry. 1970. Do It! Scenarios of the
+Revolution. New York: Simon and Schuster.\
+
+University of Missouri-Kansas City Law School.
+“The Chicago Seven Trial.” http://www.law.umkc.edu/faculty/projects/ftrials/Chicago7/chicago7.html.
+
+Walker, Daniel. 1968. Rights in Conflict: Convention
+Week in Chicago, August 25–29, 1968. New York:
+Bantam Books.
+
+
+Damore, Leo. 1989. Senatorial Privilege. New York:
+Dell.
+
+Hersh, Burton. 1972. The Education of Edward
+Kennedy. New York: William Morrow.
+
+Kappel, Kenneth. 1991. Chappaquiddick Revealed.
+New York: St. Martin’s Press.
+
+Lange, James E. T., and Katherine DeWitt, Jr. 1992.
+Chappaquiddick: The Real Story. New York: St.
+Martin’s Press.
+
+Lerner, Max. 1980. Ted and the Kennedy Legend.
+New York: St. Martin’s Press.
+
+Olsen, Jack. 1970. The Bridge at Chappaquiddick.
+New York: Ace.
+
+Rust, Zad. 1971. Teddy Bare. Belmont, MA:
+Western Islands Press.
+
+
+
+Chambers, Whittaker. 1953. Witness. London:
+Deutsch.
+
+Chambers, Whittaker. Ghosts on the Roof: Selected Essays. 1996.
+Edited by Terry Teachout. Washington, DC:
+Regnery Publishing.
+
+Cooke, Alistair. 1950. A Generation on Trial: USA
+vs. Alger Hiss. New York: Knopf.
+
+Fiedler, Leslie. 1950. “Hiss, Chambers, and the Age
+of Innocence.” In An End to Innocence: Essays
+on Culture and Politics. Boston, MA: Beacon.
+
+Haynes, John Earl, and Harvey Klehr. 1999. Venona:
+Decoding Soviet Espionage in America. New
+Haven, CT: Yale University Press.
+
+Kristol, Irving. 1952. “‘Civil Liberties, 1952’: A
+Study in Confusion.” Commentary 13 (March):
+228–236.
+
+Tannenhaus, Sam. 1997. Whittaker Chambers. New
+York: Random House.
+
+Weinstein, Allen. [1978] 1997. Perjury: The Hiss-
+Chambers Case. New and rev. ed. New York:
+Random House.
+
+Haines, Gerald K. 1997. “A Die Hard Issue: CIA’s
+Role in the Study of UFOs, 1947–90.” Studies in
+Intelligence. Semiannual edition no. 1: http://www.cia.gov/csi/studies/97unclass/ufo.html#ft12.
+
+Holland, Max. 2001. “The Power of Disinformation:
+The Lie that Linked CIA to the Kennedy
+Assassination.” Studies in Intelligence 11 (fall-winter): 
+http://www.cia.gov/csi/studies/fall_winter_2001/article02.html.
+
+Jeffreys-Jones, Rhodri. 1998. The CIA and American
+Democracy. 2d ed. New Haven, CT: Yale
+University Press.
+
+Marks, John. 1979. The Search for the Manchurian
+Candidate: The CIA and Mind Control. London:
+Penguin.
+
+Ellis, Bill. 1991. “Cattle Mutilation: Contemporary
+Legends and Contemporary Mythologies.”
+Contemporary Legend 1: 39–80.
+
+Ellis, Bill. 2000. Raising the Devil: Satanism, New
+Religions, and the Media. Lexington: University of
+Kentucky Press.
+
+Hitt, Jack. 1997. “Operation Moo.” GQ: Gentlemen’s
+Quarterly 67 (February): 152–159; 195–196.
+
+Howe, Linda Moulton. 1989. An Alien Harvest:
+Further Evidence Linking Animal Mutilations
+and Human Abductions to Alien Life Forms.
+Littleton, CO: Linda Moulton Howe Productions.
+
+Rommel, Kenneth M., Jr. 1980. Operation Animal
+Mutilation. Santa Fe: District Attorney, First
+Judicial District, New Mexico. Also available at:
+http://www.parascope.com/articles/0597/romindex.htm.
+
+Geyer, Georgie Anne. 2001. Guerrilla Prince: The
+Untold Story of Fidel Castro. 3rd rev. ed. Kansas
+City, MO: Andrews McMeel.
+
+Hersh, Seymour. 1998. The Dark Side of Camelot.
+London: HarperCollins.
+
+#Clodfelter, Michael. 1995. Vietnam in Military
+#Statistics: A History of the Indochina Wars,
+#1772–1991. Jefferson, NC: McFarland and Company, Inc.
+
+Kissinger, Henry A. 1991. “Bombing of Cambodia: A
+Defense.” Pp. 284–294 in Light at the End of the
+Tunnel: A Vietnam Anthology, ed. Andrew J.
+Rotter. New York: St. Martin’s Press.
+
+#Krepinevich, Andrew F. 1986. The Army and
+#Vietnam. Baltimore, MD: Johns Hopkins
+#University Press.
+
+Shawcross, William. 1991. “Bombing of Cambodia:
+A Critique.” Pp. 273–283 in Light at the End of
+the Tunnel: A Vietnam Anthology, ed. Andrew J.
+Rotter. New York: St. Martin’s Press.
+
+Fenster, Mark. 1999. Conspiracy Theories: Secrecy
+and Power in American Culture. Minneapolis:
+University of Minnesota Press.
+
+Tarpley, Webster Griffin, and Anton Chaitkin. 1992.
+George Bush: The Unauthorized Biography.
+Washington, DC: Executive Intelligence Review.
+
+
+Grauerholz, James, and Ira Silverberg. 1998. Word
+Virus: The William Burroughs Reader. New York:
+Grove Press.
+
+Morgan, Ted. 1988. Literary Outlaw: The Life and
+Times of William S. Burroughs. New York: Avon.
+Mottram, Eric. 1977. William Burroughs: The
+Algebra of Need. London: Calder and Boyers.
+
+Odier, Daniel. 1989. The Job: Interviews with
+William S. Burroughs. New York: Penguin.
+
+Abernethy, Thomas Perkins. 1954. The Burr
+Conspiracy. New York: Oxford University Press.
+
+Kline, Mary-Jo, and Joanne Wood Ryan, eds. 1983.
+Political Correspondence and Public Papers of
+Aaron Burr. Princeton, NJ: Princeton University
+Press.
+
+Lomask, Milton. 1982. Aaron Burr: The Conspiracy
+and Years of Exile, 1805–1836. New York: Farrar,
+Straus, and Giroux.
+
+McCaleb, Walter Flavius. 1936. The Aaron Burr
+Conspiracy. New York: Wilson-Erickson.
+
+Melton, Buckner F., Jr. 2001. Aaron Burr:
+Conspiring to Treason. New York: John Wiley and
+Sons, Inc.
+
+Danforth, John C. 2000. Final Report to the Deputy
+Attorney General Concerning the 1993
+Confrontation at the Mt. Carmel Complex, Waco,
+Texas. Washington, DC: U.S. Government
+Printing Office.
+
+Department of the Treasury. 1993. Report of the
+Department of the Treasury on the Bureau of
+Alcohol, Tobacco, and Firearms Investigation of
+Vernon Wayne Howell also known as David
+Koresh. Washington, DC: U.S. Government
+Printing Office.
+
+Herbeck, Dan, and Lou Michel. 2001. American
+Terrorist: Timothy McVeigh and the Oklahoma
+City Bombing. New York: Regan Books.
+
+Kopel, David, and Paul H. Blackman. 1997. No
+More Wacos: What’s Wrong with Federal Law
+Enforcement and How to Fix It. Amherst, NY:
+Prometheus Books.
+
+Martinek, Wendy L., Kenneth J. Meier, and Lael R.
+Keiser. 1998. “Jackboots or Lace Panties? The
+Bureau of Alcohol, Tobacco, and Firearms.” Pp.
+17–44 in The Changing Politics of Gun Control,
+ed. John M. Bruce and Clyde Wilcox. Lanham,
+MD: Rowman and Littlefield Publishing Inc.
+
+Myers, Lawrence W. 1995. “‘Operation Achilles
+Heel’: Exposing Allegations of Racism, Rape, and
+Drug Abuse Among ‘Redneck Rogues’ in Federal
+Law Enforcement.” Media Bypass. Vol. 3, No. 9
+(Sept.): 18–27.
+
+Skolnick, Sherman H. n.d. “U.S. Government
+Complicity in the Oklahoma Bombing” in
+Conspiracy Nation. Vol. 7, No. 44, available at
+http://www.conspiracy-net.com/archives/articles/conspiracy/conspnation/CN744.txt
+
+Spitzer, Robert J. 1998. The Politics of Gun Control.
+2d ed. New York: Seven Bridges Press.
+
+Stern, Kenneth S. 1997. A Force upon the Plain: The
+American Militia Movement and the Politics of
+Hate. Norman: University of Oklahoma Press.
+
+Coletta, Paolo. 1964. William Jennings Bryan:
+Political Evangelist, 1860–1908. Lincoln:
+University of Nebraska Press.
+
+Hicks, John D. 1931. The Populist Revolt.
+Minneapolis. University of Minnesota Press.@hicksPopulistRevoltHistory1961
+
+Hofstadter, Richard. 1965. The Paranoid Style in
+American Politics, and Other Essays. New York:
+Knopf.
+
+Larson, Edward J. 1997. Summer for the Gods: The
+Scopes Trial and America’s Continuing Debate
+over Science and Religion. New York: BasicBooks.
+
+
+Vankin, Jonathan. 1991. Conspiracies, Cover-ups,
+and Crimes: Political Manipulation and Mind
+Control in America. New York: Paragon House.978-1-55778-384-4
+
+Canedy, Susan. 1998. America’s Nazis: A Democratic
+Dilemma. Menlo Park, CA: Markgraf Publishing
+Group. 978-0-944109-06-9
+
+Carlson, John Roy [Arthur Derounian]. 1943. Under
+Cover: My Four Years in the Nazi Underworld of
+America—The Amazing Revelation of How Axis
+Agents and Our Enemies within Are Now
+Plotting to Destroy the United States. New York:
+E. P. Dutton and Company. Carlson1943
+
+Carlson, John Roy. 1946. The Plotters. New York: E. P. Dutton
+and Company. Carlson1946
+
+Cole, Wayne S. 1983. Roosevelt and the Isolationists,
+1932–1945. Lincoln: University of Nebraska
+Press. 978-0-8032-1410-1
+
+Diamond, Sander A. 1974. The Nazi Movement in
+the United States, 1924–1941. New York: Cornell
+University Press. 978-0-8032-1410-1
+
+Gary, Brett. 1999. The Nervous Liberals:
+Propaganda Anxieties from World War I to the
+Cold War. New York: Coumbia University Press.978-0-231-11365-6
+
+Glasser, Martha. 1974. “The German American
+Bund in New Jersey.” New Jersey History 92: 1,
+33–49. Glasser1974
+
+Highham, Charles. 1985. American Swastika.
+Garden City, NY: Doubleday. Higham1985
+
+Jenkins, Philip. Hoods and Shirts: The Extreme
+Right in Pennsylvania, 1925–1950. Chapel Hill,
+NC: University of North Carolina Press. 978-0-8078-2316-3
+
+Johnson, Niel M. 1972. George Sylvester Viereck:
+German-American Propagandists. Urbana:
+University of Illinois Press. 978-0-252-00222-9
+
+MacDonnell, Francis. 1995. The Axis Fifth Column
+and the American Home Front. Westport, CT:
+Greenwood Press. 978-0-19-535775-2
+
+Marshall, George. 1942. “Foreword” in Investigate
+Martin Dies! The Case for a Grand Jury
+Investigation of Martin Dies Submitted to the
+Department of Justice on August 6, 1942 by the
+National Federation for Constitutional Liberties.
+New York: Np. Marshall1942
+
+
+O’Reilly, Kenneth. 1983. Hoover and the Un-
+Americans: The FBI, HUAC, and the Red
+Menace. Philadelphia, PA: Temple University
+Press. 978-0-87722-301-6
+
+# Ribuffo, Leo P. 1983. The Old Christian Right: The
+# Protestant Far Right from the Great Depression
+# to the Cold War. Philadelphia, PA: Temple
+# University Press.
+
+Rogge, John. 1961. The Official German Report:
+Nazi Penetration 1924–1942, Pan Arabism
+1939–Today. New York: Thomas Yoseloff. Rogge1961
+
+Sayers, Michael, and Albert E. Kahn. 1942.
+Sabotage! The Secret War against America. New
+York: Harper Brothers.Sayers1942
+
+Smith, Geoffrey S. 1992. To Save a Nation:
+American Countersubversives, the New Deal, and
+the Coming of World War II. New York: Basic
+Books. 978-0-465-08625-2
+
+U.S. House. 1935. Investigation of Nazi and Other
+Propaganda. 74th Cong., 1st Sess., H. Rept. 153
+(Serial 9890). Washington, DC: U.S. Government
+Printing Office.
+
+
+McPherson, James M. 1988. Battle Cry of Freedom:
+The Civil War Era. New York: Oxford Universtiy
+Press. 978-0-345-35942-1 978-0-19-503863-7
+
+Oates, Stephen B. 1970. To Purge This Land with
+Blood: A Biography of John Brown. New York:
+Harper and Row. 978-0-87023-458-3
+
+Ames, Seth, ed. 1954. The Works of Fisher Ames.
+Boston. Ames1983
+
+
+Dalrymple, John. 1775. The Address of the People of
+England to the Inhabitants of America. London. Dalrymple1775
+
+# Elkins, Stanley, and Eric McKitrick. 1993. The Age
+# of Federalism. New York: Oxford University
+# Press.
+
+Hancock, Harold Bell. 1972. The Delaware
+Loyalists. Boston, MA: Gregg Press.978-0-8398-0800-8
+
+Howe, Daniel Walker. 1979. The Political Culture of
+the American Whigs. Chicago, IL: University of
+Chicago Press. 978-0-226-35478-1
+
+Jennings, Sir Ivor. 1954. The Queen’s Government.
+Baltimore, MD: Penguin. 978-0-313-24571-8
+
+Rhenquist, William H. 1999. Grand Inquests. New
+York: Quill. 978-0-688-05142-6
+
+Rose, Richard. 1980. Politics in England. Boston,
+MA: Little, Brown, and Co. 978-0-316-75641-9
+
+Shaw, Peter. The Character of John Adams. 1976.
+Chapel Hill, NC: University of North Carolina
+Press. 978-0-8078-1254-9
+
+U.S. House. 1965. Inaugural Addresses of the
+Presidents of the U.S. 89th Cong., 1st sess., H.
+Doc. 51. Washington, DC: U.S. Government
+Printing Office. https://www.presidency.ucsb.edu/documents/the-presidents-inaugural-address
+
+Wood, Gordon S. 1969. The Creation of the
+American Republic 1776–1787. New York: W. W.
+Norton and Co. Wood1969
+
+
+
+# Bailyn, Bernard. 1967. The Ideological Origins of
+# the American Revolution. Cambridge, MA:
+# Belknap Press of Harvard University Press.
+
+Fowler, William M., Jr. 1997. Samuel Adams:
+Radical Puritan. New York: Longman. 978-0-673-99293-2
+
+Labaree, Benjamin Woods. 1964. The Boston Tea
+Party. New York: Oxford University Press. 978-0-930350-05-5
+
+Young, Alfred F. 1999. The Shoemaker and the Tea
+Party. Boston, MA: Beacon Press. 10.2307/1918907
+
+Maier, Pauline. 1972. From Resistance to
+Revolution: Colonial Radicals and the
+Development of American Opposition to Britain,
+1765–1776. New York: W. W. Norton. https://doi.org/10.2307/1959783
+
+Young, Alfred F. 1981. “George Robert Twelves
+Hewes (1742–1840): A Boston Shoemaker and
+the Memory of the American Revolution.”
+William and Mary Quarterly, 3d ser., 38
+(October): 561–623. https://doi.org/10.2307/1918907
+
+Zobel, Hiller B. 1970. The Boston Massacre. New
+York: W. W. Norton. 978-0-393-05376-0 
+
+Babcock, Bernie. 1925. Booth and the Spirit of
+Lincoln: A Story of a Living Dead Man.
+Philadelphia, PA, and London: J. B. Lippincott. [Babcock1925]
+
+Bryan, George S. 1940. The Great American Myth.
+New York: Carrick and Evans. [Bryan1940]
+
+Forrester, Izola D. 1937. This One Mad Act: The
+Unknown Story of John Wilkes Booth and His
+Family. Boston, MA: Hale, Cushman and Flint. [Forrester1937]
+
+Foster, Gaines M. 1988. Ghosts of the Confederacy:
+Defeat, the Lost Cause, and the Emergence of the
+New South, 1865 to 1913. New York: Oxford
+University Press. 978-0-19-504213-9
+
+Lewis, Lloyd. 1929. Myths after Lincoln. New York:
+Harcourt, Brace and Company. [Lewis1929]
+
+Foner, Philip S., ed. 1970. The Black Panthers Speak.
+Philadelphia, PA: J. B. Lippincott Company. 978-0-306-81201-9
+
+Jones, Charles E., ed. 1998. The Black Panther
+Party: Reconsidered. Baltimore, MD: Black
+Classic Press. 978-0-933121-96-6
+
+Newton, Huey. 1996. War against the Panthers: A
+Study of Repression in America. New York:
+Harlem River Press.[*]
+
+O’Reilly, Kenneth. 1989. “Racial Matters”: The FBI’s
+Secret File on Black America. New York: The
+Free Press. 978-0-02-923681-9
+
+Smith, Jennifer B. 1999. An International History of
+the Black Panther Party. New York: Garland
+Publishing Company. 978-0-8153-3257-2
+
+
+Davis, Mike. 1990. City of Quartz: Excavating the
+Future in Los Angeles. London: Vintage. 978-1-84467-568-5
+
+Howe, Linda Moulton. 1989. An Alien Harvest. n.p.:
+Howe Productions. 978-0-9620570-1-4
+
+Keith, Jim. 1994. Black Helicopters over America:
+Strikeforce for the New World Order. Georgia:
+Illuminet Press. 978-1-881532-05-7
+
+Peeples, Curtis. 1990. Watch the Skies. Washington,
+DC: Smithsonian Institution. 978-1-881532-05-7
+
+Spark, Alasdair. 1998. “Flight Controls: The Social
+History of the Helicopter as a Symbol of
+Vietnam.” In Vietnam Images, ed. Jeff Walsh and
+Jim Aulich. London: MacMillan. https://doi.org/10.1007/9
+
+Spark, Alasdair. 1998. “Are There Black Helicopters over
+Your House?” Thresholds: Viewing Culture. Vol. 11.[*]
+
+Gill, Stephen. 1990. American Hegemony and the
+Trilateral Commission. Cambridge: Cambridge
+University Press. 978-0-521-36286-3
+
+Hardt, Michael, and Antonia Negri. 2000. Empire.
+Cambridge, MA: Harvard University Press.
+Ronson, Jon. 2001. Them. London: Picador. 978-0-674-00671-3
+
+Govan, Thomas Payne. 1959. Nicholas Biddle:
+Nationalist and Public Banker 1786–1844.
+Chicago, IL: University of Chicago Press. [*]
+
+
+Taylor, George Rogers. 1949. Jackson vs. Biddle: The
+Struggle over the Second Bank of the United
+States. Boston, MA: Heath. 978-0-669-84491-7
+
+Wilburn, Jean Alexander. 1967. Biddle’s Bank: The
+Crucial Years. New York: Columbia University
+Press. [*]
+
+Flynn, Kevin, and Gary Gerhardt. 1989. The Silent
+Brotherhood. New York: The Free Press. 978-0-02-910312-8
+
+George, John, and Laird Wilcox. 1996. American
+Extremists: Militias, Supremacists, Klansmen,
+Communists, and Others. Amhurst, NY:
+Prometheus Books. 121 978-1-57392-058-2
+
+Singular, Stephen. 1989. Talked to Death: The
+Murder of Alan Berg and the Rise of the Neo-
+Nazis. New York: Berkley Books. 978-0-688-06154-8
+
+
+Dees, Morris, with James Corcoran. 1996.
+Gathering Storm. America’s Militia Threat. New
+York: HarperCollins. 978-0-06-017403-3
+
+Stanton, Bill. 1991. Klanwatch. Bringing the Ku
+Klux Klan to Justice. New York: Mentor. 978-0-8021-1327-6
+
+
+Bamford, James. 2002. Body of Secrets: Anatomy of
+the Ultra Secret National Security Agency. New
+York: Anchor Books. 978-0-385-49908-8
+
+Blight, James G., and Peter Kornbluh, eds. 1998.
+Politics of Illusion: The Bay of Pigs Invasion Re-
+examined. Boulder, CO: Lynne Rienner
+Publishers. 978-1-55587-822-1
+
+Kornbluh, Peter, ed. 1998. Bay of Pigs Declassified:
+The Secret CIA Report on the Invasion of Cuba.
+New York: New Press. 978-1-56584-494-0
+
+# Barruel, Abbé. 1798–1799a. Memoires pour servir a
+# l’histoire du Jacobinisme. Vols. 3 and 4. Hamburg:
+# P. Fauche.
+
+# Barruel, Abbé. 1799b. Memoirs Illustrating the History of
+# Jacobinism. Vols. 1–4. London. Printed for the
+# author by T. Burton, sold by E. Booker.
+
+Davis, David Brion, ed. 1971. The Fear of
+Conspiracy. Ithaca, NY: Cornell University Press.ISBN: 978-0-8014-9113-9
+
+Levine, Robert S. 1989. Conspiracy and Romance.
+Cambridge: Cambridge University Press. 978-0-521-36654-0
+
+
+McIlhany, William H. 1996. “The Roots of
+Subversion.” New American. Vol. 12, No. 20.
+http://www.thenewamerican.com/tna/vol12no20/vol12no20_roots.htm.
+
+Pipes, Daniel. 1997. Conspiracy: How the Paranoid
+Style Flourishes and Where It Comes From. New
+York: The Free Press. 978-0-684-83131-2
+
+Roberts, J. M. 1972. The Mythology of the Secret
+Societies. London: Secker and Warburg. 978-0-684-12904-4
+
+Hummel, Jeffrey Rogers. 1990. “Second Bank of the
+United States and the Independent Treasury.” In
+The Encyclopedia of American Business History
+and Biography: Banking and Finance to 1913, ed.
+Larry Schweikart. New York: Facts on File. 978-0-8160-3133-7
+
+Schlesinger, Arthur, Jr. 1945. The Age of Jackson.
+Boston, MA: Little, Brown. 978-0-316-77343-0
+
+Schweikart, Larry. 1988. “Jacksonian Ideology,
+Currency Control, and ‘Central’ Banking: A
+Reappraisal.” Historian 51 (November): 78–102. https://doi.org/10.1111/j.1540-6563.1988.tb00767
+
+Temin, Peter. 1969. The Jacksonian Economy. New
+York: Norton. https://tinyurl.com/yutqqujr
+
+
+Remini, Robert V. 1967. Andrew Jackson and the
+Bank War: A Study in the Growth of Presidential
+Power. New York: Norton. 978-0-393-09757-3
+
+Schweikart, Larry, ed. 1990. Encyclopedia of
+American Business History and Biography:
+Banking and Finance to 1913. New York: Facts
+on File. 978-0-8160-2194-9
+
+Timberlake, Richard. 1978. The Origins of Central
+Banking in the United States. Cambridge, MA:
+Harvard University Press. 978-0-674-64480-9
+
+
+Anderson, B. L., and P. L. Cottrell. 1974. Money
+and Banking in England: The Development of the
+Banking System 1694–1914. Vancouver: David
+and Charles. 978-0-7153-6366-9
+
+Clapham, John. 1945. The Bank of England: A
+History. New York: The Macmillan Company. https://tinyurl.com/ynr4eadw
+
+Mullins, Eustace. 1993. Secrets of the Federal
+Reserve: The London Connection. Staunton, VA:
+Bankers Research Institute. 978-1-77464-238-2
+
+Robertson, Pat. 1991. The New World Order. Dallas,
+TX: Word Publishing. 978-0-8499-3394-3
+
+Rough, Gerry. 1988. “More Evidence on the Bank
+of England: Parts 1 and 2.” http://www.floodlight.org.
+
+Still, Bill. 1996. On the Horns of the Beast: The
+Federal Reserve and the New World Order.
+Winchester, VA: Reinhardt and Still Publishers. 978-0-9640485-3-9
+
+Kerry, John, and Hank Brown. 1992. The BCCI
+Affair: A Report to the Committee on Foreign
+Relations, United States Senate. 102d Congress,
+2d Session. http://www.fas.org/irp/congress/1992_rpt/bcci.
+
+Beaty, Jonathan and S. C. Gwynne. 1993. The
+Outlaw Bank: A Wild Ride into the Secret Heart
+of BCCI. New York: Random House. 978-0-679-41384-4
+
+Ehrenfeld, Rachel. 1992. Evil Money: Encounters
+along the Money Trail. New York: HarperCollins. 978-1-56171-333-2
+
+Gup, Benton E. 1995. Targeting Fraud: Uncovering
+and Deterring Fraud in Financial Institutions.
+Chicago, IL: Probus. 978-1-55738-740-0
+
+Kwitny, Jonathan. 1987. The Crimes of Patriots: A
+True Tale of Dope, Dirty Money, and the CIA.
+New York: W. W. Norton. 978-0-393-02387-9
+
+
+Brown, Kathleen. 1996. Goodwives, Nasty Wenches,
+and Anxious Patriarchs: Gender, Race, and Power
+in Colonial Virginia. Chapel Hill: University of
+North Carolina Press. 978-0-8078-2307-1
+
+Morgan, Edmund. 1975. American Slavery,
+American Freedom: The Ordeal of Colonial
+Virginia. New York: W. W. Norton & Company. 978-0-393-05554-2
+
+Washburn, Wilcomb. 1957. The Governor and the
+Rebel: A History of Bacon’s Rebellion in Virginia.
+Chapel Hill: University of North Carolina Press https://tinyurl.com/ymkxmyyp
+
+
+Brown, Stuart. 1994. “Searching for the Secrets of
+Groom Lake.” Popular Science, March, 84–85.
+
+Harris, Roy, Jr. 1992. “Evidence Points to Secret
+U.S. Spy Plane.” Wall Street Journal, 4
+December.
+
+Sweetman, Bill. 1993. “Out of the Black: Secret
+Mach 6 Spy Plane.” Popular Science, March,
+56–60; 62–63; 98–100. 978-0-87938-780-8
+
+Albright, Joseph, and Maria Kunstel. 1997.
+Bombshell: The Secret Story of America’s
+Unknown Atomic Spy Conspiracy. New York:
+Times Books. 978-0-8129-2861-7
+
+Granatstein, J. L., and David Stafford. 1990. Spy
+Wars: Espionage and Canada from Gouzenko to
+Glasnost. Toronto: Key Porter. 978-1-55013-258-8
+
+Herken, Gregg. 2002. The Brotherhood of the
+Bomb: The Tangled Lives and Loyalties of Robert
+Oppenheimer, Ernest Lawrence, and Edward
+Teller. New York: Henry Holt. 978-0-8050-6588-6
+
+Holloway, David. 1994. Stalin and the Bomb: The
+Soviet Union and Atomic Energy 1939–1956.
+New Haven, CT: Yale University Press. 978-0-300-06664-7
+
+Hyde, H. Montgomery. 1980. The Atomic Bomb
+Spies. New York: Atheneum. 978-0-241-10271-8
+
+Radosh, Ronald, and Joyce Milton. 1997. The
+Rosenberg File: The Search for the Truth. Rev. ed.
+New Haven, CT: Yale University Press. 978-0-300-07205-1
+
+West, Nigel, and Oleg Tsarev. 1998. The Crown
+Jewels: The British Secrets at the Heart of the
+KGB Archives. London: HarperCollins. 978-0-300-07806-0
+
+Williams, Robert Chardwell. 1987. Klaus Fuchs: Atom
+Spy. Cambridge, MA: Harvard University Press. 978-0-674-50507-0
+
+
+
+
+Chan, Sucheng. 1991. Asian Americans: An
+Interpretative History. Boston, MA: Twayne
+Publishers. 978-0-8057-8437-4
+
+Daniels, Roger. 1988. Asian America: Chinese and
+Japanese in the United States since 1950. Seattle:
+University of Washington Press. 978-0-295-97018-9
+
+McClain, Charles. 1994. In Search of Equality: The
+Chinese Struggle against Discrimination in
+Nineteenth-Century America. Berkeley:
+University of California Press. 978-0-520-91781-1
+
+Spence, Jonathan D. 1999. The Chan’s Great
+Continent: China in Western Minds. New York:
+Norton. 978-0-393-02747-1
+
+Ting Yi Lui, Mary. 1998. “‘The Real Yellow Peril’:
+Mapping Racial and Gender Boundaries in New
+York City’s Chinatown, 1870–1910.” Hitting
+Critical Mass: A Journal of Asian American
+Cultural Criticism, 5.1: http://socrates.berkeley.edu/~critmass/v5n1/luiprint.html.
+
+Tsai, Shih-Shan Henry. 1986. The Chinese
+Experience in America. Bloomington: Indiana
+University Press. 978-0-253-31359-1
+
+Coates, James. 1987. Armed and Dangerous: The
+Rise of the Survivalist Right. New York: Hill and
+Wang. 978-0-8090-2742-2
+
+Brandt, Claire. 1994. The Man in the Mirror: A Life
+of Benedict Arnold. New York: Random House. 978-0-679-40106-3
+
+Martin, James Kirby. 1997. Benedict Arnold,
+Revolutionary Hero: An American Warrior
+Reconsidered. New York: New York University
+Press. 978-0-8147-5560-0
+
+Wallace, Willard M. 1978. Connecticut’s Dark Star
+of the Revolution: General Benedict Arnold.
+Hartford, CT: New Era Printing. 978-0-918676-12-2
+
+Wilson, Barry K. 2001. Benedict Arnold: A Traitor in
+our Midst. Montreal: McGill University Press.
+
+
+Brown, Stuart. 1994. “Searching for the Secrets of
+Groom Lake.” Popular Science, March, 84–85.
+
+Corso, Philip J., with William J. Birnes. 1997. The
+Day after Roswell. New York: Pocket Books. 978-0-671-01756-9
+
+Good, Timothy. [1991] 1993. Alien Contact: Top-
+Secret UFO Files Revealed. New York: Quill. 978-0-688-12223-2
+
+Aukerman, Dale. 1993. Reckoning with Apocalypse.
+New York: Crossroad. 978-0-87722-297-2
+
+Barruel, Abbé Augustin de. [1797–1798] 1995.
+Memoirs Illustrating the History of Jacobinism.
+2d ed., rev. Translated by Robert Clifford. Fraser,
+MI: Real-View-Books.http://archive.org/details/BarruelMemoirsIllustratingTheHistoryOfJacobinism
+
+Bell, Daniel. 1963. The Radical Right. The New
+American Right. Rev. ed. Garden City, NY:
+Doubleday. http://archive.org/details/radicalrightthen010584mbp
+
+Berlet, Chip, and Matthew N. Lyons. 2000. Right-
+Wing Populism in America: Too Close for
+Comfort. New York: Guilford. 978-1-57230-562-5
+
+Camp, Gregory S. 1997. Selling Fear: Conspiracy
+Theories and End-Times Paranoia. Grand Rapids,
+MI: Baker Books. 978-0-8010-5721-2
+
+Cohn, Norman. [1957] 1970. The Pursuit of the
+Millennium. New York: Oxford University Press. http://archive.org/details/pursuitofmillenn0000cohn
+
+Fenster, Mark. 1999. Conspiracy Theories: Secrecy
+and Power in American Culture. Minneapolis:
+University of Minnesota Press. 978-0-8166-3242-8
+
+Fuller, Robert C. 1995. Naming the Antichrist: The
+History of an American Obsession. New York:
+Oxford University Press. 978-0-19-510979-5
+
+Hofstadter, Richard. 1965. The Paranoid Style in
+American Politics, and Other Essays. New York:
+Knopf. http://archive.org/details/paranoidstyleina0000hofs
+
+Kaplan, Jeffrey. 1997. Radical Religion in America:
+Millenarian Movements from the Far Right to the
+Children of Noah. Syracuse, NY: Syracuse
+University Press. 978-0-8156-2687-9
+
+Lindsey, Hal, with C. C. Carlson. 1970. The Late
+Great Planet Earth. Grand Rapids, MI: Zondervan. 978-0-310-27771-2
+
+Lipset, Seymour Martin, and Earl Raab. 1970. The
+Politics of Unreason; Right Wing Extremism in
+America, 1790–1970. Vol. 5. Patterns of American
+Prejudice Series. New York: Harper and Row. https://tinyurl.com/ys7kl2ev
+
+O’Leary, Stephen D. 1994. Arguing the Apocalypse:
+A Theory of Millennial Rhetoric. New York:
+Oxford University Press. 978-0-19-508045-2
+
+Quinby, Lee. 1999. Millennial Seduction: A Skeptic
+Confronts Apocalyptic Culture. Ithaca, NY:
+Cornell University Press.978-0-8014-3592-8
+
+Robbins, Thomas, and Susan J. Palmer, eds. 1997.
+Millennium, Messiahs, and Mayhem:
+Contemporary Apocalyptic Movements. New
+York: Routledge. 978-0-415-91649-3
+
+Robison, John. [1798] 1967. Proofs of a Conspiracy
+against All the Religions and Governments of
+Europe, Carried on in the Secret Meetings of Free
+Masons, Illuminati, and Reading Societies. 4th ed.
+with postscript. Boston, MA: Western Islands. https://tinyurl.com/pqersjq
+
+Spear, Robert K. 1992. Surviving Global Slavery:
+Living under the New World Order.
+Leavenworth, KS: Universal Force Dynamics. 978-0-87947-178-1
+
+Thompson, Damian. 1998. The End of Time: Faith
+and Fear in the Shadow of the Millennium.
+Hanover, NH: University Press of New England. 978-0-87451-849-8
+
+Wessinger, Catherine, ed. 2000. Millennialism,
+Persecution, and Violence: Historical Cases.
+Syracuse, NY: Syracuse University Press. 978-0-8156-2809-5
+
+
+Dinnerstein, Leonard. 1994. Antisemitism in
+America. New York: Oxford University Press. 978-0-19-531354-3
+
+Ginsberg, Benjamin. 1993. The Fatal Embrace: Jews
+and the State. Chicago, IL: University of Chicago
+Press. 978-0-226-29665-4
+
+Jaher, Frederic Cople. 1996. Scapegoat in the New
+Wilderness: The Origins and Rise of Anti-
+Semitism in America. Cambridge, MA: Harvard
+University Press. 978-0-674-79006-3
+
+Lindemann, Albert S. 1997. Esau’s Tears: Modern
+Antisemitism and the Rise of the Jews.
+Cambridge, MA: Cambridge University Press. 978-0-521-79538-8
+
+Ribuffo, Leo P. 1983. The Old Christian Right: The
+Protestant Far Right from the Great Depression
+to the Cold War. Philadelphia, PA: Temple
+University Press. 978-0-87722-297-2
+
+Bernard, Daniel Dewey. 1846. The “Anti-Rent”
+Movement and Outbreak in New York. Albany,
+NY: Weed and Parsons. https://tinyurl.com/yopawrw5
+
+Emenhiser, JeDon A. 1962. “The Anti-Rent War.”
+Armed Politics: An Analysis and Comparison of
+Six Cases in the United States. Ph.D. diss.,
+University of Minnesota.
+
+Goodman, Paul. 1988. Towards a Christian
+Republic: Antimasonry and the Great Transition
+in New England, 1826–1836. New York: Oxford
+University Press. 978-0-19-504864-3
+
+Lipson, Dorothy Ann. 1977. Freemasonry in
+Federalist Connecticut. Princeton, NJ: Princeton
+University Press.   978-0-691-04646-4
+
+Ratner, Lorman. 1969. Antimasonry: The Crusade
+and the Party. Englewood Cliffs, NJ: Prentice-
+Hall. 978-0-13-038513-0
+
+Vaughn, William Preston. 1983. The Antimasonic
+Party in the United States 1826–1843.Lexington:
+University Press of Kentucky. 978-0-8131-5040-6
+
+
+Jensen, Merrill, et al., eds. 1976–. Documentary
+History of the Ratification of the Constitution. 18
+vols. to date. Madison, WI: State Historical
+Society of Wisconsin. 978-0-87020-153-0
+
+Kenyon, Cecelia M. 1955. “Men of Little Faith: The
+Anti-Federalists on the Nature of Representative
+Government.” William and Mary Quarterly. 3d
+ser., 12: 3–43. https://doi.org/10.2307/1923094
+
+Main, Jackson Turner. 1961. The Anti-Federalists:
+Critics of the Constitution, 1781–1788. Chapel
+Hill: University of North Carolina Press. http://archive.org/details/antifederalistsc00main
+
+Rakove, Jack N. 1996. Original Meanings: Politics
+and Ideas in the Making of the Constitution. New
+York: Alfred A. Knopf. 978-0-679-78121-9
+
+Rutland, Robert Allen. 1966. The Ordeal of the
+Constitution: The Antifederalists and the
+Ratification Struggle of 1787–1788. Norman:
+University of Oklahoma Press. http://archive.org/details/ordealofconstitu0000rutl
+
+Storing, Herbert J., ed. 1981. The Complete AntiFederalist. 7 vols. Chicago, IL: University of
+Chicago Press.978-0-226-77576-0
+
+
+Almond, Gabriel, et al. 1954. The Appeals of
+Communism. Princeton, NJ: Princeton University
+Press. 978-0-691-65093-7
+
+Bell, Daniel, ed. 1955. The New American Right.
+New York: Criterion. http://archive.org/details/radicalrightthen010584mbp
+
+Caute, David. 1978. The Great Fear: The AntiCommunist Purge under Truman and
+Eisenhower. New York: Simon and Schuster. 978-0-671-24848-2
+
+Fried, Richard. 1990. Nightmare in Red: The
+McCarthy Era in Perspective. New York: Oxford
+University Press. 978-0-19-504361-7
+
+Griffith, Robert, and Athan Theoharris. 1974. The
+Specter: Original Essays on the Cold War and the
+Origins of McCarthyism. New York: Franklin
+Harris. 978-0-531-06364-4
+
+Hyman, Sidney. 1968. The Politics of Consensus.
+New York: Random House.https://archive.org/details/politicsofconsen0000hyma
+
+Isserman, Maurice. 1982. Which Side Were You On?
+The American Communist Party during the
+Second World War. Middletown, CT: Wesleyan
+University Press. ISBN: 978-0-252-06336-7
+
+McAuliffe, Mary Sperling. 1978. Crisis on the Left:
+Cold War Politics and American Liberals,
+1947–1954. Amherst: University of Massachusetts
+Press. 978-0-87023-241-1
+
+Miller, Arthur. 1972. The Crucible: Text and
+Criticism. Edited by Gerald Weaks. New York:
+Viking. 978-1-01-437134-8
+
+Powers, Richard Gid. 1987. Secrecy and Power: The
+Life of J. Edgar Hoover. New York: Free Press. 978-0-09-172598-3
+
+Schrecker, Ellen. 1998. Many Are the Crimes:
+McCarthyism in America. Princeton, NJ:
+Princeton University Press. 978-0-691-04870-3
+
+Schrecker, Ellen., ed. 1994. The Age of McCarthyism: A Brief
+History with Documents. Boston, MA: Bedford
+Books. 978-0-312-39319-9 
+
+Scott, Peter Dale. 1993. Crime and Cover-Up: The
+CIA, the Mafia, and the Dallas-Watergate
+Connection. New and rev. ed. Santa Barbara, CA:
+Open Archive Press. 978-0-9636380-0-7
+
+Summers, Anthony. 2000. The Arrogance of Power:
+The Secret World of Richard Nixon. New York:
+Viking. 978-0-14-026078-6
+
+
+
+Billington, Ray. 1938. The Protestant Crusade,
+1800–1860: A Study in the Origins of American
+Nativism. New York: Rinehart and Company, Inc. http://archive.org/details/protestantcrusad0000unse
+
+Franchot, Jenny. 1994. Roads to Rome: Catholicism
+in the Antebellum Protestant Imagination.
+Berkeley: University of California Press. 978-0-520-07818-5
+
+Higham, John. 1955. Strangers in the Land: Patterns
+of American Nativism, 1860–1925. New
+Brunswick, NJ: Rutgers University Press. 978-0-8135-3123-6
+
+Massa, Mark, S. J. 2001. “The New and Old AntiCatholicism and the Analogical Imagination.”
+Theological Studies 62: 549–571. https://doi.org/10.1177/004056390106200305
+
+McGreevy, John. 1997. “Thinking on One’s Own:
+Catholicism in the American Intellectual
+Imagination, 1928–1965.” Journal of American
+History 84: 97–131. https://doi.org/10.2307/2952736
+
+Moore, R. Laurence. 1986. Religious Outsiders and
+the Making of Americans. New York: Oxford
+University Press. 978-0-19-536399-9
+
+
+
+Avrich, Paul. 1988. Anarchist Portraits. Princeton,
+NJ: Princeton University Press. 978-0-691-00609-3
+
+Berkman, Alexander. 1970. Prison Memoirs of an
+Anarchist. New York: Schocken Books. 978-0805202670
+
+Goldman, Emma. 1970. Living My Life. New York:
+DaCapo Press.978-0-14-243785-8
+
+Morton, Marian J. 1992. Emma Goldman and the
+American Left: “Nowhere at Home.” New York:
+Twayne Publishers. 978-0-8057-7794-9
+
+Schaack, Michael J. [1889] 1977. Anarchy and
+Anarchists. Reprint, New York: Arno Press. https://www.gutenberg.org/files/52811/52811-h/52811-h.htm
+
+Trautmann, Frederic. 1980. The Voice of Terror: A
+Biography of Johann Most. Westport, CT:
+Greenwood Press. 9780313220531
+
+Woodcock, George. 1962. Anarchism: A History of
+Libertarian Ideas and Movements. Cleveland,
+OH: The World Publishing Company. 9781789122305
+
+Bailyn, Bernard. 1967. The Ideological Origins of
+the American Revolution. Cambridge, MA:
+Harvard University Press. ISBN: 978-0674443013
+
+Wood, Gordon. 1982. “Conspiracy and the Paranoid
+Style: Causality and Deceit in the Eighteenth
+Century.” William and Mary Quarterly, 3d ser.,
+39 (March): 401–441.
+
+
+Addison, Alexander. 1798. Liberty of Speech and
+Press: A Charge to the Grand Juries of the
+County Courts of the Fifth Circuit of the State of
+Pennsylvania. Washington, PA: John Colerick, for
+the Author. http://name.umdl.umich.edu/N25101.0001.001
+
+.Addison, Alexander. 1798 1800. Reports of Cases in the County
+Courts of the Fifth Circuit, and in the High Court
+of Errors and Appeals, of the State of
+Pennsylvania and Charges to the Grand Juries of
+Those County Courts. Washington, PA: John
+Colerick.
+
+Carter, Edward C., II. 1970. “A ‘Wild Irishman’
+under Every Federalist’s Bed: Naturalization in
+Philadelphia, 1789–1906.” Pennsylvania Magazine
+of History and Biography 94: 331–346. https://www.jstor.org/stable/987049
+
+Cobbett, William. 1994. Peter Porcupine in America:
+Pamphlets on Republicanism and Revolution.
+Edited by David A. Wilson. Ithaca, NY: Cornell
+University Press. 978-0-8014-2839-5
+
+Durey, Michael. 1997. Transatlantic Radicals and
+the Early American Republic. Lawrence:
+University Press of Kansas. doi: 10.1086/ahr/103.1.140
+
+Elkins, Stanley, and Eric McKitrick. 1993. The Age
+of Federalism. New York and Oxford: Oxford
+University Press. https://doi.org/10.1093/acprof:oso/9780195093810.001.0001
+
+Hamilton, Alexander. 2001. Writings. Edited by
+Joanne B. Freeman. New York: Library of America. ISBN: 978-1-93108204-4
+
+Hofstadter, Richard. 1969. The Idea of a Party
+System: The Rise of Legitimate Opposition in the
+United States, 1780–1840. Berkeley: University of
+California Press. 978-0520017542
+
+Jefferson, Thomas. 1984. Writings. Edited by
+Merrill D. Peterson. New York: Library of
+America.ISBN: 978-0-94045016-5
+
+Levy, Leonard W. 1985. Emergence of a Free Press.
+New York: Oxford University Press. 978-0-19-503506-3
+
+Miller, John C. 1951. Crisis in Freedom: The Alien
+and Sedition Acts. Boston: Little, Brown and
+Company, Atlantic Monthly Press. https://doi.org/10.2307/1895021
+
+Pasley, Jeffrey L. 2001. “The Tyranny of Printers”:
+Newspaper Politics in the Early American Republic. Charlottesville: University Press of
+Virginia. ISBN 0-8139- 2030-2 https://www.jstor.org/stable/j.ctt6wrm5f
+
+Rosenberg, Norman L. 1984. “Alexander Addison
+and the Pennsylvania Origins of Federalist First
+Amendment Thought.” Pennsylvania Magazine of
+History and Biography 108: 399–417. https://www.jstor.org/stable/20091884
+
+Rosenberg, Norman L. 1986. Protecting the Best
+Men: An Interpretive History of the Law of Libel.
+Chapel Hill: University of North Carolina Press. ISBN: 9780807816653
+
+Smith, James Morton. 1956. Freedom’s Fetters: The
+Alien and Sedition Laws and American Civil
+Liberties. Ithaca, NY: Cornell University Press. 978-0-608-18391-6
+
+
+Cantwell, Jr., Alan. 1983. AIDS: The Mystery and
+the Solution. Los Angeles, CA: Aries Rising Press.
+
+Cantwell, Jr., Alan. 1988. AIDS and the Doctors of Death. Los
+Angeles, CA: Aries Rising Press.
+
+Cantwell, Jr., Alan. 1993. Queer Blood: The Secret AIDS
+Genocide Plot. Los Angeles, CA: Aries Rising
+Press.
+
+Cantwell, Jr., Alan. 1996. “Virus Wars: Does HIV Cause
+AIDS?” Steamshovel Press 15: 8–12.
+
+Cantwell, Jr., Alan. 1997. “The Gulf BioWar: GWS and AIDS.” Paranoia 5, no. 1: 30–33.
+
+Cantwell, Jr., Alan. 1997. “AIDS: A Doctor’s Note on the ManMade Theory.” Paranoia 5, no. 2: 18–25. Cantwell, Jr., Alan. 1997. “AIDS: A Doctor’s Note on the ManMade Theory
+
+Cooper, William. 1991. Behold A Pale Horse.
+Sedona, AZ: Light Technology Publishing. 978-0-929385-22-8
+
+Douglass, William C. 1992. AIDS: The End of
+Civilization. A and B Books Publishers/Distributors. 978-1-881316-00-8
+
+Duesberg, Peter. 1996. Inventing the AIDS Virus.
+Washington, DC: Regnery Publishing. http://dx.doi.org/10.1007/978-94-009-1651-7
+
+Duesberg, Peter, and Bryan J. Ellison. 1994. Why
+We Will Never Win the War on AIDS. El Cerrito,
+CA: Inside Story. 978-0-9646475-0-3
+
+Duke, Phillip S. “The AIDS-ET Connection.” Paranoia 6, no. 1: 51–54.
+
+Fiske, John. 1994. Media Matters: Everyday Culture
+and Political Change. Minneapolis: University of
+Minnesota Press. 978-0-8166-2462-1
+
+Gilbert, David. 1996. “Tracking the Real Genocide:
+AIDS—Conspiracy or Unnatural Disaster?”
+Covert Action Quarterly 58: 55–64. https://antifascistnews.net/2017/02/28/aids-conspiracy-theories-tracking-the-real-genocide-david-gilbert-1997/
+
+Herek, Gregory M., and John P. Capitanio. 1994.
+“Conspiracies, Contagion, and Compassion: Trust
+and Public Reactions to AIDS.” AIDS Education
+and Prevention 64: 365–375. Herek & Capitanio 1994
+
+Hooper, Edward, and W. D. Hamilton. 2000. The
+River: A Journey to the Source of HIV and AIDS.
+Boston, MA: Back Bay Books. ISBN 978-0-316-37261-9
+
+Horowitz, Leonard. 1996. Emerging Viruses: AIDS
+and Ebola—Nature, Accident, or Intentional?
+Rockport, MA: Tetrahedron. 978-0-923550-12-7
+
+James, John S. 1986. “AIDS Conspiracy—Just a
+Theory?” San Francisco Sentinel, 12 September.
+http://www.immunet.org/atn/ZQX01301.html.
+
+#Knight, Peter. 2000. Conspiracy Culture: From the
+#Kennedy Assassination to The X-Files. London
+#and New York: Routledge. ISBN: 9780415189781
+
+Krupey, G. W. 1993. “AIDS: Act of God or the
+Pentagon?” Pp. 240–255 in Secret and Suppressed:
+Banned Ideas and Hidden History, ed. Jim Keith.
+Portland, OR: Feral House. 240–255. 9781936239412
+
+Lauritsen, John. 1993. The AIDS War: Propaganda,
+Profiteering, and Genocide from the Medical-Industrial Complex. New York: ASKLEPIOS
+Press. 978-0943742083
+
+Madhubuti, Haki R. 1990. Black Men: Obsolete,
+Single, Dangerous? The Afrikan American
+Family in Transition. Chicago: Third World
+Press. 978-0883781357
+
+Martin, Harry V. 1995. “Foundation of AIDS.”
+http://www.sonic.net/sentinel/gvcon1.html.
+
+Rappaport, Jon. 1988. AIDS Incorporated: The
+Scandal of the Century. San Bruno, CA: Human
+Energy Press. 978-0-941523-03-5
+
+Segal, Jakob, and Lilli Segal. 1986. AIDS: USA
+Home-Made Evil. Self-published.
+
+The Strecker Memorandum. 1988. Produced byRobert Strecker. Videocassette.
+
+Thomas, Stephen, and Sandra Crouse Quinn. 1991.
+“The Tuskegee Syphilis Study, 1932 to 1972:
+Implications for HIV Education and Risk
+Education Programs in the Black Community.”
+American Journal of Public Health 81, no. 11:
+1498–1505. http://hdl.handle.net/10822/738825
+
+Treichler, Paula A. 1999. How to Have Theory in an
+Epidemic. Durham and London: Duke University
+Press.ISBN: 978-0-8223-2286-3
+
+U.S. House. 1969. Committee on Appropriations.
+Hearings on Department of Defense
+Appropriations for 1970. 91st Cong., 1st sess.
+Washington, DC: U.S. Government Printing
+Office.
+
+Watney, Simon. 1994. Practices of Freedom. Durham and London: Duke University Press. ISBN 978-0-8223-1553-7
+
+
+
+Clodfelter, Michael. 1995. Vietnam in Military
+Statistics: A History of the Indochina Wars,
+1772–1991. Jefferson, NC: McFarland and
+Company, Inc. ISBN: 978-0-7864-0027-0
+
+Columbia Encyclopedia, Sixth Edition. 2001. “Agent Orange.” http://www.bartleby.com/65/ag/AgentOra.html
+
+Institute of Medicine (U.S.). Committee to Review
+the Health Effects in Vietnam Veterans of
+Exposure to Herbicides. 1999. Veterans and
+Agent Orange: Update 1998. Washington, DC:
+National Academy Press.https://www.ncbi.nlm.nih.gov/books/NBK535912/
+
+Krepinevich, Andrew F. 1986. The Army and
+Vietnam. Baltimore, MD: Johns Hopkins
+University Press.https://doi.org/10.56021/9780801828638
+
+Fine, Gary Alan, and Patricia A. Turner. 2001.
+Whispers on the Color Line: Rumor and Race in
+America. Berkeley: University of California Press. ISBN: 9780520228559
+
+Goldberg, Robert. 2001. Enemies Within: The
+Culture of Conspiracy in Modern America. New
+Haven, CT, and London: Yale University Press.isbn: 978-0300090000
+
+Knight, Peter. 2000. Conspiracy Culture: From the
+Kennedy Assassination to The X-Files. London
+and New York: Routledge. ISBN: 9780415189781
+
+Quinn, Eithne. “‘All Eyez on Me’: The Paranoid
+Style of Tupac Shakur.” Pp. 177–201 in
+Conspiracy Nation, ed. Peter Knight. New York:
+New York University Press. isbn: 9780814747353
+
+Turner, Patricia. 1992. I Heard It through the
+Grapevine: Rumor in African-American Culture.
+Berkeley: University of California Press. ISBN: 9780520089365
+
+
+Anonymous. The Army of God Manual.
+http://www.armyofgod.com/AOGhistory.html
+
+Blanchard, Dallas A. 1994. The Anti-abortion
+Movement and the Rise of the Religious Right:
+From Polite to Fiery Protest. New York: Maxwell
+Macmillan International.https://doi.org/10.2307/3511171
+
+Blanchard, Dallas A., and Terry J. Prewitt. 1993.
+Religious Violence and Abortion: The Gideon
+Project. Gainesville: University Press of Florida. https://doi.org/10.2307/3712182
+
+Diamond, Sara. 1998. “As If It Were Murder.” Pp.
+131–155 in Not by Politics Alone: The Enduring
+Influence of the Christian Right. New York: The
+Guilford Press. https://doi.org/10.1017/S0034670500050658
+
+National Abortion Federation. Clinic Violence.
+http://www.prochoice.org.
+
+
+
+Brown, Richard H. 1966. “The Missouri Crisis,
+Slavery, and the Politics of Jacksonianism.” South
+Atlantic Quarterly 65: 55–72. https://doi.org/10.1215/00382876-65-1-55
+
+Cain, William E., ed. 1995. William Lloyd Garrison
+and the Fight against Slavery: Selections from
+“The Liberator.” Boston, MA: Bedford Books of
+St. Martin’s Press. ISBN-13: 978-0312103866
+
+Channing, Steven A. 1974. Crisis of Fear: Secession
+in South Carolina. New York: Norton.ISBN-13: 9780393007305
+
+Cole, Donald B. 1993. The Presidency of Andrew
+Jackson. Lawrence: University Press of Kansas. https://doi.org/10.2307/2081254
+
+Davis, David Brion. 1969. The Slave Power
+Conspiracy and the Paranoid Style. Baton Rouge:
+Louisiana State University Press. https://doi.org/10.2307/1918186
+
+DiGiacomantonio, William C. 1995. “‘For the
+Gratification of a Volunteering Society’:
+Antislavery and Pressure Group Politics in the
+First Federal Congress.” Journal of the Early
+Republic 15: 169–197. https://doi.org/10.2307/3123907
+
+
+Eaton, Clement. 1964. The Freedom-of-Thought
+Struggle in the Old South. New York: Harper and
+Row. https://archive.org/details/freedomofthought00eatorich
+
+Finkelman, Paul. 1996. Slavery and the Founders:
+Race and Liberty in the Age of Jefferson. Armonk,
+NY: M. E. Sharpe. https://doi.org/10.4324/9781315720869
+
+Franklin, John Hope. 1956. The Militant South,
+1800–1861. Cambridge, MA: Belknap Press of
+Harvard University Press. ISBN: 978-0252070693
+
+Gara, Larry. 1996. The Liberty Line: The Legend of
+the Underground Railroad. Lexington: University
+Press of Kentucky. 978-0-8131-0864-3 
+
+Hinks, Peter P. 1997. To Awaken My Afflicted
+Brethren: David Walker and the Problem of
+Antebellum Slave Resistance. University Park:
+Pennsylvania State University Press. https://doi.org/10.2307/2953140
+
+Holt, Michael F. 1983. The Political Crisis of the
+1850s. New York: Norton. ISBN: 978-0393953701
+
+Jefferson, Thomas. 1984. Writings. Edited by
+Merrill D. Peterson. New York: Library of
+America. ISBN: 978-1598533484
+
+John, Richard R. 1995. Spreading the News: The
+American Postal System from Franklin to Morse.
+Cambridge, MA: Harvard University Press. ISBN 9780674833425
+
+“L.S.M.” 1852. “Negro-Mania.” DeBow’s Review 12:
+507–524. http://name.umdl.umich.edu/acg1336.1-12.005
+
+Nord, David Paul. 1984. “The Evangelical Origins of
+Mass Media in America, 1815–1835.” Journalism
+Monographs (1984): 1–30. https://files.eric.ed.gov/fulltext/ED245260.pdf
+
+Richards, Leonard L. 1970. “Gentlemen of Property
+and Standing”: Anti-Abolition Mobs in Jacksonian
+America. New York: Oxford University Press. https://doi.org/10.2307/1918187
+
+Ruffin, Edmund. 1857. “Consequences of Abolition
+Agitation, No. IV: What Effect Disunion Would
+Have upon Southern Slave Property in Peace or
+in War.” DeBow’s Review 23: 546–552. https://hdl.handle.net/2027/wu.89063005953?urlappend=%3Bseq=9
+
+Stewart, James Brewer. 1976. Holy Warriors: The
+Abolitionists and American Slavery. New York:
+Hill and Wang. ISBN: 9780809015962 
+
+United States. Congress. 1834–56. The Debates and
+Proceedings in The Congress of the United States.
+Washington, DC: Gales and Seaton. http://memory.loc.gov/ammem/amlaw/lwac.html
+
+Walker, David. 1829. Appeal to the Colored Citizens
+of the World. Boston, MA. Excerpts at http://www.pbs.org/wgbh/aia/part4/4h2931t.html
