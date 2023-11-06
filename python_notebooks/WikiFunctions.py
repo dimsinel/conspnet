@@ -46,7 +46,7 @@ def findByWikiName(wikiName, objlist):
 def printCommentsOnly(objlist):
     """Get all comments in list of entries"""
     for ob in objlist:
-        if ob.comment != None:
+        if ob.comment is not None:
             ob.print()
             print()
 ########################################################################        
@@ -64,9 +64,9 @@ class wikiItem:
         print(f'node name: {self.nodeName}')
         print(f'wiki name: {self.wikiName}')
         print(f'tag1:      {self.tag} ') 
-        if self.tag2 != None:
+        if self.tag2 is not None:
             print(f'tag2:      {self.tag2} ') 
-        if self.comment != None:
+        if self.comment is not None:
             print(f'comment:   {self.comment}')
            
 ########################################################################        
