@@ -1,6 +1,39 @@
 using PDFIO
 import DataFrames
 
+
+struct bibnames
+    name::RegexMatch
+    ref::String
+    function bibnames(ref::String)
+        # a word, a comma a space, a wor d, a possible '.', space, a third possible word 
+        single_name = r"^(\w+),\s(\w+)+[.,]{0,2}\s(\w+)?[.,]{0,2}?"
+        second_name = r"(\w+)\s(\w+)+[.,]{0,2}\s(\w+)?[.,]{0,2}?"
+        etal = r"^(\w+),\s(\w+)+,\set\sal[.,]\s(\d{4})"
+
+    end
+end
+
+mutable struct MyData
+    biblio::Dict{Any,Any}
+    fullref2short::Dict{String,Any}  # Dict{String,SSubString{String}}
+    shortref2full::Dict{String,Any}  # {String,String}
+
+    #   
+    title::String
+    start_search::Int64
+    n::Integer # 1
+    noDate::String #"No_Date"
+    breaker::Bool
+    ref_end::Int64 # where the next item starts
+end
+
+mutable struct Texts
+    txt::String
+    ency::String
+end
+
+
 """
 ​```
     getPDFText(src, out) -> Dict 
@@ -46,15 +79,15 @@ function find_title(sym::AbstractString, txt::String, in_page::UnitRange)
         change_linefeed = false
         if occursin(r"\n$", mysym)
             change_linefeed = true
-            mysym = replace(mysym, "\n"=>"")
+            mysym = replace(mysym, "\n" => "")
         end
         mysym = change_symbols(mysym)
         if change_linefeed
-            mysym = mysym*"\n"
+            mysym = mysym * "\n"
         end
         println("changed $sym, $mysym")
     end
-    
+
     title = findnext(mysym, txt, in_page[1])
     println(mysym, "  $title   ", in_page[1])
     # check if this is the first word in the page: in this case it is a headr, ignore it
@@ -64,11 +97,11 @@ function find_title(sym::AbstractString, txt::String, in_page::UnitRange)
 
     # check that this is in the correct page!
     if title[end] > in_page[end]
-        
+
         #in_page = (in_page[1]+1):in_page[end]
-        title = findnext(mysym, txt, in_page[1]+1)
+        title = findnext(mysym, txt, in_page[1] + 1)
         #usethis = replace(mysym,"\n"=>"")
-    
+
         #println(title, in_page[end])
         #println("Error at page $in_page, title $mysym, $title.")
         #return nothing
@@ -120,8 +153,8 @@ function change_symbols(sym)
     elseif sym == "Ruby Ridge Incident"
         mysym = "Ruby Ridge"
 
-    # elseif sym == "Burroughs, William S"
-    #     mysym = "Burroughs, William S."
+        # elseif sym == "Burroughs, William S"
+        #     mysym = "Burroughs, William S."
 
     elseif sym == "Central Ingelligence Agency"
         mysym = "Central Intelligence Agency"
@@ -129,14 +162,14 @@ function change_symbols(sym)
     elseif sym == "CIA"
         mysym = "Central Intelligence Agency"
 
-     elseif sym == "Venona Project"
-         mysym = "Venona"
+    elseif sym == "Venona Project"
+        mysym = "Venona"
 
-     elseif sym == "Roosevelt, Franklin Delano"
-         mysym = "Roosevelt, Franklin D"
-      
-     elseif sym == "Roosevelt, Franklin D."
-         mysym = "Roosevelt, Franklin D"
+    elseif sym == "Roosevelt, Franklin Delano"
+        mysym = "Roosevelt, Franklin D"
+
+    elseif sym == "Roosevelt, Franklin D."
+        mysym = "Roosevelt, Franklin D"
 
     elseif occursin("Larouche", sym)
         mysym = replace(sym, "Larouche" => "LaRouche")
@@ -176,18 +209,18 @@ function change_symbols(sym)
 
     elseif sym == "The Illuminatus! Trilogy"
         mysym = "Illuminatus! Trilogy"
-   
+
     elseif sym == "The Iron Heel"
-        mysym = "Iron Heel"  
+        mysym = "Iron Heel"
 
     elseif sym == "Pan Am Flight 103"
-        mysym = "Pan Am 103"  
+        mysym = "Pan Am 103"
 
     elseif sym == "Mae Brussel"
-        mysym = "Brussell, Mae"  
+        mysym = "Brussell, Mae"
 
     elseif sym == "MJ12"
-        mysym = "MJ-12"  
+        mysym = "MJ-12"
 
     elseif sym == "House Un-American Activities  Committee"
         mysym = "House Un-American Activities Committee"
@@ -196,7 +229,7 @@ function change_symbols(sym)
         mysym = "Kennedy, Robert F., Assassination of"
 
     elseif occursin("Pierce, William", sym)
-        mysym =  "Pierce, William L."
+        mysym = "Pierce, William L."
 
     elseif occursin("Constitution", sym)
         mysym = "Constitution, U.S."
@@ -222,14 +255,14 @@ function make_replacements(txt)
     txt = replace(txt, "Zionist Occupied Government" => "ZOG")
 
     txt = replace(txt, "Liddy, G Gordon" => "Liddy, G. G")
-    
+
     txt = replace(txt, "F, Assassin" => "F., Assassin")
 
-    txt = replace(txt,"Warren Commission" => "Warren Commission Report")
+    txt = replace(txt, "Warren Commission" => "Warren Commission Report")
 
-    txt = replace(txt,"Hoover, Edgar J" => "Hoover, J Edgar")
+    txt = replace(txt, "Hoover, Edgar J" => "Hoover, J Edgar")
 
-    txt = replace(txt,"mk-ultra" => "MK-ULTRA")
+    txt = replace(txt, "mk-ultra" => "MK-ULTRA")
 
     txt = replace(txt, "Johnson, Lyndon B" => "Johnson, Lyndon Baines")
 
@@ -247,11 +280,11 @@ function make_replacements(txt)
 
     txt = replace(txt, "CIA" => "Central Intelligence Agency")
 
-     txt = replace(txt, "Venona Project" => "Venona")
+    txt = replace(txt, "Venona Project" => "Venona")
 
-     txt = replace(txt, "Roosevelt, Franklin Delano" => "Roosevelt, Franklin D")
-      
-     txt = replace(txt, "Roosevelt, Franklin D." => "Roosevelt, Franklin D")
+    txt = replace(txt, "Roosevelt, Franklin Delano" => "Roosevelt, Franklin D")
+
+    txt = replace(txt, "Roosevelt, Franklin D." => "Roosevelt, Franklin D")
 
     txt = replace(txt, "Larouche" => "LaRouche")
 
@@ -280,14 +313,14 @@ function make_replacements(txt)
     txt = replace(txt, "KnowNothings" => "Know-Nothings")
 
     txt = replace(txt, "The Illuminatus! Trilogy" => "Illuminatus! Trilogy")
-   
-    txt = replace(txt, "The Iron Heel" => "Iron Heel")  
 
-    txt = replace(txt, "Pan Am Flight 103" => "Pan Am 103")  
+    txt = replace(txt, "The Iron Heel" => "Iron Heel")
 
-    txt = replace(txt, "Mae Brussel" => "Brussell, Mae")  
+    txt = replace(txt, "Pan Am Flight 103" => "Pan Am 103")
 
-    txt = replace(txt, "MJ12" => "MJ-12")  
+    txt = replace(txt, "Mae Brussel" => "Brussell, Mae")
+
+    txt = replace(txt, "MJ12" => "MJ-12")
 
     txt = replace(txt, "House Un-American Activities  Committee" => "House Un-American Activities Committee")
 
@@ -303,8 +336,8 @@ function make_replacements(txt)
 
     txt = replace(txt, "Johnson, Lyndon B" => "Johnson, Lyndon")
 
-    txt = replace(txt,"Hollywood 10"=>"Hollywood Ten")
-    txt = replace(txt,"Hoover, J."=>"Hoover J")
+    txt = replace(txt, "Hollywood 10" => "Hollywood Ten")
+    txt = replace(txt, "Hoover, J." => "Hoover J")
 end
 #######################################3333
 
@@ -337,27 +370,27 @@ function get_refs(a::UnitRange, b::UnitRange, txt::String)
         println("no References in this item!")
         ref = b
     else
-        refs 
+        refs
     end
-    
-    salsos = txt[(a[end]+2):(ref[1] -1)]
+
+    salsos = txt[(a[end]+2):(ref[1]-1)]
     #println("salsos _______ $salsos")
     # check if there is a page break here -- it should also contain a page number
-    if occursin("\f", salsos)   
+    if occursin("\f", salsos)
         #@show salsos
         # the first word after the page break is a header
-        salsos = split(salsos,"\f")
+        salsos = split(salsos, "\f")
         # page braks are of the form "\n\n57\n\n\f"
-        salsos[1] = replace(salsos[1],r"\W{1,}\d{1,}?\W{1,}"=>" " )
-        splitsalsos = split(salsos[2],";")[2:end]
+        salsos[1] = replace(salsos[1], r"\W{1,}\d{1,}?\W{1,}" => " ")
+        splitsalsos = split(salsos[2], ";")[2:end]
         #@show salsos[1], splitsalsos, length(splitsalsos)
         #if length(splitsalsos) != 0\
-       salsos = length(splitsalsos) > 0 ?  salsos[1]*splitsalsos[1] : salsos[1] 
+        salsos = length(splitsalsos) > 0 ? salsos[1] * splitsalsos[1] : salsos[1]
     end
-    
+
     salsos = replace(salsos, "." => "")
     salsos = replace(salsos, "\n" => " ")
-    salsos = split(salsos,";") .|> strip
+    salsos = split(salsos, ";") .|> strip
     #println("2 --- a=$a, b=$b, txt[b]=$(txt[b])" )
     #println("2 salsos ------ " , salsos)
     return salsos
@@ -381,3 +414,456 @@ end
 
 
 
+function find_numeral_in_entry_line(line::String)
+
+    bibitem = replace(line, "RR " => "", "." => " ") |> split
+    #bibitem = [tryparse.(Int,x) for x in bibitem ]
+    bibitem = filter.(isdigit, bibitem)
+    bibitem = bibitem[bibitem.!=nothing]  # removes nothings
+
+end
+
+
+#
+################################################
+function get_shortref(ref, date)
+    # For Knight book
+    # tHIS is a pain. Depending on the way the second name is written, this 
+    # function must change...
+    if occursin("L.S.M", ref)
+        ref = replace(ref, "L.S.M." => "L_S_M")
+        @show ref
+    end
+    if occursin("A. B.", ref)
+        ref = replace(ref, "A. B." => "A_B_ ")
+        @show ref
+    end
+
+    if startswith(ref, "U.S. ")
+        ref = replace(ref, "U.S. " => "US_")
+    end
+
+
+    splitref = (@pipe split(ref, ",") |> split.(_, "."))
+    # datematch = match(r"(\(\d{4}\))", ref) # 4 digit number enclosed in parens(1234)
+    # splitref = String[]
+
+    # push!(splitref, ref1 )
+    # ref2 = ref[findfirst(datematch.captures[1], ref)[end]+1:end]
+
+    shortref = replace(splitref[1][1], "_" => ". ")
+    shortref = shortref * "  " * date
+
+    if startswith(ref, "A_B_ ")
+        shortref = "A. B. 1972"
+    end
+
+    if startswith(ref, "Martin, Albro")
+        shortref = "Martin No_Date"
+    end
+
+    if startswith(ref, "Steam")
+        shortref = "Steamshovel No_Date"
+    end
+
+    if startswith(ref, "Institute of Medicine")
+        shortref = "Institute of Medicine 1999"
+    end
+    if startswith(ref, "Subcommittee on Crime of the Committee")
+        shortref = "Subcommittee on Crime 1996"
+    end
+    if startswith(ref, "Reefer Madness")
+        shortref = "Reefer Madness 1938"
+    end
+    if startswith(ref, "Global Survival Network (GSN)")
+        shortref = "Global Survival Network GSN 1997"
+    end
+    if startswith(ref, "Southern Poverty Law Center (SPLC)")
+        shortref = "Southern Poverty Law Center SPLC 1997"
+    end
+    return ref, splitref, strip(shortref)
+end
+################################################
+function get_shortref2(ref, date)
+
+    datepoint = findfirst(date, ref)
+
+    
+    if startswith(ref, "Staggenborg, S., Eder, D., and")
+    #     datepoint = "(1993-1994)"
+    # end
+    splitref = (@pipe split(ref[1:datepoint[begin]], ",") |> split.(_, "."))
+    # datematch = match(r"(\(\d{4}\))", ref) # 4 digit number enclosed in parens(1234)
+    # splitref = String[]
+
+    # push!(splitref, ref1 )
+    # ref2 = ref[findfirst(datematch.captures[1], ref)[end]+1:end]
+
+    shortref = replace(splitref[1][1], "_" => ". ")
+    shortref = shortref * "  " * date
+
+    if startswith(ref, "Indymedia Documentation Project")
+        shortref = "Indymedia Documentation Project (No Date)"
+    end
+    
+    return ref, splitref, strip(shortref)
+end
+
+#############################################3
+function change_title(title, ency)
+    # try if tehre is a starting The
+    tt = ""
+    if startswith(title, "The ")
+        tt = replace(title, "The " => "")
+
+        if occursin(tt, ency)
+            return tt
+        end
+    else
+        #     println(title, occursin(title, ency))
+
+
+        if title == "Roosevelt, Franklin D."
+            tt = "Roosevelt, Franklin Delano"
+            # elseif title == "The Dorr War"
+            #     title = "Dorr War"
+
+            return tt
+        end
+    end
+    return title
+end
+
+
+
+################################################33
+function is_in_biblio(shortref, bibitem_string)
+    made_changes = false
+    if shortref ∈ bibitem_string # tehre is oalready a ref fron thw same aytor and year
+        made_changes = true # we are going to add something eventually
+        notfoundityet = true
+
+        while notfoundityet
+            println(shortref, " ∈ bibitem_string:   ", bibitem_string)
+            # this is either "ref (1234)", or "ref (1234) (1)
+            m = match(r"\((\d{1})\)", shortref) # match the final "(i)"
+            if isnothing(m) # no final number found
+                shortref *= " (1)" # add one
+            else
+                new_num = tryparse(Int, m[1])
+
+                if !isnothing(new_num)
+                    new_num += 1
+                    shortref = replace(shortref, r"(\(\d{1}\))" => string(" (", new_num, ")"))
+                    @show shortref
+                end
+            end
+            if shortref ∉ bibitem_string
+                notfoundityet = false # found it!
+                break
+            end
+        end
+
+    end
+    return strip(shortref), made_changes
+end
+#########################################
+
+#################################################3
+function bootstrap(infile::String)
+    ###3
+    infile = infile |> FileDocument
+    txt = Texts(text(infile),
+        (datadir("exp_pro", "ency_items.txt") |> FileDocument |> text))
+
+    txt.txt = replace(txt.txt, "\u201c" => String(raw"\""))
+    txt.txt = replace(txt.txt, "’" => String(raw"'"))
+
+    txt.ency = (datadir("exp_pro", "ency_items.txt") |> FileDocument |> text)
+    txt.ency = replace(txt.ency, "\u201c" => String(raw"\""))
+    txt.ency = replace(txt.ency, "’" => String(raw"'"))
+
+    # This is ufortunate, but due to misspellings int ie book...
+    #txt =  make_replacements(txt)
+    #"""
+
+    dat = MyData(Dict{String,String}(),
+        Dict{String,String}(),
+        Dict{String,String}(),
+        "",
+        1,
+        1,
+        "No_Date",
+        false,
+        0,)
+
+    return dat, txt
+end
+
+#################################################3
+function find_title(txt::Texts, dat::MyData)
+
+    tit_start = findnext("## ", txt.txt, dat.start_search)
+    if isnothing(tit_start)
+        return nothing # Base.nothing_sentinel
+    else
+        tit_start = tit_start[end]
+    end
+
+    tit_end = findnext("\n", txt.txt, tit_start)[1]
+    dat.title = strip(txt.txt[tit_start:tit_end])
+    #println("=========  ",title)
+    dat.title = change_title(dat.title, txt.ency)
+    println("=========  ", dat.title)
+    #occursin("Aryan", dat.title) && break
+    ref_start = findnext("RR ", txt.txt, tit_end)[end]
+    dat.ref_end = findnext("++", txt.txt, ref_start)[1]
+    #@show ref_end, typeof(ref_end)
+
+    refs = split(txt.txt[ref_start:dat.ref_end], "RR ")
+    refs = replace.(refs, "\n" => "")
+    refs = filter(!=(""), refs)
+    refs = filter(!=(" "), refs)
+
+    return refs
+
+end
+
+###############################################
+
+function break_refs(refs, dat, bibitem_string)
+
+    for refwBlanks in refs #loop over references of the current title
+        ref = strip(refwBlanks)
+        if ref == ""
+            @show dat.title, refs
+            dat.breaker = true
+        end
+        # if startswith(ref, "Waco dat.breaker") 
+        #     println(">>>>>>>>>>>> ",title)
+        #     global dat.breaker = true
+        # end
+        if startswith(ref, '"')
+            ref = replace(ref, "\"" => "")
+        end
+
+
+        #datematch = match(r"[^\[](\d{4})", ref) # 4 digit number, but not if thery are of the form [1234]
+        datematch = match(r"(\(\d{4}\))", ref) # 4 digit number enclosed in parens(1234)
+
+        # a word, a comma a space, a word, a possible '.', space, a third possible word 
+        # single_name = r"^(\w+),\s(\w+)+[.,]{0,2}\s(\w+)?[.,]{0,2}?"
+        single_name = r"^(\w+),\s*(\w+\.*\w\.)*\s*"
+        single_backup = r"^(\w+)"
+        second_name = r"(\w+)\s(\w+)+[.,]{0,2}\s(\w+)?[.,]{0,2}?"
+        etal = r"^(\w+),\s(\w+)+,\set\sal[.,]\s(\(\d{4}\))"
+
+        @show dat.title
+        #@show  etal
+
+        #@show ref
+        println()#
+        found_single = false
+
+        fname = match(single_name, ref)
+        if isnothing(fname)
+            println("single name fname is nothing.")
+            fname = match(single_backup, ref)
+            println("trying backup for ref:", ref)
+        end
+        #if this is still empty, then there are no references
+        if isnothing(fname)
+            dat.biblio[dat.title] = []
+            continue
+        end
+
+        date = dat.noDate
+        if !isnothing(datematch)
+            date = datematch.captures[1]
+            # remove parens, if they exist, eg in (1999)
+            date = strip(date, ['(', ')'])
+            #@show datematch.offsets
+        end
+
+        # # is this enough?
+        # we might have a date as the last part of the name
+        ## !!!!!!!!!!!!!!!! BUUUUG !!!!!!!!!!!!!!!!!!!!!!!
+        if length(fname.captures) == 3
+            if !isnothing(datematch)
+
+                if fname.captures[3] == date
+                    # ok get the name and date and get out ### WHAT??
+                end
+            end
+        end
+
+
+        found_etal = false
+        if occursin(etal, ref)
+            println("found etal in ", ref)
+            found_etal = true
+            #readline()
+        end
+        @show ref, date
+        # choose get_shortref according to book...
+        #ref, splitref, shortref = get_shortref(ref, date)
+        ref, splitref, shortref = get_shortref2(ref, date)
+
+        found_double = false
+        sname = nothing
+        if found_etal
+            # there is already a date here, remove it first and then ad et al
+            #shortref = replace(shortref, r"\s+\d{4}"=>"")*" et al "*date
+            shortref = replace(shortref, date => "et al " * date)
+        else
+            #check for second author, in case no et al was found
+            #tempslit = length(splitref) > 1 ? splitref[2] : splitref
+            #@show tempslit
+            @show ref
+            @show fname
+            #@show date, shortref
+            if !isnothing(datematch)
+                #@show max(fname.offsets...), max(datematch.offsets...)
+                if max(fname.offsets...) + 3 <= max(datematch.offsets...)
+                    # lets look if there is a "and" here
+                    #@show fname.captures[end]
+                    andmatch = match(r"\s?(and)", ref, max(fname.offsets...))
+                    if !isnothing(andmatch)
+                        #println("No 'and' found")
+                        #else
+                        #@show andmatch  andmatch.offsets
+                        if max(fname.offsets...) <= andmatch.offsets[1] <= max(datematch.offsets...)
+                            # this is an author 'and'
+                            sname = match(second_name, ref, andmatch.offsets[1]) # + length("and"))
+                            @show sname
+                            if !isnothing(sname)
+                                # find the last non-nothing entry, which must also starts w/ a capital letter name
+                                my_cond = x -> isnothing(x) || isnothing(match(r"^[A-Z]", x))
+                                last_non_nothing = findlast(!my_cond, sname.captures)
+                                first_non_nothing = findfirst(!my_cond, sname.captures)
+                                ##last_non_nothing = findlast( !isnothing, sname.captures)
+                                
+                                # Knight uses the format A. B. Cdefg for the second author
+                                #capts = sname.captures[1:last_non_nothing]
+                                
+                                # this is for the format of the second author same as the first
+                                capts = sname.captures[1:first_non_nothing]
+
+                                #now first eliminate any numbers that are here (ie dates)
+                                capts = capts[findall(isnothing, match.(r"\s?\d+\s?", capts))]
+                                addedstring = "and " * capts[end] * " "
+                                shortref = replace(shortref, date => addedstring * date)
+                            end
+                        end
+                    end
+                    #@show match(r"\w+"*date,ref, max(fname.offsets...) )
+                end
+            end
+        end
+
+        if !isnothing(sname)
+            # add a second name to shortref
+        end
+
+        shortref = split(shortref)
+        matchdate_atend = match(r"\d{4}", strip(shortref[end]))
+        if isnothing(matchdate_atend) && shortref[end] != dat.noDate
+            println(shortref, " There was a problem, Breaking")
+            break
+        end
+        shortref[end] = "(" * shortref[end] * ")"
+        shortref = join(shortref, " ")
+        shortref = strip(shortref)
+        @show "before show " shortref
+        # this one just constructs a new name if the current name already exists in bibitem_string
+        # made_changes == true means that a new name was constructed, otherwise the same name is reurnd
+        shortref, made_changes = is_in_biblio(shortref, bibitem_string)
+        # in both cases, shortref must be added in bibitem_string
+
+        println("after show ", shortref, "  ", made_changes)
+        println(bibitem_string)
+
+
+        shortref = split(shortref)
+        # check if the last term is (1), (2) etc
+        last_term_multiplicity = match(r"\(\d{1}\)", strip(shortref[end]))
+        last_term = ""
+        if !isnothing(last_term_multiplicity)
+            last_term = pop!(shortref)
+        end
+
+        push!(shortref, last_term)
+        shortref = join(shortref, " ")
+        shortref = strip(shortref)
+        println("---> ", shortref, ", ", ref)
+
+        push!(bibitem_string, shortref)
+        if ref ∉ keys(dat.fullref2short)
+            dat.fullref2short[ref] = [shortref]
+        else
+            @pipe shortref |> push!(dat.fullref2short[ref], _)
+        end
+
+        if shortref ∉ keys(dat.shortref2full)
+            dat.shortref2full[shortref] = [ref]
+        else
+            @pipe ref |> push!(dat.shortref2full[shortref], _)
+        end
+
+        if dat.title ∉ keys(dat.biblio)
+            dat.biblio[dat.title] = [shortref]
+        else
+            @pipe shortref |> push!(dat.biblio[dat.title], _)
+        end
+        datematch = nothing
+        date = nothing
+        @show shortref
+
+    end
+    # 
+end
+#################################################3
+
+function loop_refs_from_txt(infile::String)
+    # begin # 172
+
+    dat, txt = bootstrap(infile)
+
+    while true # loop over dat.titles
+        dat.n += 1
+        dat.breaker = false
+        bibitem_string = String[]
+
+        refs = find_title(txt, dat)
+        @show refs
+
+        if isnothing(refs)
+            break
+        end
+        # if dat.n > 10
+        #     break
+        # end
+
+        #fullref2short, shortref2full = 
+        break_refs(refs, dat, bibitem_string)
+
+
+        #println(ref_vect)
+        #return ref_vect
+
+
+        if dat.breaker #
+            break
+        end
+
+        dat.start_search = dat.ref_end
+    end
+
+    return dat
+end
+
+
+#
+
+
+##############################3
