@@ -73,7 +73,7 @@ end
 #################################################################333
 function find_title(sym::AbstractString, txt::String, in_page::UnitRange)
     mysym = strip(sym)
-    @show mysym
+    #@show mysym
     title = findnext(mysym, txt, in_page[1])
     if isnothing(title)
         change_linefeed = false
@@ -426,7 +426,7 @@ end
 
 #
 ################################################
-function get_shortref(ref, date)
+function get_shortref2(ref, date)
     # For Knight book
     # tHIS is a pain. Depending on the way the second name is written, this 
     # function must change...
@@ -484,29 +484,28 @@ function get_shortref(ref, date)
     return ref, splitref, strip(shortref)
 end
 ################################################
-function get_shortref2(ref, date)
+function get_shortref(ref, date)
 
     datepoint = findfirst(date, ref)
 
-    
-    if startswith(ref, "Staggenborg, S., Eder, D., and")
+
+    # if startswith(ref, "Staggenborg, S., Eder, D., and")
     #     datepoint = "(1993-1994)"
     # end
-    splitref = (@pipe split(ref[1:datepoint[begin]], ",") |> split.(_, "."))
-    # datematch = match(r"(\(\d{4}\))", ref) # 4 digit number enclosed in parens(1234)
-    # splitref = String[]
 
-    # push!(splitref, ref1 )
-    # ref2 = ref[findfirst(datematch.captures[1], ref)[end]+1:end]
+    if startswith(ref, "Indymedia Documentation Project")
+        shortref = "Indymedia Documentation Project (No Date)"
+        l = length(ref)
+        datepoint = l:l
+    end
+
+    splitref = (@pipe split(ref[1:datepoint[begin]], ",") |> split.(_, "."))
 
     shortref = replace(splitref[1][1], "_" => ". ")
     shortref = shortref * "  " * date
 
-    if startswith(ref, "Indymedia Documentation Project")
-        shortref = "Indymedia Documentation Project (No Date)"
-    end
-    
-    return ref, splitref, strip(shortref)
+
+    return splitref, strip(shortref)
 end
 
 #############################################3
@@ -579,6 +578,10 @@ function bootstrap(infile::String)
     txt.txt = replace(txt.txt, "\u201c" => String(raw"\""))
     txt.txt = replace(txt.txt, "’" => String(raw"'"))
 
+    txt.txt = replace(txt.txt, "”" => String(raw"\""))
+    txt.txt = replace(txt.txt, "“" => String(raw"\""))
+
+    txt.txt = Unicode.normalize(txt.txt)
     txt.ency = (datadir("exp_pro", "ency_items.txt") |> FileDocument |> text)
     txt.ency = replace(txt.ency, "\u201c" => String(raw"\""))
     txt.ency = replace(txt.ency, "’" => String(raw"'"))
@@ -628,175 +631,210 @@ function find_title(txt::Texts, dat::MyData)
     return refs
 
 end
+#############################################
+function get_second_author(ref, shortref, refanalysis)
+
+    # lets look if there is a "and" here
+    #@show refanalysis.fname.captures[end]
+
+    if !isnothing(refanalysis.andmatch)
+
+        #@show andmatch  andmatch.offsets
+        if max(refanalysis.fname.offsets...) <= andmatch.offsets[1] <= max(datematch.offsets...)
+            #second_name = r"(\w+)\s(\w+)+[.,]{0,2}\s(\w+)?[.,]{0,2}?"
+            second_name = r"(\w+),\s*[A-Z]\.,\s[A-Z]?"
+            # this is an author 'and'
+            sname = match(second_name, ref, andmatch.offsets[1]) # + length("and"))
+            @show sname
+            if !isnothing(sname)
+                # find the last non-nothing entry, which must also starts w/ a capital letter name
+                my_cond = x -> isnothing(x) || isnothing(match(r"^[A-Z]", x))
+                last_non_nothing = findlast(!my_cond, sname.captures)
+                first_non_nothing = findfirst(!my_cond, sname.captures)
+                ##last_non_nothing = findlast( !isnothing, sname.captures)
+
+                # Knight uses the format A. B. Cdefg for the second author
+                #capts = sname.captures[1:last_non_nothing]
+
+                # this is for the format of the second author same as the first
+                capts = sname.captures[1:first_non_nothing]
+
+                #now first eliminate any numbers that are here (ie dates)
+                capts = capts[findall(isnothing, match.(r"\s?\d+\s?", capts))]
+                addedstring = "and " * capts[end] * " "
+                shortref = replace(shortref, date => addedstring * date)
+            end
+        end
+    end
+
+    return shortref
+end
+
 
 ###############################################
 
+
+#################################################
+function special_cases(ref)
+    #@show ref, startswith("Indymedia Documentation", ref)
+    if startswith(ref, "Indymedia Documentation Project")
+        #retref = "Indymedia Documentation Project"
+        return Bibitem([match(Regex(ref), ref)], nothing, match(r"No Date", "No Date"), nothing)
+
+    end
+    if startswith(ref, "Osborn, A. Violence and hatred in Russia")
+        # this is a newspaper article, not easily found anymore
+        return Bibitem()
+    end
+    # if startswith(ref, "CRIS Handbook: www.centreforcommunication")
+    #     return Bibitem([match(Regex(ref), ref)], nothing, match(r"No Date", "No Date"), nothing)
+
+    # end
+    if occursin(" www.", ref)
+        @show ref
+        return Bibitem([match(Regex(ref), ref)], nothing, match(r"No Date", "No Date"), nothing)
+    end
+end
+#################################################3
+abstract type AbsBibitem end
+
+struct Bibitem{S<:AbstractMatch} <: AbsBibitem
+
+    authors::Union{Nothing,Vector{S}} # Union{Nothing,RegexMatch{String}}[]
+    etal::Union{Nothing,S}
+    datematch::Union{Nothing,S}
+    andmatch::Union{Nothing,S}
+
+end
+
+Bibitem() = Bibitem(RegexMatch[], nothing, nothing, nothing)
+
+
+function Bibitem(ref::S) where S<:AbstractString
+
+    ref2d = ref
+    authors = Vector{RegexMatch{S}}
+
+    namematcher = r"(\w+),\s*[A-Z]?\.?,*\s?[A-Z]?\.?"
+
+    datematch = match(r"(\(\d{4}[a-d\s]?[\/,\–]*[\d{4}]*\))", ref)
+    if isnothing(datematch)
+        # check for other rare cases
+        datematch = match(r"(\(forthcoming\))", ref)
+        if isnothing(datematch)
+            # check for other rare cases
+            datematch = match(r"(\(forthcoming\))", ref)
+            if isnothing(datematch)
+                datematch = match(r"(\(n.d.\))", ref)
+            end
+        end
+    end
+    if isnothing(datematch)
+        return special_cases(ref)
+    end
+    @show ref
+
+    # All the names must be before the date
+    ref2d = ref[1:datematch.offsets[1]-1]
+
+    etal = match(r"\set\sal[.,]?", ref2d)
+    andmatch = match(r"\s(and)\s", ref2d)
+
+    firsttime = true
+    while true
+
+        single_name = match(namematcher, ref2d)
+        if isnothing(single_name)
+            if firsttime
+                return Bibitem()
+            else
+                break
+            end
+        end
+
+        # we have a match for at least a name
+        if firsttime
+            authors = [single_name]
+            firsttime = false
+        else
+            push!(authors, single_name)
+        end
+        offs = single_name.offsets[1] + length(single_name.match)
+        try
+            ref2d = ref2d[offs:end]
+        catch e
+            @warn "Error in Bibitem cstor"
+            println(e)
+            @show single_name
+            println("Using graphemes to get the rest of the string")
+            ref2d = graphemes(ref2d, offs:(length(ref2d)-1))
+            @show ref2d
+        end
+        #n_of_authors += 1
+        #@show single_name, single_name.offsets
+    end
+    return Bibitem(authors, etal, datematch, andmatch)
+end
+
+###############################################
+#=
+1 find first author
+2 find date
+3 find etal
+4 find and
+
+5 if etal return
+6 if and is after the first author, get the second author and return
+
+7 if no and between 1st and 2nd, find all authors
+=#
+##############################################3
 function break_refs(refs, dat, bibitem_string)
 
     for refwBlanks in refs #loop over references of the current title
         ref = strip(refwBlanks)
         if ref == ""
-            @show dat.title, refs
             dat.breaker = true
         end
-        # if startswith(ref, "Waco dat.breaker") 
-        #     println(">>>>>>>>>>>> ",title)
-        #     global dat.breaker = true
-        # end
+
         if startswith(ref, '"')
             ref = replace(ref, "\"" => "")
         end
+        
+        refanalysis = Bibitem(ref) # 
 
+        shortref = ""
 
-        #datematch = match(r"[^\[](\d{4})", ref) # 4 digit number, but not if thery are of the form [1234]
-        datematch = match(r"(\(\d{4}\))", ref) # 4 digit number enclosed in parens(1234)
+        #println()#
 
-        # a word, a comma a space, a word, a possible '.', space, a third possible word 
-        # single_name = r"^(\w+),\s(\w+)+[.,]{0,2}\s(\w+)?[.,]{0,2}?"
-        single_name = r"^(\w+),\s*(\w+\.*\w\.)*\s*"
-        single_backup = r"^(\w+)"
-        second_name = r"(\w+)\s(\w+)+[.,]{0,2}\s(\w+)?[.,]{0,2}?"
-        etal = r"^(\w+),\s(\w+)+,\set\sal[.,]\s(\(\d{4}\))"
-
-        @show dat.title
-        #@show  etal
-
-        #@show ref
-        println()#
-        found_single = false
-
-        fname = match(single_name, ref)
-        if isnothing(fname)
-            println("single name fname is nothing.")
-            fname = match(single_backup, ref)
-            println("trying backup for ref:", ref)
-        end
         #if this is still empty, then there are no references
-        if isnothing(fname)
-            dat.biblio[dat.title] = []
-            continue
-        end
-
-        date = dat.noDate
-        if !isnothing(datematch)
-            date = datematch.captures[1]
-            # remove parens, if they exist, eg in (1999)
-            date = strip(date, ['(', ')'])
-            #@show datematch.offsets
-        end
-
-        # # is this enough?
-        # we might have a date as the last part of the name
-        ## !!!!!!!!!!!!!!!! BUUUUG !!!!!!!!!!!!!!!!!!!!!!!
-        if length(fname.captures) == 3
-            if !isnothing(datematch)
-
-                if fname.captures[3] == date
-                    # ok get the name and date and get out ### WHAT??
-                end
+        try
+            if isnothing(refanalysis.authors) || length(refanalysis.authors) == 0
+                dat.biblio[dat.title] = []
+                continue
             end
+        catch e
+            println("Error at $(dat.title)")
+            println("ref: $ref")
+            #println("After character $(dat.start_search)")
         end
 
-
-        found_etal = false
-        if occursin(etal, ref)
-            println("found etal in ", ref)
-            found_etal = true
-            #readline()
-        end
-        @show ref, date
         # choose get_shortref according to book...
-        #ref, splitref, shortref = get_shortref(ref, date)
-        ref, splitref, shortref = get_shortref2(ref, date)
-
-        found_double = false
-        sname = nothing
-        if found_etal
-            # there is already a date here, remove it first and then ad et al
-            #shortref = replace(shortref, r"\s+\d{4}"=>"")*" et al "*date
-            shortref = replace(shortref, date => "et al " * date)
-        else
-            #check for second author, in case no et al was found
-            #tempslit = length(splitref) > 1 ? splitref[2] : splitref
-            #@show tempslit
-            @show ref
-            @show fname
-            #@show date, shortref
-            if !isnothing(datematch)
-                #@show max(fname.offsets...), max(datematch.offsets...)
-                if max(fname.offsets...) + 3 <= max(datematch.offsets...)
-                    # lets look if there is a "and" here
-                    #@show fname.captures[end]
-                    andmatch = match(r"\s?(and)", ref, max(fname.offsets...))
-                    if !isnothing(andmatch)
-                        #println("No 'and' found")
-                        #else
-                        #@show andmatch  andmatch.offsets
-                        if max(fname.offsets...) <= andmatch.offsets[1] <= max(datematch.offsets...)
-                            # this is an author 'and'
-                            sname = match(second_name, ref, andmatch.offsets[1]) # + length("and"))
-                            @show sname
-                            if !isnothing(sname)
-                                # find the last non-nothing entry, which must also starts w/ a capital letter name
-                                my_cond = x -> isnothing(x) || isnothing(match(r"^[A-Z]", x))
-                                last_non_nothing = findlast(!my_cond, sname.captures)
-                                first_non_nothing = findfirst(!my_cond, sname.captures)
-                                ##last_non_nothing = findlast( !isnothing, sname.captures)
-                                
-                                # Knight uses the format A. B. Cdefg for the second author
-                                #capts = sname.captures[1:last_non_nothing]
-                                
-                                # this is for the format of the second author same as the first
-                                capts = sname.captures[1:first_non_nothing]
-
-                                #now first eliminate any numbers that are here (ie dates)
-                                capts = capts[findall(isnothing, match.(r"\s?\d+\s?", capts))]
-                                addedstring = "and " * capts[end] * " "
-                                shortref = replace(shortref, date => addedstring * date)
-                            end
-                        end
-                    end
-                    #@show match(r"\w+"*date,ref, max(fname.offsets...) )
-                end
+        if length(refanalysis.authors) == 1
+            if isnothing(refanalysis.etal)
+                shortref = refanalysis.authors[1].match * " " * refanalysis.datematch.match
+            else
+                shortref = refanalysis.fname.match * " et al " * refanalysis.datematch.match
             end
         end
+        println("@@@@ ", shortref)
 
-        if !isnothing(sname)
-            # add a second name to shortref
+        if length(refanalysis.authors) > 1
+            shortref = refanalysis.authors[1].match * " et al " * refanalysis.datematch.match
         end
 
-        shortref = split(shortref)
-        matchdate_atend = match(r"\d{4}", strip(shortref[end]))
-        if isnothing(matchdate_atend) && shortref[end] != dat.noDate
-            println(shortref, " There was a problem, Breaking")
-            break
-        end
-        shortref[end] = "(" * shortref[end] * ")"
-        shortref = join(shortref, " ")
-        shortref = strip(shortref)
-        @show "before show " shortref
-        # this one just constructs a new name if the current name already exists in bibitem_string
-        # made_changes == true means that a new name was constructed, otherwise the same name is reurnd
-        shortref, made_changes = is_in_biblio(shortref, bibitem_string)
-        # in both cases, shortref must be added in bibitem_string
 
-        println("after show ", shortref, "  ", made_changes)
-        println(bibitem_string)
-
-
-        shortref = split(shortref)
-        # check if the last term is (1), (2) etc
-        last_term_multiplicity = match(r"\(\d{1}\)", strip(shortref[end]))
-        last_term = ""
-        if !isnothing(last_term_multiplicity)
-            last_term = pop!(shortref)
-        end
-
-        push!(shortref, last_term)
-        shortref = join(shortref, " ")
-        shortref = strip(shortref)
-        println("---> ", shortref, ", ", ref)
-
+        println("=== $(shortref)")
         push!(bibitem_string, shortref)
         if ref ∉ keys(dat.fullref2short)
             dat.fullref2short[ref] = [shortref]
@@ -815,55 +853,9 @@ function break_refs(refs, dat, bibitem_string)
         else
             @pipe shortref |> push!(dat.biblio[dat.title], _)
         end
-        datematch = nothing
-        date = nothing
-        @show shortref
+
+
 
     end
-    # 
 end
-#################################################3
-
-function loop_refs_from_txt(infile::String)
-    # begin # 172
-
-    dat, txt = bootstrap(infile)
-
-    while true # loop over dat.titles
-        dat.n += 1
-        dat.breaker = false
-        bibitem_string = String[]
-
-        refs = find_title(txt, dat)
-        @show refs
-
-        if isnothing(refs)
-            break
-        end
-        # if dat.n > 10
-        #     break
-        # end
-
-        #fullref2short, shortref2full = 
-        break_refs(refs, dat, bibitem_string)
-
-
-        #println(ref_vect)
-        #return ref_vect
-
-
-        if dat.breaker #
-            break
-        end
-
-        dat.start_search = dat.ref_end
-    end
-
-    return dat
-end
-
-
-#
-
-
-##############################3
+#       
