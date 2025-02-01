@@ -1,67 +1,237 @@
 using DrWatson
 quickactivate("conspnet")
-
-using TextAnalysis
-using Pipe: @pipe
-using DataStructures
-#using Debugger
-using Revise
-using Unicode 
-
-includet(srcdir("functions.jl"))
-#################################
-function loop_refs_from_txt(infile::String)
-   # begin # 172
-
-   dat, txt = bootstrap(infile)
-
-   while true # loop over dat.titles
-      dat.n += 1
-      dat.breaker = false
-      bibitem_string = String[]
-
-      refs = find_title(txt, dat)
-      @show refs
-
-      if isnothing(refs)
-         break
-      end
-      if dat.n > 100
-          break
-      end
-
-      break_refs(refs, dat, bibitem_string)
-
-
-      #println(ref_vect)
-      #return ref_vect
-
-
-      if dat.breaker #
-         break
-      end
-
-      dat.start_search = dat.ref_end
-   end
-
-   return dat
+begin
+   import JSON
+   using TextAnalysis
+   using Pipe: @pipe
+   using DataStructures
+   #using Debugger
+   using Revise
+   using Unicode
 end
+includet(srcdir("functions.jl"))
 
 #################################
 
 #infile = datadir("ConspiracyKnight_byhand.txt")
 infile = datadir("Snow.txt")
-#@run 
-dat = loop_refs_from_txt(infile)
+dat = loop_refs_from_txt(infile);
+
 #################################
+#@run dat = loop_refs_from_txt(infile)
+#################################
+#sortedrefs  = sort!([dat.namedates...])
+###########################################
+function shortenref(dat)
+   shortrefs = Dict{String,String}()
+   # namedates is a set, so its entries are unique
+   # test
+   @assert length(dat.namedates) == length(dat.shref2full)
 
+   global datematch
 
- Van De Von D’Anieri
+   x = 1
+   for i in dat.namedates
 
-for (i, k) in dat.biblio
-   println("$i => $k")
+      if length(dat.biblio_item[i].authors) <= 2
+         if i ∈ values(shortrefs)
+            println("shortrefs[$i] = $(shortrefs[i])")
+            x = 2
+
+         end
+         shortrefs[i] = i
+         # we may continue since the uniqueness of these namedates are checjed elsewere
+         continue
+      end
+
+      println("$i => $(length(dat.biblio_item[i].authors))")
+      shdate = findfirst(datematch, i)
+      a = false
+      if shdate === nothing
+         a = true
+         shdate = findfirst(r"(?!\(eds\))(\(.*\))", i) # what is in parentehses, but not (eds)
+         #leaves unchanged
+         println("NO date in $i, using $(i[shdate])")
+      end
+      #@show  i[shdate]
+      #@show dat.biblio_item[i].authors
+      newshortref = dat.biblio_item[i].authors[1].match * " et al " * i[shdate]
+
+      println("newshortref = $newshortref")
+
+      notfoundeq = true
+      while notfoundeq
+         oldshortref = newshortref
+         newshortref = change_shortref(dat, i, oldshortref, shortrefs)
+         if newshortref == oldshortref
+            notfoundeq = false
+         end
+      end
+      shortrefs[i] = newshortref
+
+   end
+   return shortrefs
 end
-#################################
+
+##############################
+function change_shortref(dat, i, newshortref, shortrefs)
+   # we need the new shortre to already exist in values(hortrefs)
+   # and at the same time the old shortref to be different from the new one
+   # remove all spaces and commas to Compare 
+   replacer = x -> replace(x, r"\s" => "", r"," => "", r"\." => "") |> lowercase
+
+   for (j, k) in shortrefs
+      if replacer(newshortref) == replacer(k)
+         #
+         println("newshortref  $newshortref")
+         println("$i already exists \n$j\n")
+         if replacer(dat.shref2full[i]) == replacer(dat.shref2full[j])
+            println("But it's ok , they are the same ref")
+         else
+            println(dat.shref2full[i])
+            println(dat.shref2full[j])
+
+            println(dat.biblio_item[i].title)
+            println(dat.biblio_item[j].title)
+
+            t1 = dat.biblio_item[j].title |> replacer
+            t2 = dat.biblio_item[i].title |> replacer
+            csub = common_substrings(t1, t2)
+            println("common_substring $csub")
+            lcsub = length(csub)
+            lt12 = min(length(t1), length(t2)) * 0.3
+            if lcsub > lt12
+               println("No Change needed here! Continue.")
+               x = 1
+               continue
+            else
+               # yesno = readline()
+               # @show yesno
+               # if yesno == "n" || yesno == "N"
+               dmat = match(datematch, newshortref) ##dat.shref2full[refanalysis.names_date_str])
+               @show dmat
+               if dmat === nothing
+                  error("No date found for $(dat.shref2full[i])")
+               end
+               if isnothing(dmat.captures[end])
+                  # no a, b, etc found after the year
+                  println("No a, b, etc ext after date in $(newshortref), $(dmat.captures)")
+                  # add an 'a' after the year
+                  startref = newshortref[1:findfirst(datematch, newshortref)[end]-1]
+                  endref = newshortref[findfirst(datematch, newshortref)[end]:end]
+                  newshortref = startref * "a" * endref
+                  @show newshortref
+                  # also we must
+                  #@show dat.names_date_str
+               else
+                  # we have a, b, etc
+                  ch = dmat.captures[end][1] + 1 #next character
+                  # if shref is "asdasdf (2001a)", then shref)[end]-2] = "asdasdf (2001"
+                  # then we can add ch (which is b,c, d etc) after the year
+                  newshortref = newshortref[1:findfirst(datematch, newshortref)[end]-2] * ch * newshortref[findfirst(datematch, newshortref)[end]:end]
+                  @show newshortref
+               end
+            end
+         end
+         #change_shortref(i, newshortref, shortrefs)
+         x = 2
+      end
+   end
+   return newshortref
+end
+
+##############################
+#@run 
+
+shortrefs = shortenref(dat)
+
+@assert length(shortrefs) == length(dat.namedates)
+
+
+
+###############################################
+##################################
+function get_bbdict(dat, shortrefs)
+   bibdict = Dict{String,Any}()
+   for (i, k) in dat.see_also # 
+      println("$i => $k")
+      for item in dat.biblio[i]
+         println("-- $item => $(shortrefs[item])")
+      end
+      #println("$i => $(dat.biblio[i])\n") #
+      # transform dat.biblio[i] to shortrefs
+      bibdict[i] = (k, [shortrefs[x] for x in dat.biblio[i]])
+   end
+   bibdict = sort(bibdict);
+end
+bibdict=get_bbdict(dat, shortrefs)
+
+ json_string = JSON.json(bibdict)
+
+open(datadir("bibdict_for_Snow_etal.json"), "w") do f
+   JSON.print(f, json_string)
+end
+
+#############################################
+function reversegraph(dat, shortrefs)
+   reversebibdict = Dict{String,Vector{String}}()
+
+   for (tit, refs) in dat.biblio # 
+      for ref in refs
+         shref = shortrefs[ref]
+         if shref ∈ keys(reversebibdict) && tit ∈ reversebibdict[shref]
+            @show ref, shref, tit
+         end
+         reversebibdict[shref] = push!(get(reversebibdict, shref, []), tit)
+      end
+
+   end
+
+   # bibdict[i] = (k, dat.biblio[i])
+   sort(reversebibdict)
+end
+
+######
+rdict = reversegraph(dat, shortrefs)
+
+json_string = JSON.json(rdict)
+
+open(datadir("reversebibdict_for_Snow_etal.json"), "w") do f
+   JSON.print(f, json_string)
+end
+
+
+###############################################
+x = 1
+
+
+
+for i in dat.namedates
+   if !isnothing(match(r"\d{4}-", i))
+      println(i)
+   end
+end
+###
+
+rmatch = r"\d{4}[bc]"
+rmatch = r"Gramsci"
+for i in dat.namedates
+   if !isnothing(match(rmatch, i))
+      println(i)
+      println(dat.shref2full[i], "\n")
+   end
+end
+
+##############################
+dat, txt = bootstrap(infile);
+ind = findall(txt.titles) do x
+   occursin("strumental", x)
+end
+
+txt.titles[ind]
+
+####################################
+dat
 
 namematcher = r"(\w+),\s*[A-Z]?\.?,*\s?[A-Z]?\.?"
 #single_name = r"^(\w+),(\s*[A-Z]\.),\s[A-Z]?"
@@ -74,62 +244,71 @@ andmatch = match(r"\s(and)\s", ref2d)
 single_name = match(namematcher, ref2d)
 isnothing(single_name)
 
-s.captures
-s.offset
-ref = "Wickham-Crowley, T.P. (1992) Guerrillas and Revolution in Latin America: A Comparative Study of Insurgents and Regimes since 1956. Princeton University Press, Princeton, NJ."
-ref = "Indymedia Documentation Project. http://docs.indymedia.org/."
-#ref = "Sturmer, S., Simon, B., Loewy, M., and Jörger, H. (2003) The dual-pathway model of social movement participation:"
-ref = "Grey, S. J., asdfsdf, A. B and Serge, M. J. (eds) (2008) Women's Movements: Flourishing or in Abeyance? Routledge, NewYork."
-#
-ref = "Almeida, P.D. (2003) Opportunity organizationsand threat-induced contention: Protest waves inauthoritarian settings. American Journal of Sociology 109, 345–400."
-ref = "Sōmuchō (1995) Tenkanki o Mukaeta Dōwa
-Mondai: Heisei gonendo dōwa chiku jittai
-haakutō chōsa kekka no kaisetsu (A Turning
-Point for the Dōwa Mondai: Analysis of the
-Results of the 1993 Survey to Assess Conditions in Dōwa Districts). Chūōhōki Shuppan,
-Tokyo."
-ref = "Губин, О.И. (2009) От парадигмы к структуризирика-нному лексикону: лингвиситческий и социологическ-ий поворт Томаса Куна (From paradigm to structured lexicon: Thomas Kuhn's linguistic and sociological turn.) Сониология 4, 28-48. Available online at: [invalid URL removed]."
-single_name = match(r"(\w+),\s*(\w+\.*\w\.)*\s*", ref)
-datematch = match(r"\(\d{4}\)", ref)
-single_name.offsets
-datematch.offsets
-offs = single_name.offsets[1] + length(single_name.match)
-ref[offs:end]
 
-graphemes(ref, offs:(length(ref)-1))
-
-
-
-@run  aa = Bibitem(ref)
-
-ref = "Constitution of the Bolivarian Republic of Venezuela
-(1999)."
-ref = "César Chávez Foundation. www.cesarechavez
-foundation.org."
-ref = "O’Brien, K.J. (ed.) (2008) Popular Protest in China.
-Harvard University Press, Cambridge, MA."
-
-ref = "Ó Dochartaigh, N. (2005) From Civil Rights to
-Armalites: Derry and the Birth of the Irish Troubles.
-Palgrave Macmillan, Basingstoke."
-ref ="Martin Luther King, Jr. Research and Education Institute (2012) Stanford University. www.stanford.edu/group/King/liberation_
-curriculum/resources/, accessed Mar. 12, 2012."
-ref = "Губин, О.И. (2009) От парадигмы к структуризирика-нному лексикону: лингвиситческий и социологическ-ий поворт Томаса Куна (From paradigm to structured lexicon: Thomas Kuhn's linguistic and sociological turn.) Сониология 4, 28-48. Available online at: [invalid URL removed]"
-ref = "Osborn, A. Violence and hatred in Russia's new skinhead playground. Independent (Jan. 25). www.independent.co.uk/news/world/europe/violence-and-hatred-in-russias-new-skinhead-playground-488154.html, accessed Apr. 16, 2012."
-
-
-
-
-
-for (i,c) in enumerate(ref)
-   println("$i => $c")
+function harmser(; n=2000)
+   res = 0
+   for i in 1:n
+      res += 1. / i
+   end
+   return res
 end
 
+function lsum(; n=10000)
+   res = 0
+   for x in 1:n
+      res += log(1 + 1 / x)
+   end
+   return res
+end
+a = lsum(n=1000000)
 
-aa = Bibitem(ref)
-aa
-@run a= Bibitem(match(r"a","awsdf"), nothing, nothing, nothing)
+function mydifff(n)
+   harmser(n=n) - lsum(n=n)
+end
 
-Vector{RegexMatch{S}} where {S<: AbstractString} <: Vector
+mydifff(10000000000)
 
-=#
+
+
+
+
+
+length(values(shortrefs))
+values(shortrefs) |> Set |> length
+keys(shortrefs) |> Set |> length
+
+
+for (i, h) in shortrefs
+   a = findfirst(r"(\d{4}(.)\))", i)
+   b = findfirst(r"(\d{4}(.)\))", h)
+   if !isnothing(a)
+      println("$i => $h")
+      println("$(i[a])\n")
+   end
+   if !isnothing(b)
+      println("$i => $h")
+      println("$(i[b])\n")
+   end
+end
+
+for (i, h) in dat.biblio
+   for k in h
+      a = findfirst(r"(\d{4}(.)\))", k)
+      if !isnothing(a)
+         println("$i => $k")
+         println("$(k[a])\n")
+      end
+   end
+end
+###########
+
+for i in dat.namedates
+
+   a = findfirst(r"(\(\d{4}(.)\))", i)
+   if !isnothing(a)
+      println("$i")
+      #println("$(k[a])\n") 
+   end
+end
+##########################3
+dat.biblio_item["Anderson, K.B. (2010)"].a
