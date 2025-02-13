@@ -1,13 +1,24 @@
 using PDFIO
 import DataFrames
 
-datematch = r"(\(\d{4}([\/\-])?(\d{4})?(.)?\))"
-namematcher = r"(((?:De )|(?:V[ao]n )|(?:[DO]\S))?\w+,\s*[A-Z]?\.?,*\s?[[A-Z]\.]?)"  #r"(\w+),\s*[A-Z]?\.?,*\s?[A-Z]?\.?"
+datematcher = r"(\(\d{4}([,\/\-;])?(\s?\d{4})?(.)?\))"
+#namematcher = r"(((?:De )|(?:V[ao]n )|(?:[DO]\S))?\w+,\s*[A-Z]?\.?,*\s?[[A-Z]\.]?)"  #r"(\w+),\s*[A-Z]?\.?,*\s?[A-Z]?\.?"
+# possible 3 parts in name: Either Aaaaa Bbbbb B. , pr Aaaaa, A. B.
+first = r"(((?:De )|(?:V[ao]n )|(?:[DO]\S))?\w+,?)"
+webdubois = r"((?:Du )?\w+,\s(?:[A-Z]\.){3}?)"
+second = r"(\s*(\w+|([A-Z]))[,\.\s])"
+#third = r"\s?((\w+|[A-Z]\.)[,\.\s]?)?" # 
+#third = r"\s?((\w+|[A-Z]\.){1-2}[,\.\s]?)?" # 
+third = r"\s?(((?:[A-Z]\.(?:[A-Z]\.))|\w+)[,\.\s]?)?" # 
+m
+namematcher = first * second * third
+namematcheralt = webdubois
+
 
 mutable struct Texts
     txt::String
     titles::Vector{String}
-    #ency::String
+    filename::String
 end
 
 ######################
@@ -19,7 +30,7 @@ end
 #################################################3
 abstract type AbsBibitem end
 
-struct Bibitem{S<:AbstractMatch} <: AbsBibitem
+mutable struct Bibitem{S<:AbstractMatch} <: AbsBibitem
 
     authors::Union{Nothing,Vector{S}} # Union{Nothing,RegexMatch{String}}[]
     etal::Union{Nothing,S}
@@ -39,24 +50,30 @@ function Bibitem(ref::S) where S<:AbstractString
     authors = Vector{RegexMatch{S}}
 
     # A regex that (hopoefully) finds "Name, A. J", "Van Name, A.J","Von Name, A.J" , "De Name, A J", "D'Name, AJ"
-    #    namematcher = r"(\w+),\s*[A-Z]?\.?,*\s?[A-Z]?\.?"  
-    #namematcher = r"(((?:De )|(?:V[ao]n )|(?:[DO]\S))?\w+),\s*[A-Z]?\.?,*\s?[A-Z]?\.?"  #r"(\w+),\s*[A-Z]?\.?,*\s?[A-Z]?\.?"
     global namematcher
-    # r"(((?:De )|(?:V[ao]n )|(?:[DO]\S))?\w+),\s*[A-Z]?\.?,*\s?[[A-Z]\.]?"  #r"(\w+),\s*[A-Z]?\.?,*\s?[A-Z]?\.?"
+    global datematcher
 
     # this should have a differetn name, there is a global datematch already
-    datematch = match(r"(\(\d{4}[a-d\s]?[\/,\-]*[\d{4}]*\))", ref)
+    datematch = match(datematcher, ref)
+    matches = [r"(\(forthcoming\))", r"(\(n.d.\))", r"(\(no date\))", r"(\(No Date\))"]
     if isnothing(datematch)
         # check for other rare cases
-        datematch = match(r"(\(forthcoming\))", ref)
-        if isnothing(datematch)
-            # check for other rare cases
-            datematch = match(r"(\(forthcoming\))", ref)
-            if isnothing(datematch)
-                datematch = match(r"(\(n.d.\))", ref)
+        for match_it in matches
+            datematch = match(match_it, ref)
+            if !isnothing(datematch)
+                break
             end
         end
     end
+    #     datematch = match(r"(\(forthcoming\))", ref)
+    #     if isnothing(datematch)
+    #         # check for other rare cases
+    #         datematch = match(r"(\(forthcoming\))", ref)
+    #         if isnothing(datematch)
+    #             datematch = match(r"(\(n.d.\))", ref)
+    #         end
+    #     end
+    # end
     if isnothing(datematch)
         return special_cases(ref)
     end
@@ -65,18 +82,41 @@ function Bibitem(ref::S) where S<:AbstractString
 
     # All the names must be before the date
     ref2d = ref[1:datematch.offsets[1]-1]
+    # we dont need any editiors
+    eds = r"\([Ee]ds?\.?\)\.?"
+    edmatch = match(eds, ref2d) 
+    if !isnothing(edmatch)
+        ref2d = replace(ref2d, edmatch.match=>"")
+    end
 
 
     etal = match(r"\set\sal[.,]?", ref2d)
     andmatch = match(r"\s(and)\s", ref2d)
     #println("$ref, $(datematch.offsets)")
-    tit_start = findnext(")",ref, datematch.offsets[1])[end]
+    tit_start = findnext(")", ref, datematch.offsets[1])[end]
     title = ref[tit_start:end]
 
     firsttime = true
     while true
 
-        single_name = match(namematcher, ref2d)
+        # we try first with namematcheralt which captures names like du bois w.w.w.
+        single_name = match(namematcheralt, ref2d)
+
+        # and then w/ normal match
+        if isnothing(single_name)
+            single_name = match(namematcher, ref2d)
+        end
+
+
+        # if this didn't work
+        if isnothing(single_name)
+            # this might be the case of a newspaper article with no authors
+            single_name = ref2d |> strip
+            # convert to a match
+            @show single_name
+            single_name = match(Regex(single_name), single_name)
+        end
+
         if isnothing(single_name)
             if firsttime
                 return Bibitem()
@@ -92,7 +132,20 @@ function Bibitem(ref::S) where S<:AbstractString
         else
             push!(authors, single_name)
         end
-        offs = single_name.offsets[1] + length(single_name.match)
+
+        try 
+            firstnonzero = findfirst(>(0), single_name.offsets)
+            offs = single_name.offsets[firstnonzero] + length(single_name.match)
+        catch e 
+            println(e)
+            println("auhtor is $(single_name)")
+            break
+        end
+
+        if length(ref2d) - offs < 2 # no name of 1 char or less
+            break
+        end
+
         try
             ref2d = ref2d[offs:end]
         catch e
@@ -106,6 +159,7 @@ function Bibitem(ref::S) where S<:AbstractString
         #n_of_authors += 1
         #@show single_name, single_name.offsets
     end
+
     up2date = datematch.offsets[1] + length(datematch.match)
     return Bibitem(authors, etal, datematch, andmatch, title, ref[1:up2date-1] |> String)
 end
@@ -136,11 +190,12 @@ end
 
 ######################
 
-function bootstrap(infile::String)
+function bootstrap(infilename::String)
     ###3
-    infile = infile |> FileDocument
+    infile = infilename |> FileDocument
     txt = Texts(text(infile),
-        [""])
+        [""],
+        infilename)
     #(datadir("exp_pro", "ency_items.txt") |> FileDocument |> text),)
 
     txt.txt = replace(txt.txt, "\u201c" => String(raw"\""))
@@ -217,9 +272,11 @@ function find_title(txt::Texts, dat::MyData)
     println("\n\n=========  ", dat.title)
     #occursin("Aryan", dat.title) && break
 
-    seealso_start = findnext("SEE ALSO: ", txt.txt, tit_end)[end]
-    seealso_end = findnext("\nREFERENCES AND", txt.txt, tit_end)[begin]
-
+    seealso_start, seealso_end = 0, 0
+    if occursin("Snow", txt.filename)
+        seealso_start = findnext("SEE ALSO: ", txt.txt, tit_end)[end]
+        seealso_end = findnext("\nREFERENCES AND", txt.txt, tit_end)[begin]
+    end
     ref_start = findnext("RR ", txt.txt, tit_end)[end]
     dat.ref_end = findnext("++", txt.txt, ref_start)[1]
     #@show ref_end, typeof(ref_end)
@@ -243,29 +300,30 @@ function find_title(txt::Texts, dat::MyData)
     refs = filter(!=(""), refs)
     refs = filter(!=(" "), refs)
 
-    see_alsos = split(txt.txt[seealso_start:seealso_end], ";")
-    see_alsos = replace.(see_alsos, "\n" => " ", r"\.\s*$" => " ")
-    #, "." => " ")
+    if occursin("Snow", txt.filename)
+        see_alsos = split(txt.txt[seealso_start:seealso_end], ";")
+        see_alsos = replace.(see_alsos, "\n" => " ", r"\.\s*$" => " ")
+        #, "." => " ")
 
-    see_alsos = replace.(see_alsos, "\n" => " ")
-    see_alsos = filter(!=(""), see_alsos) .|> strip
-    # sanity \
-    # Check that all of them are ina teh titles
-    for sa in see_alsos
-        # ssa = sa
-        # if !occursin("Lenin", sa)
-        #     ssa = replace(sa, "." => " ")
-        # end
-        f = findall(==(sa), txt.titles)
-        if length(f) == 0
-            error("Error finding title $(sa)")
-        elseif length(f) > 1
-            error("Error found $(length(f)) titles $(sa)")
+        see_alsos = replace.(see_alsos, "\n" => " ")
+        see_alsos = filter(!=(""), see_alsos) .|> strip
+        # sanity \
+        # Check that all of them are ina teh titles
+        for sa in see_alsos
+            # ssa = sa
+            # if !occursin("Lenin", sa)
+            #     ssa = replace(sa, "." => " ")
+            # end
+            f = findall(==(sa), txt.titles)
+            if length(f) == 0
+                error("Error finding title $(sa)")
+            elseif length(f) > 1
+                error("Error found $(length(f)) titles $(sa)")
+            end
         end
+
+        dat.see_also[dat.title] = see_alsos
     end
-
-    dat.see_also[dat.title] = see_alsos
-
 
     return refs
 
@@ -277,17 +335,36 @@ function special_cases(ref)
     if startswith(ref, "Indymedia Documentation Project")
         #retref = "Indymedia Documentation Project"
         return Bibitem([match(Regex(ref), ref)], nothing, match(r"No Date", "No Date"), nothing, String(ref), String(ref))
-
     end
+
     if startswith(ref, "Osborn, A. Violence and hatred in Russia")
         # this is a newspaper article, not easily found anymore
         return Bibitem()
     end
     if ref == "César Chávez Foundation. www.cesarechavezfoundation.org"
         ref1 = "César Chávez Foundation"
-        ref2 = "www.cesarechavezfoundatimatch(Regex(ref), ref)on.org"
+        ref2 = "www.cesarechavezfoundation.org"
         return Bibitem([match(Regex(ref1), ref1)], nothing, match(r"No Date", "No Date"), nothing, String(ref), match(Regex(ref), ref))
 
+    end
+
+    if ref == "North Dakota Democratic-NPL Party. http://www.demnpl.com."
+        ref1 = "North Dakota Democratic-NPL Party"
+        #ref2 = "http://www.demnpl.com"
+        #rnd = r"North Dakota Democratic-NPL Party \(No Date\)"
+        nd = "North Dakota Democratic-NPL Party (No Date)"
+        return Bibitem([match(Regex(ref1), ref1)], nothing, match(r"No Date", "No Date"), nothing, String(ref1), nd)
+    end
+
+    if ref == "Digger Archives. http://www.diggers.org."
+
+        return Bibitem([match(Regex("Digger Archives"), "Digger Archives")], nothing, match(r"No Date", "No Date"), nothing, "Digger Archives", ref * " (No Date)")
+    end
+
+    if occursin("Kirk Collected Papers", ref)
+        auth = "Kirk Collected Papers"
+        d = "(No Date)"
+        return Bibitem([match(Regex(auth), auth)], nothing, match(r"No Date", "No Date"), nothing, auth, auth * " (No Date)")
     end
 
     if occursin(" www.", ref)
@@ -300,6 +377,36 @@ function special_cases(ref)
         return Bibitem([match(Regex(short), short)], nothing, match(r"No Date", "No Date"), nothing, String(ref), String(ref))
 
     end
+    if startswith(ref, "U.S. Department of Health and Human")
+        short = "U.S. Department Health"
+        return Bibitem([match(Regex(short), short)], nothing, match(r"No Date", "No Date"), nothing, String(ref), String(ref))
+    end
+
+    if occursin("New Harmony Gazette", ref)
+        auth = "New Harmony Gazette"
+        return Bibitem([match(Regex(auth), auth)], nothing, match(r"No Date", "No Date"), nothing, auth, auth * " (No Date)")
+    end
+
+    if startswith(ref, "Why American Civil Liberties Does What It Does")
+        auth = "U.S. News and World Report"
+        date = "(1984)"
+        return Bibitem([match(Regex(auth), auth)], nothing, match(r"(1984)", date), nothing, auth, auth * date)
+    end
+    if startswith(ref, "Dome Village/Justiceville")
+        auth = "Dome Village-Justiceville"
+        date = "No Date"
+        return Bibitem([match(Regex(auth), auth)], nothing, match(Regex(date), date), nothing, auth, auth * '(' * date * ')')
+    end
+
+    if startswith(ref, "Dignity Village (Portland, OR)")
+        auth = "Dignity Village (Portland, OR) "
+        rauth = r"Dignity Village \(Portland, OR\) "
+        ddate = "No Date"
+        return Bibitem([match(rauth, auth)], nothing, match(Regex(ddate), ddate), nothing, auth, auth * '(' * ddate * ')')
+    end
+
+
+    #*New Harmony Gazette*. University of Wyoming. Microfiche HN 64N4.
 
 end
 
@@ -332,7 +439,7 @@ function break_refs!(refs, dat) # , bibitem_string)
         end
 
         if startswith(ref, '"')
-            ref = replace(ref, "\"" => "")
+            ref = replace(ref, "\"" => "", "*" => "")
         end
 
         refanalysis = Bibitem(ref) # 
@@ -345,13 +452,12 @@ function break_refs!(refs, dat) # , bibitem_string)
                 dat.biblio[dat.title] = []
                 continue
             end
+
         catch e
             println("Error at $(dat.title)")
             println("ref: $ref")
             #println("After character $(dat.start_search)")
         end
-
-
 
         locshref = refanalysis.names_date_str
 
@@ -426,36 +532,37 @@ function check_refs!(dat::MyData, refanalysis::Bibitem)
                 continue
             end
 
-            println("found $(length(fref)) occurences of $(refanalysis.names_date_str) in $(i)")
+            println(">> found $(length(fref)) occurences of $(refanalysis.names_date_str) in $(i)")
             # see if the full ref is the same
             for j in fref
                 oldref = k[j]
                 oldfullref = dat.shref2full[oldref]
                 println("new short ref $(refanalysis.names_date_str)")
                 println("new full ref $(dat.shref2full[refanalysis.names_date_str])")
-                println("old full ref $(oldfullref)")
+                println("old full ref --> $(oldfullref)")
 
                 # These 2 refs share the sam authors and date. 
                 # what happens after the date?
                 newref_after_date = dat.shref2full[refanalysis.names_date_str]
-                finder = findfirst(datematch, newref_after_date)
                 # if there is no date, finder will be nothing
+                @show refanalysis.datematch.match
+                finder = findfirst(refanalysis.datematch.match, newref_after_date)
                 foundnouthing = isnothing(finder)
                 if foundnouthing
                     finder = findfirst("(forthcoming)", newref_after_date)
                 end
-                @show newref_after_date, finder
+                @show finder
 
                 newref_after_date = newref_after_date[finder[end]:end]
-                newref_after_date = replace(newref_after_date, "," => "", " " => "") |> lowercase
-
+                newref_after_date = replace(newref_after_date, "," => "", " " => "", "*" => "") |> lowercase
+                @show newref_after_date
                 oldfullref_after_date = ""
                 try
-                    oldfullref_after_date = oldfullref[findfirst(datematch, oldfullref)[end]:end]
-                    oldfullref_after_date = replace(oldfullref_after_date, "," => "", " " => "") |> lowercase
+                    oldfullref_after_date = oldfullref[findfirst(datematcher, oldfullref)[end]:end]
+                    oldfullref_after_date = replace(oldfullref_after_date, "," => "", " " => "", "*" => "") |> lowercase
                 catch e
                     oldfullref_after_date = oldfullref[findfirst("(forthcoming)", oldfullref)[end]:end]
-                    oldfullref_after_date = replace(oldfullref_after_date, "," => "", " " => "") |> lowercase
+                    oldfullref_after_date = replace(oldfullref_after_date, "," => "", " " => "", "*" => "") |> lowercase
                 end
 
                 println("new = $(newref_after_date)")
@@ -468,7 +575,7 @@ function check_refs!(dat::MyData, refanalysis::Bibitem)
                 # Here we indeed have 2 different refs, going to the same refanalysis.names_date_str.
                 # first check the date of the new reference
 
-                dmat = match(datematch, refanalysis.names_date_str) ##dat.shref2full[refanalysis.names_date_str])
+                dmat = match(datematcher, refanalysis.names_date_str) ##dat.shref2full[refanalysis.names_date_str])
                 @show dmat
                 if dmat === nothing
                     error("No date found for $(dat.shref2full[refanalysis.names_date_str])")
@@ -477,8 +584,8 @@ function check_refs!(dat::MyData, refanalysis::Bibitem)
                     # no a, b, etc found after the year
                     println("No a, b, etc ext after date in $(refanalysis.names_date_str), $(dmat.captures)")
                     # add an 'a' after the year
-                    startref = refanalysis.names_date_str[1:findfirst(datematch, refanalysis.names_date_str)[end]-1]
-                    endref = refanalysis.names_date_str[findfirst(datematch, refanalysis.names_date_str)[end]:end]
+                    startref = refanalysis.names_date_str[1:findfirst(datematcher, refanalysis.names_date_str)[end]-1]
+                    endref = refanalysis.names_date_str[findfirst(datematcher, refanalysis.names_date_str)[end]:end]
                     refanalysis.names_date_str = startref * "a" * endref
                     @show refanalysis.names_date_str
                     # also we must
@@ -488,11 +595,11 @@ function check_refs!(dat::MyData, refanalysis::Bibitem)
                     ch = dmat.captures[end][1] + 1 #next character
                     # if shref is "asdasdf (2001a)", then shref)[end]-2] = "asdasdf (2001"
                     # then we can add ch (which is b,c, d etc) after the year
-                    refanalysis.names_date_str = refanalysis.names_date_str[1:findfirst(datematch, refanalysis.names_date_str)[end]-2] * ch * refanalysis.names_date_str[findfirst(datematch, refanalysis.names_date_str)[end]:end]
+                    refanalysis.names_date_str = refanalysis.names_date_str[1:findfirst(datematcher, refanalysis.names_date_str)[end]-2] * ch * refanalysis.names_date_str[findfirst(datematcher, refanalysis.names_date_str)[end]:end]
                     @show refanalysis.names_date_str
                 end
                 @warn "Dublicate reference: $refanalysis.names_date_str"
-                @show("Dublicate reference: $shref")
+                #@show("Dublicate reference: $shref")
 
             end
         end
@@ -565,7 +672,45 @@ function compbychar(s1, s2)
         return false
     end
 end
+#############################################
+# function getalltitles(infile)
+#     begin
+#         n = 1
+#         tstart = 1
+#         tend = 1
+#         mytitles = Dict()
+#     end
+#     while tend < length(infile) # loop over dat.titles
+#         #global n += 1
 
+#         tstartr, tendr = gettitles(infile, tend)
+
+#         if isnothing(tstartr)
+#             break
+#         end
+
+#         @show tstart, tendr
+#         tstart = tstartr[end]
+#         tend = tendr[begin]
+#         tit = infile[tstart:(tend-1)]
+#         mytitles[n] = tit
+#         n += 1
+#         println("title $n  $(tit)")
+#     end
+#     return sort(mytitles)
+# end
+################################################
+# function gettitles(infile::String, startfrom::Int)
+
+#     nextfind = findnext("## ", infile, startfrom)
+#     if isnothing(nextfind)
+#         return nothing, nothing
+#     end
+#     nextendline = findnext("\n", infile, nextfind[end])
+
+#     return nextfind, nextendline
+
+# end
 #############################################
 function loop_refs_from_txt(infile::String)
     # begin # 172
@@ -574,12 +719,24 @@ function loop_refs_from_txt(infile::String)
 
     while true # loop over dat.titles
         dat.n += 1
+        println("Item $(dat.n)")
         #dat.breaker = false
-        bibitem_string = String[]
-
+        #bibitem_string = String[]
 
         refs = find_title(txt, dat)
-        #@show refs
+        @show refs
+        try
+            if dat.title != txt.titles[dat.n-1]
+                @show dat.n - 1, dat.title, txt.titles[dat.n-1]
+                if dat.n > 2
+                    @show dat.n - 2, txt.titles[dat.n-2]
+                    @show dat.n, txt.titles[dat.n]
+                end
+                break
+            end
+        catch e
+            @show dat.n - 1, dat.title, txt.titles[dat.n-2]
+        end
 
         if isnothing(refs)
             break
@@ -589,15 +746,6 @@ function loop_refs_from_txt(infile::String)
         break_refs!(refs, dat) #
 
         println()
-        #return ref_vect
-
-
-        # if dat.n > 1000
-        #    break
-        # end
-        # if dat.breaker #
-        #    break
-        # end
 
         dat.start_search = dat.ref_end
     end
@@ -605,9 +753,11 @@ function loop_refs_from_txt(infile::String)
     return dat
 end
 #############################
+
+
 # Function to find common substrings between two strings
 function common_substrings(s1::String, s2::String)
-    common = ""#String[]  # Array to store common substrings
+    common = "" #String[]  # Array to store common substrings
     len1, len2 = length(s1), length(s2)
     if len1 > len2
         s1, s2 = s2, s1
@@ -618,6 +768,32 @@ function common_substrings(s1::String, s2::String)
         for stop in start:len1
             substring = s1[start:stop]
             if occursin(substring, s2) #&& !(substring in common)
+                if length(substring) > length(common)
+                    common = substring
+                end
+            end
+        end
+    end
+
+    return common
+end
+#############################
+
+# Function to find common substrings between two strings
+function common_graphemes(ss1::String, ss2::String)
+    common = "" #String[]  # Array to store common substrings
+    s1, s2 = graphemes(ss1), graphemes(ss2)
+    len1, len2 = length(s1), length(s2)
+    if len1 > len2
+        ss1, ss2 = ss2, ss1
+        len1, len2 = len2, len1
+        s1, s2 = s2, s1
+    end
+    # Check all possible substrings of s1
+    for start in 1:len1
+        for stop in start:len1
+            substring = graphemes(ss1, start:stop)
+            if occursin(substring, ss2) #&& !(substring in common)
                 if length(substring) > length(common)
                     common = substring
                 end
