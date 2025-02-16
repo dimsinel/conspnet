@@ -19,12 +19,13 @@ infile = datadir("Snow.txt")
 #tit_snow = getalltitles(infile |> FileDocument |> text)
 dat_snow = loop_refs_from_txt(infile);
 
-infile = datadir("Ness.txt")
+
+  infile = datadir("Ness.txt")
 #tit_ness = getalltitles(infile |> FileDocument |> text)
 dat_ness = loop_refs_from_txt(infile);
 
 #################################
-@run dat_ness = loop_refs_from_txt(infile)
+#@run dat_ness = loop_refs_from_txt(infile)
 #################################
 #sortedrefs  = sort!([dat.namedates...])
 ###########################################
@@ -39,7 +40,7 @@ function shortenref(dat)
    # test
    @assert length(dat.namedates) == length(dat.shref2full)
 
-   global datematcher
+   global datematcher, eds
 
    x = 1
    for i in dat.namedates
@@ -50,8 +51,17 @@ function shortenref(dat)
             x = 2
 
          end
-         shortrefs[i] = i
-         # we may continue since the uniqueness of these namedates are checjed elsewere
+
+         #shortrefs[i] = i
+
+         if isnothing(match(eds, i))
+            shortrefs[i] = i
+         else
+            m = match(eds, i).match
+            shortrefs[i] = replace(i, m=>" ")
+         end
+
+            # we may continue since the uniqueness of these namedates are checjed elsewere
          continue
       end
 
@@ -64,7 +74,7 @@ function shortenref(dat)
          #leaves unchanged
          println("NO date in $i, using $(i[shdate])")
       end
-      #@show  i[shdate]
+      #@show  i[shdate]shortrefs_ness = shortenref(dat_ness)
       #@show dat.biblio_item[i].authors
       newshortref = dat.biblio_item[i].authors[1].match * " et al " * i[shdate]
 
@@ -164,55 +174,48 @@ end
 
 shortrefs_snow = shortenref(dat_snow)
 shortrefs_ness = shortenref(dat_ness)
+#@run  shortrefs_ness = shortenref(dat_ness)
 
 @assert length(shortrefs_ness) == length(dat_ness.namedates)
 @assert length(shortrefs_snow) == length(dat_snow.namedates)
 
-
-
-###############################################
-##################################
-# function get_bbdict(dat, shortrefs)
-#    bibdict = Dict{String,Any}()
-#    for (i, k) in dat.see_also # 
-#       println("$i => $k")
-#       for item in dat.biblio[i]
-#          println("-- $item => $(shortrefs[item])")
-#       end
-#       #println("$i => $(dat.biblio[i])\n") #
-#       # transform dat.biblio[i] to shortrefs
-#       bibdict[i] = (k, [shortrefs[x] for x in dat.biblio[i]])
-#    end
-#    bibdict = sort(bibdict)
-# end
+#########################################
 function get_bbdict(dat, shortrefs)
    bibdict = Dict{String,Any}()
    for (i, k) in dat.biblio # 
-      println("$i => $k")
-      for item in k # dat.see_also[i]
-         println("-- $item => $(shortrefs[item])")
+      # remove editors
+      
+       #  println("$i => $k")
+      #end
+      noeds = []
+      for  (ind,item) in enumerate(k) # dat.see_also[i]
+         @show ind, item
+         push!(noeds, remove_editors(item))
+         if occursin("ed.", item) #
+            println("-- $item => $(shortrefs[item])  $(noeds[ind])")
+         end
       end
-      println("$i => $(dat.biblio[i])\n") #
+      # println("$i => $(dat.biblio[i])\n") 
       # transform dat.biblio[i] to shortrefsoffs = single_name.offsets[1] + length(single_name.match)
       if haskey(dat.see_also, i)
-         bibdict[i] = (dat.see_also[i], k)
+         bibdict[i] = (dat.see_also[i], noeds)
       else
-         bibdict[i] = ([], k)
+         bibdict[i] = ([], noeds)
       end
    end
-   bibdict = sort(bibdict)
+   bibdict = sort(bibdict);
 end
 
 #############################
 bibdict_ness = get_bbdict(dat_ness, shortrefs_ness)
-bibdict_snow = get_bbdict(dat_snow, shortrefs_snow)
+ bibdict_snow = get_bbdict(dat_snow, shortrefs_snow)
 
 
-bibdict_ness
-bibdict_ness["AFRICAN-AMERICAN WOMEN'S MOVEMENT 1865-1920s"]
-[x for x in keys(bibdict_ness) if occursin("AFRI", x)]
+# bibdict_ness
+# bibdict_ness["AFRICAN-AMERICAN WOMEN'S MOVEMENT 1865-1920s"]
+# [x for x in keys(bibdict_ness) if occursin("AFRI", x)]
 
-x = 0;
+# x = 0;
 
 
 function check_shortrefs(bibdict, shortrefs)
@@ -220,28 +223,61 @@ function check_shortrefs(bibdict, shortrefs)
 
    for (i, k) in bibdict
       # @show k
-      @show bibdict[i][2]
+      #@show bibdict[i][2]
       for item in k[2]
 
-         @show item, shortrefs[item]
-         @assert shortrefs[item] ∈ bibdict[i][2]
+         #@show i,item
+         #println("find common substring of $(shortrefs[item]) with...")
+         found = false
+         for ccc in bibdict[i][2]
+            cccom =""
+            try
+               cccom = common_substrings(shortrefs[item], ccc)
+            catch
+               cccom = common_graphemes(shortrefs[item], ccc)
+            end
+            #println("common substring of $(shortrefs[item]) and $ccc")
+            #println("--> $cccom")
+            if startswith(shortrefs[item], cccom) && startswith(ccc, cccom)
+               found = true
+               #@show found
+               break
+            end
+            #println("common, $cccom")
+         end
+         
+         @assert found #shortrefs[item] ∈ bibdict[i][2]
       end
    end
 end
 
-#check_shortrefs(bibdict_snow, shortrefs_snow)
+check_shortrefs(bibdict_snow, shortrefs_snow)
 check_shortrefs(bibdict_ness, shortrefs_ness)
 
-fieldnames(typeof(dat_ness))
-dat_ness.biblio
-bibdict_ness["ABORTION RIGHTS MOVEMENT"]
-bibdict_snow["Abeyance"][2]
 
-shortrefs["Lipset, S.M. et al (1956)"]
-json_string = JSON.json(bibdict)
+for i in bibdict_ness["ABORTION RIGHTS MOVEMENT"][2]
+if occursin("Berkman",i)
+   println(i)
+end
+end
+
+
+
+fieldnames(typeof(dat_ness))
+
+
+
+##########################################
+json_string_ness = JSON.json(bibdict_ness)
+
+open(datadir("bibdict_for_Ness_etal.json"), "w") do f
+   JSON.print(f, json_string_ness)
+end
+
+json_string_snow = JSON.json(bibdict_snow)
 
 open(datadir("bibdict_for_Snow_etal.json"), "w") do f
-   JSON.print(f, json_string)
+   JSON.print(f, json_string_snow)
 end
 
 #############################################
@@ -264,12 +300,17 @@ function reversegraph(dat, shortrefs)
 end
 
 ######
-rdict = reversegraph(dat, shortrefs)
+rdict_ness = reversegraph(dat_ness, shortrefs_ness)
+rdict_snow = reversegraph(dat_snow, shortrefs_snow)
 
-json_string = JSON.json(rdict)
+json_string_ness = JSON.json(rdict_ness)
+json_string_snow = JSON.json(rdict_snow)
 
 open(datadir("reversebibdict_for_Snow_etal.json"), "w") do f
-   JSON.print(f, json_string)
+   JSON.print(f, json_string_snow)
+end
+open(datadir("reversebibdict_for_Ness_etal.json"), "w") do f
+   JSON.print(f, json_string_ness)
 end
 ##############################################
 function find_etals(bibdict)
@@ -409,5 +450,35 @@ if occursin("et al", k) && !occursin("et al", i)
 end
 
 end
+
+
+###################     
+ref2d = [i for (i, x) in dat_snow.biblio_item if startswith(i, "Van K")][1]
+ref2d= [i for (i, x) in dat_snow.biblio_item if startswith(i, "Du B")][1]
+
+ref2d = "Van Kleef, G.A., de Dreu, C.K.W, and Manstead,A.S.R. (2004)"
+ref2d = "Cı́sar̂, O.W. "
+
+
+match(authname, ref2d)
+#match(authname, graphemes(ref2d, begin:end))
+getnames(ref2d)
+
+#nfirst = r"(((?:De )|(?:V[ao]n )|(?:[DO]\S))?\w+-?,?(?:\s?[A-Z]\.){3}?)"
+nfirst = r"(((?:D[eu] )|(?:V[ao]n )|(?:[DO]\S))?\w+-?,?(?:\s?[A-Z]\.)?(?:\s?[A-Z]\.)?(?:\s?[A-Z]\.)?)"
+nsecond = r",?\s?"* nfirst #(\s*(\w+|([A-Z]))[,\.\s])"
+commaspace = r",?\s*?"
+match(nfirst, ref2d)
+#namematcher = nfirst * nsecond * third
+namematcher = nfirst * commaspace * nfirst * commaspace* nfirst
+
+match(namematcher, replace(ref2d,"and"=>""))
+match(r"\X+,\s?(?:[A-Z]?\.?){0,3}", ref2d)
+
+ref2d
+
+a=getnames(ref2d)
+
+
 
 

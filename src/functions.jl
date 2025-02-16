@@ -2,17 +2,22 @@ using PDFIO
 import DataFrames
 
 datematcher = r"(\(\d{4}([,\/\-;])?(\s?\d{4})?(.)?\))"
-#namematcher = r"(((?:De )|(?:V[ao]n )|(?:[DO]\S))?\w+,\s*[A-Z]?\.?,*\s?[[A-Z]\.]?)"  #r"(\w+),\s*[A-Z]?\.?,*\s?[A-Z]?\.?"
+
 # possible 3 parts in name: Either Aaaaa Bbbbb B. , pr Aaaaa, A. B.
-first = r"(((?:De )|(?:V[ao]n )|(?:[DO]\S))?\w+,?)"
-webdubois = r"((?:Du )?\w+,\s(?:[A-Z]\.){3}?)"
-second = r"(\s*(\w+|([A-Z]))[,\.\s])"
-#third = r"\s?((\w+|[A-Z]\.)[,\.\s]?)?" # 
-#third = r"\s?((\w+|[A-Z]\.){1-2}[,\.\s]?)?" # 
-third = r"\s?(((?:[A-Z]\.(?:[A-Z]\.))|\w+)[,\.\s]?)?" # 
-m
-namematcher = first * second * third
-namematcheralt = webdubois
+#first = r"(((?:De )|(?:V[ao]n )|(?:[DO]\S))?\w+-?,?)"
+
+#second = r"(\s*(\w+|([A-Z]))[,\.\s])"
+
+#third = r"\s?(((?:[A-Z]\.(?:[A-Z]\.))|\w+)[,\.\s]?)?" # 
+
+authname = r"(((?:D[eu] )|(?:V[ao]n )|(?:[DO]\S))?\w+-?,?(?:\s?[A-Z]\.)?(?:\s?[A-Z]\.)?(?:\s?[A-Z]\.)?)"
+authname = r"(((?:D[eu] )|(?:V[ao]n )|(?:[DO]\S))?\X+-?,?(?:\s?[A-Z]\.)?(?:\s?[A-Z]\.)?(?:\s?[A-Z]\.)?)"
+
+eds = r"(\s\(?[Ee]ds?\.?\)?\.?\s?)(?=\(\d)"
+eds_nodate = r"(\s\(?[Ee]ds?\.?\)?\.?\s?)"
+
+#namematcher = first * second * third
+#namematcheralt = webdubois
 
 
 mutable struct Texts
@@ -46,7 +51,7 @@ Bibitem() = Bibitem(RegexMatch[], nothing, nothing, nothing, nothing, nothing)
 
 function Bibitem(ref::S) where S<:AbstractString
 
-    ref2d = ref
+    #ref2d = ref
     authors = Vector{RegexMatch{S}}
 
     # A regex that (hopoefully) finds "Name, A. J", "Van Name, A.J","Von Name, A.J" , "De Name, A J", "D'Name, AJ"
@@ -65,15 +70,7 @@ function Bibitem(ref::S) where S<:AbstractString
             end
         end
     end
-    #     datematch = match(r"(\(forthcoming\))", ref)
-    #     if isnothing(datematch)
-    #         # check for other rare cases
-    #         datematch = match(r"(\(forthcoming\))", ref)
-    #         if isnothing(datematch)
-    #             datematch = match(r"(\(n.d.\))", ref)
-    #         end
-    #     end
-    # end
+
     if isnothing(datematch)
         return special_cases(ref)
     end
@@ -82,30 +79,39 @@ function Bibitem(ref::S) where S<:AbstractString
 
     # All the names must be before the date
     ref2d = ref[1:datematch.offsets[1]-1]
-    # we dont need any editiors
-    eds = r"\([Ee]ds?\.?\)\.?"
-    edmatch = match(eds, ref2d) 
-    if !isnothing(edmatch)
-        ref2d = replace(ref2d, edmatch.match=>"")
-    end
+
+    # we dont need any editiors 
+    # The pattern must be before a number in  parentehsis -> (?=\(\d)
+    @show "---", ref2d
+    ref2d = remove_editors_nodate(ref2d)
 
 
     etal = match(r"\set\sal[.,]?", ref2d)
     andmatch = match(r"\s(and)\s", ref2d)
+    if !isnothing(andmatch)
+        ref2d = replace(ref2d, "and" => "")
+    end
     #println("$ref, $(datematch.offsets)")
     tit_start = findnext(")", ref, datematch.offsets[1])[end]
     title = ref[tit_start:end]
 
+    authors = getnames(ref2d)
+
+    up2date = datematch.offsets[1] + length(datematch.match)
+    return Bibitem(authors, etal, datematch, andmatch, title, ref[1:up2date-1] |> String)
+end
+##################################################
+function getnames(ref2d)
     firsttime = true
+
+    global authname
+    authors = []
+
     while true
 
         # we try first with namematcheralt which captures names like du bois w.w.w.
-        single_name = match(namematcheralt, ref2d)
-
-        # and then w/ normal match
-        if isnothing(single_name)
-            single_name = match(namematcher, ref2d)
-        end
+        single_name = match(authname, ref2d)
+        @show single_name
 
 
         # if this didn't work
@@ -119,7 +125,7 @@ function Bibitem(ref::S) where S<:AbstractString
 
         if isnothing(single_name)
             if firsttime
-                return Bibitem()
+                return nothing # Bibitem()
             else
                 break
             end
@@ -133,10 +139,11 @@ function Bibitem(ref::S) where S<:AbstractString
             push!(authors, single_name)
         end
 
-        try 
+        offs = 0
+        try
             firstnonzero = findfirst(>(0), single_name.offsets)
             offs = single_name.offsets[firstnonzero] + length(single_name.match)
-        catch e 
+        catch e
             println(e)
             println("auhtor is $(single_name)")
             break
@@ -149,21 +156,44 @@ function Bibitem(ref::S) where S<:AbstractString
         try
             ref2d = ref2d[offs:end]
         catch e
-            @warn "Error in Bibitem cstor"
+            @warn "Error in Bibitem cstor "
             println(e)
-            @show single_name
+            @show single_name, ref2d
             println("Using graphemes to get the rest of the string")
-            ref2d = graphemes(ref2d, offs:(length(ref2d)-1))
+            ref2d = graphemes(ref2d, offs:(length(ref2d)-2))
             @show ref2d
         end
         #n_of_authors += 1
         #@show single_name, single_name.offsets
     end
-
-    up2date = datematch.offsets[1] + length(datematch.match)
-    return Bibitem(authors, etal, datematch, andmatch, title, ref[1:up2date-1] |> String)
+    return authors
 end
 
+##################################################
+
+function remove_editors(ref)
+
+    global eds # = r"(\s\(?[Ee]ds?\.?\)?\.?\s?)(?=\(\d)"
+    edmatch = match(eds, ref)
+    #@show ref
+    if !isnothing(edmatch)
+        ref = replace(ref, edmatch.match => " ")
+        #@show ref2d
+    end
+    return ref
+end
+#################################################3
+function remove_editors_nodate(ref)
+
+    global eds_nodate # = r"(\s\(?[Ee]ds?\.?\)?\.?\s?)(?=\(\d)"
+    edmatch = match(eds_nodate, ref)
+    #@show ref
+    if !isnothing(edmatch)
+        ref = replace(ref, edmatch.match => " ")
+        #@show ref2d
+    end
+    return ref
+end
 #################################################3
 mutable struct MyData
     # This should be 2 structs, one for the containers, 
@@ -205,7 +235,7 @@ function bootstrap(infilename::String)
     txt.txt = replace(txt.txt, "“" => String(raw"\""))
 
     txt.txt = replace(txt.txt, "della Port" => "dellaPort", "Opp, K.-D" => "Opp, K.D")
-    #txt.txt = replace(txt.txt, "Opp, K.-D" => "Opp, K.D")
+    txt.txt = replace(txt.txt, " ," => ",", " ." => ". ")
 
     txt.txt = Unicode.normalize(txt.txt)
 
@@ -432,15 +462,17 @@ end
 function break_refs!(refs, dat) # , bibitem_string)
 
     for refwBlanks in refs #loop over references of the current title
-        ref = strip(refwBlanks)
-        ref = replace(ref, "( " => "(", " )" => ")")
-        if ref == ""
+        refed = strip(refwBlanks)
+        refed = replace(refed, "( " => "(", " )" => ")")
+        if refed == ""
             continue
         end
 
-        if startswith(ref, '"')
-            ref = replace(ref, "\"" => "", "*" => "")
+        if startswith(refed, '"')
+            refed = replace(refed, "\"" => "", "*" => "")
         end
+
+        ref = remove_editors(refed)
 
         refanalysis = Bibitem(ref) # 
 
@@ -467,7 +499,7 @@ function break_refs!(refs, dat) # , bibitem_string)
         check_refs!(dat, refanalysis)
         #is_in_biblio(locshref, bibitem_string) 
 
-        push!(dat.namedates, refanalysis.names_date_str)
+        push!(dat.namedates, refanalysis.names_date_str |> remove_editors)
 
         # dicts.namedate2short[refanalysis.names_date_str] = locshref
         # dicts.short2namedate[locshref] = refanalysis.names_date_str
@@ -492,6 +524,8 @@ function break_refs!(refs, dat) # , bibitem_string)
                 end
             end
         end
+
+        locshref = remove_editors(locshref)
 
         if dat.title ∉ keys(dat.biblio)
             dat.biblio[dat.title] = [locshref]
@@ -735,10 +769,12 @@ function loop_refs_from_txt(infile::String)
                 break
             end
         catch e
+            println(e)
             @show dat.n - 1, dat.title, txt.titles[dat.n-2]
         end
 
         if isnothing(refs)
+            println("Reached the end:  $(dat.n) $(dat.title)")
             break
         end
 
@@ -757,6 +793,17 @@ end
 
 # Function to find common substrings between two strings
 function common_substrings(s1::String, s2::String)
+
+    # "(forthcoming)" is large enough to break the algorithm
+    forth = false
+    if occursin("(forthcoming)", s1) && occursin("(forthcoming)", s2)
+        forth = true
+        s1 = replace(s1, "(forthcoming)" => "")
+        s2 = replace(s2, "(forthcoming)" => "")
+    end
+    ## !!!! forth is not used. It would be nice to throw it in..
+
+
     common = "" #String[]  # Array to store common substrings
     len1, len2 = length(s1), length(s2)
     if len1 > len2
@@ -781,6 +828,16 @@ end
 
 # Function to find common substrings between two strings
 function common_graphemes(ss1::String, ss2::String)
+
+    # "(forthcoming)" is large enough to break the algorithm
+    forth = false
+    if occursin("(forthcoming)", ss1) && occursin("(forthcoming)", ss2)
+        forth = true
+        ss1 = replace(ss1, "(forthcoming)" => "")
+        ss2 = replace(ss2, "(forthcoming)" => "")
+    end
+    ## !!!! forth is not used. It would be nice to throw it in..
+
     common = "" #String[]  # Array to store common substrings
     s1, s2 = graphemes(ss1), graphemes(ss2)
     len1, len2 = length(s1), length(s2)
